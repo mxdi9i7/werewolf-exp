@@ -1,0 +1,29 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.main-content.row {
+	margin: 0px 50px;
+}
+
+.main-content-title {
+	margin: 20px auto;
+	width: 50%;
+	display: inline;
+}
+nav .nav-wrapper ul li a {
+	color: #333;
+}
+.publishBtn {
+	display: inline;
+}
+.main-content-header {
+	display: block;
+	width: 100%;
+	margin: 0px auto;
+	padding: 0px auto;
+}

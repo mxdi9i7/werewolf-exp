@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{#event}}
+		<title>{{title}}</title>
+	{{/event}}
+</head>
+<body>
+	{{#event}}
+		<ul>
+			<li>{{title}}</li>
+			<li>{{type}}</li>
+			<li>{{date}}</li>
+			<li>{{currentFill}}/{{capacity}}</li>
+		</ul>
+	{{/event}}
+</body>
+</html>
