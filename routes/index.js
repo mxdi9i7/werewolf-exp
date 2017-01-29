@@ -19,6 +19,10 @@ router
 			res.render('index', {
 				title: '面杀网',
 				events,
+				partials: {
+					header: './partials/header',
+					footer: './partials/footer'
+				}
 			})
 
 			

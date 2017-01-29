@@ -18,8 +18,11 @@ const db = knex({
 router
 	.get('/publish', (req, res) => {
 			res.render('publish', {
-					title: '发布活动'
-
+					title: '发布活动',
+          partials: {
+            header: './partials/header',
+            footer: './partials/footer'
+          }
 				})
 		})
 

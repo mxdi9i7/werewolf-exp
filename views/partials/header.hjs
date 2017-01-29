@@ -5,25 +5,25 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
   </head>
-  <body>
+  <body id="body">
     
 	  <nav>
 	    <div class="nav-wrapper white">
-	      <a href="#!" class="brand-logo black-text">Logo</a>
+	      <a href="../" class="brand-logo black-text">Logo</a>
 	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <ul class="right hide-on-med-and-down">
-	      	<li><a href="./publish" class="btn publishBtn white-text">发布活动</a></li>
-	        <li><a href="./">主页</a></li>
+	        <li><a href="../">主页</a></li>
 	        <li><a href="./users/:id">个人主页</a></li>
 	        <li><a href="./rank">名人堂</a></li>
 	        <li><a href="./settings">设置</a></li>
+	        <li><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
-	      	<li><a href="./publish" class="btn publishBtn">发布活动</a></li>
-	        <li><a href="./">主页</a></li>
+	        <li><a href="../">主页</a></li>
 	        <li><a href="./users/:id">个人主页</a></li>
 	        <li><a href="./rank">名人堂</a></li>
 	        <li><a href="./settings">设置</a></li>
+	        <li><a href="./login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
 	      </ul>
 	    </div>
 	  </nav>

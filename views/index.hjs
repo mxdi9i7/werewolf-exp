@@ -1,38 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
-  </head>
-  <body>
-    
-	  <nav>
-	    <div class="nav-wrapper white">
-	      <a href="#!" class="brand-logo black-text">Logo</a>
-	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	      <ul class="right hide-on-med-and-down">
-	        <li><a href="./">主页</a></li>
-	        <li><a href="./users/:id">个人主页</a></li>
-	        <li><a href="./rank">名人堂</a></li>
-	        <li><a href="./settings">设置</a></li>
-	        <li><a href="./login" class="btn publishBtn white-text red">登录</a></li>
-	      </ul>
-	      <ul class="side-nav" id="mobile-demo">
-	        <li><a href="./">主页</a></li>
-	        <li><a href="./users/:id">个人主页</a></li>
-	        <li><a href="./rank">名人堂</a></li>
-	        <li><a href="./settings">设置</a></li>
-	        <li><a href="./login" class="btn publishBtn white-text red">登录</a></li>
-	      </ul>
-	    </div>
-	  </nav>
+{{> header }}
+	  <div class="carousel carousel-slider center color-carousel" id="color-carousel" data-indicators="true">
+		    <div class="carousel-fixed-item center">
+		      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+		    </div>
+		    <div class="carousel-item blue white-text" href="#two!">
+		      <h2>Second Panel</h2>
+		      <p class="white-text">This is your second panel</p>
+		    </div>
+		    <div class="carousel-item blue white-text" href="#three!">
+		      <h2>Third Panel</h2>
+		      <p class="white-text">This is your third panel</p>
+		    </div>
+		    <div class="carousel-item blue white-text" href="#four!">
+		      <h2>Fourth Panel</h2>
+		      <p class="white-text">This is your fourth panel</p>
+		    </div>
+	  </div>
 	  <section class="row main-content">
+
+	  
 	  	<div class="col s12 m8 l8">
 	  		<div class="main-content-header">
-	  			<h2 class="main-content-title">附近的面杀局</h2>
-	  			<a href="./publish" class="btn btn-large publishBtn white-text">发布活动</a>
+	  			<h3 class="main-content-title">附近的面杀局</h3>
+	  			<a href="./publish" class="btn btn-large publishBtn white-text light-blue accent-3 waves-effect">发布活动</a>
 	  		</div>
+	  		<hr>
 	  			{{#events}}
 		  		  <div class="row">
 			        <div class="col s12 m12 l12">
@@ -44,8 +36,8 @@
 			              	<p>参与人数／负荷人数： <b>{{currentFill}}/{{capacity}}</b></p>
 			            </div>
 			            <div class="card-action">
-			              <a href="/event/{{id}}">了解更多</a>
-			              <a href="#">报名参加</a>
+			              <a href="/event/{{id}}" class="btn-flat black-text"><b>了解更多</b></a>
+			              <a class="black-text red-link btn-flat" href="#"><b>报名参加</b></a>
 			            </div>
 			          </div>
 			        </div>
@@ -57,8 +49,4 @@
 	  	</div>
 	  </section>
 
-	<script src="/javascripts/jquery-3.1.1.min.js"></script>  
-    <script src="/javascripts/materialize.min.js"></script>
-    <script type="text/javascript" src="/javascripts/main.js"></script>
-	</body>
-</html>
+{{> footer }}

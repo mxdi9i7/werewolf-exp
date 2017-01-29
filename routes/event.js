@@ -25,6 +25,10 @@ router
 			res.render('event', {
 					title: '活动详情',
 					event,
+					partials: {
+						header: './partials/header',
+						footer: './partials/footer'
+					}
 				})
 		}, next)
 	})

@@ -1,9 +1,28 @@
-<form action="/login" method="post">
-	<label>Email</label>
-	<input type="text" name="username">
-		<br>
-	<label>Password</label>
-	<input type="text" name="password">
-		<br>
-	<button type="submit">Log in</button>
-</form>
+{{> header }}
+
+<section class="login-bg">
+		<div class="login-container">
+			<h3>登录／注册</h3>
+			<div class="row">
+			    <form class="col s12" action="/login" method="post">
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="email" type="text" name="username" class="validate">
+			          <label for="email">登录邮箱</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="password" type="password" name="password" class="validate">
+			          <label for="password">登录密码</label>
+			        </div>
+			      </div>
+			      <button class="btn login-button waves-effect light-blue accent-3" type="submit">登录</button>
+			      <button class="btn register-button light-blue accent-3 waves-effect" type="submit">注册</button>
+			    </form>
+			  </div>
+		</div>
+</section>
+
+  
+{{> footer }}

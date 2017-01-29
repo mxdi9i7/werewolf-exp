@@ -11,7 +11,12 @@ router
 		})
 	})
 	.get('/login', (req, res, next) => {
-		res.render('login')
+		res.render('login', {
+			partials: {
+				header: './partials/header',
+				footer: './partials/footer'
+			}
+		})
 	})
 	.post('/login', passport.authenticate('local', {
 		successRedirect: '/status',

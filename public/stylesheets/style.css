@@ -8,6 +8,7 @@ a {
 }
 .main-content.row {
 	margin: 0px 50px;
+	padding-top: 100px;
 }
 
 .main-content-title {
@@ -15,15 +16,74 @@ a {
 	width: 50%;
 	display: inline;
 }
+#body nav {
+	position: fixed;
+	opacity: 0.9;
+	z-index: 999;
+}
 nav .nav-wrapper ul li a {
 	color: #333;
 }
 .publishBtn {
 	display: inline;
+	float: right;
+	position: relative;
+	bottom: 10px;
+	right: 10px;
 }
 .main-content-header {
 	display: block;
 	width: 100%;
 	margin: 0px auto;
 	padding: 0px auto;
+}
+.login-container {
+	height: 50%;
+	min-width: 50%;
+	background-color: white;
+	top: 30%;
+	position: absolute;
+	margin: 0 auto;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 30px;
+}
+.login-container h3{
+	text-align: center;
+}
+.login-button {
+	float: right;
+	margin: 0 10px;
+}
+.register-button {
+	float: right;
+	margin: 0 10px;
+}
+.login-bg {
+	width: 100%;
+	height: 100vh;
+	background-color: #00b0ff;
+}
+.event-section {
+	padding: 50px 10%;
+}
+.event-detail-list li b {
+	margin: 20px;
+	font-size: 16px;
+}
+#color-carousel .carousel-item {
+	padding-top: 80px;
+	height: 500px;
+}
+.publish-section {
+	padding: 50px 5%;
+	background-color: #00b0ff;
+}
+.publish-form {
+	background-color: #fff;
+	padding: 2% 5%;
+	margin-top: 50px;
+}
+div.input-field.publish-textarea {
+	margin-top: 50px;
 }
