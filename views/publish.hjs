@@ -1,26 +1,26 @@
 {{> header }}
   <section class="publish-section">
 
-        <form class="row publish-form">
+        <form class="row publish-form" method="post">
             <h3 class="center-align">活动策划表格</h3>
             <div class="input-field col m12 l6">
-              <input placeholder="请输入您的活动名称" id="event-name" type="text" class="validate">
+              <input placeholder="请输入您的活动名称" type="text" class="validate" name="eventName">
               <label for="event-name">活动名称</label>
             </div>
             <div class="input-field col m12 l6">
-              <input placeholder="您的名字" id="event-host" type="text" class="validate">
+              <input placeholder="您的名字" id="event-host" type="text" class="validate" name="eventHost">
               <label for="event-host">发起人</label>
             </div>
             <div class="input-field col m12 l12">
-              <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="event-address" type="email" class="validate">
+              <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="event-address" type="text" class="validate" name="eventAddress">
               <label for="event-address">活动地址</label>
             </div>
             <div class="input-field col s12 m6 l6">
-              <input type="date" class="datepicker">
+              <input type="date" class="datepicker" name="eventDate">
               <label>活动日期（请单击选择）</label>
             </div>
             <div class="input-field col s12 m6 l6">
-              <select>
+              <select name="eventCapacity">
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
                   <option value="3">3 人</option>
@@ -44,57 +44,30 @@
                   <option value="20+">20+ 人</option>
                 </select>
             </div>
-            <div class="input-field col s12 m6 l6">
-              <select>
+            <div class="input-field col s12 m12 l12">
+              <select name="eventType">
                 <option value="">活动类型</option>
                 <option value="A">狼人杀</option>
                 <option value="B">三国杀</option>
                 <option value="C">麻将</option>
               </select>
             </div>
-            <div class="input-field col s12 m6 l6">
-              <input placeholder="请输入时间范围，如：12AM - 9PM格式" id="event-duration" type="text" class="validate">
-              <label for="event-duration">活动时间</label>
-            </div>
             <div class="input-field col s12 m12 l12">
               <div class="file-field input-field">
-                <div class="btn">
-                    <span>File</span>
-                    <input type="file">
+                <div class="btn btn-large white-text light-blue accent-3 waves-effect">
+                    <span>上传照片</span>
+                    <input type="file" name="eventFile">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
                 </div>
               </div>
             </div>
-            <div class="input-field col s12 m12 l12">
-              <label>活动饮食</label>
-              <br>
-              <p>
-                <input name="group1" type="radio" id="event-noFood" />
-                <label for="event-noFood">自备饮食</label>
-              </p>
-              <p>
-                <input name="group1" type="radio" id="event-yesFood" />
-                <label for="event-yesFood">提供饮食</label>
-              </p>
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea" name="eventNote"></textarea>
+              <label for="textarea1">活动详情</label>
             </div>
-            <div class="input-field col s12 m12 l12">
-              <label>活动花销</label>
-              <br>
-              <p>
-                <input name="group2" type="radio" id="event-free" />
-                <label for="event-free">免费</label>
-              </p>
-              <p>
-                <input name="group2" type="radio" id="event-cost" />
-                <label for="event-cost">均摊</label>
-              </p>
-            </div>
-            <div class="input-field col s12 publish-textarea">
-                  <textarea id="textarea1" class="materialize-textarea" placeholder="可填写活动须知"></textarea>
-                  <label for="textarea1">备注</label>
-            </div>
+            <button class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">发布活动</button>
         </form>
   </section>
 	

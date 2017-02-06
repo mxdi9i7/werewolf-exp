@@ -23,7 +23,8 @@
 					<li><b>活动类型 -</b><span id="{{type}}">{{type}}</span></li>
 					<li><b>活动日期 -</b>{{date}}</li>
 					<li><b>活动人数 -</b>{{currentFill}}/{{capacity}}</li>
-					<li><b>活动详情 -</b></li>
+					<li><b>活动地址 -</b>{{address}}</li>
+					<li><b>活动详情 -</b>{{note}}</li>
 				</ul>
 				{{/event}}
 			</div>
