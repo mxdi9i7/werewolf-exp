@@ -21,7 +21,7 @@
 	  
 	  	<div class="col s12 m8 l8">
 	  		<div class="main-content-header">
-	  			<h3 class="main-content-title">附近的面杀局</h3>
+	  			<h3 class="main-content-title">附近的面杀局 {{nickname}}</h3>
 	  			<a href="./publish" class="btn btn-large publishBtn white-text light-blue accent-3 waves-effect">发布活动</a>
 	  		</div>
 	  		<hr>

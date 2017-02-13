@@ -18,16 +18,26 @@ const db = knex({
 /* GET home page. */
 router
 	.get('/', (req, res, next) => {
-		db('events').orderBy('id', 'desc').then((events) => {
-			res.render('index', {
-				title: '面杀网',
-				events,
-				partials: {
-					header: './partials/header',
-					footer: './partials/footer'
-				}
-			})
 
+		
+		db('events').orderBy('events.id', 'desc')
+		.then((events) => {
+			db('users')
+			.where('id', req.user.id)
+			.then((users) => {
+				console.log(users.nickname);
+				res.render('index', {
+					partials: {
+						header: './partials/header',
+						footer: './partials/footer'
+					},
+					title: '面杀网',
+					events,
+					nickname: users[0].nickname,
+					id: users[0].id,
+					username: users[0].username
+				})
+			})
 			
 		})
 	})
