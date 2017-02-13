@@ -1,4 +1,4 @@
-{{> header }}
+ {{> header }}
 	  <div class="carousel carousel-slider center color-carousel" id="color-carousel" data-indicators="true">
 		    <div class="carousel-fixed-item center">
 		      <a class="btn waves-effect white grey-text darken-text-2">button</a>
@@ -30,14 +30,14 @@
 			        <div class="col s12 m12 l12">
 			          <div class="card white">
 			            <div class="card-content black-text">
-			              <span class="card-title">{{ title }}</span>
+						  <h3 class="card-title">用户{{ user_id }}发布了活动: {{title}}</h3>
 			              	<p>游戏类型：<b id="{{type}}">{{type}}</b></p>
 			              	<p>地址：{{address}}</p>
 			              	<p>日期：<b>{{date}}</b></p>
 			              	<p>参与人数／负荷人数： <b>{{currentFill}}/{{capacity}}</b></p>
 			            </div>
 			            <div class="card-action">
-			              <a href="/event/{{id}}" class="btn-flat black-text"><b>了解更多</b></a>
+			              <a href="/event{{id}}" class="btn-flat black-text"><b>了解更多</b></a>
 			              <a class="black-text red-link btn-flat" href="#"><b>报名参加</b></a>
 			            </div>
 			          </div>

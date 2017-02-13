@@ -1,0 +1,33 @@
+{{> header }}
+
+<section class="login-bg">
+		<div class="login-container">
+			<h3>注册</h3>
+			<div class="row">
+			    <form class="col s12" action="/signup" method="post">
+			      <div class="row">
+			      	<div class="input-field col s12">
+			          <input id="nickname" type="text" name="nickname" class="validate" required>
+			          <label for="nickname">个性昵称</label>
+			        </div>
+			        <div class="input-field col s12">
+			          <input id="email" type="text" name="username" class="validate" required>
+			          <label for="email">注册邮箱</label>
+			        </div>
+			        <div class="input-field col s12">
+			          <input id="password" type="password" name="password" class="validate" required>
+			          <label for="password">注册密码</label>
+			        </div>
+			        <div class="input-field col s12">
+			          <input id="password" type="password" name="password2" class="validate" required>
+			          <label for="password">注册密码（确认）</label>
+			        </div>
+			      </div>
+			      <button class="btn register-button light-blue accent-3 waves-effect" type="submit">注册</button>
+			    </form>
+			  </div>
+		</div>
+</section>
+
+  
+{{> footer }}

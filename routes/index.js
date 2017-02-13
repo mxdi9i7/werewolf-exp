@@ -12,10 +12,13 @@ const db = knex({
     database: 'test',
   }
 })
+
+
+
 /* GET home page. */
 router
 	.get('/', (req, res, next) => {
-		db('events').then((events) => {
+		db('events').orderBy('id', 'desc').then((events) => {
 			res.render('index', {
 				title: '面杀网',
 				events,

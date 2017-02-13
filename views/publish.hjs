@@ -1,7 +1,7 @@
 {{> header }}
   <section class="publish-section">
 
-        <form class="row publish-form" method="post">
+        <form class="row publish-form" method="post" id="publish-form">
             <h3 class="center-align">活动策划表格</h3>
             <div class="input-field col m12 l6">
               <input placeholder="请输入您的活动名称" type="text" class="validate" name="eventName">
@@ -70,5 +70,10 @@
             <button class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">发布活动</button>
         </form>
   </section>
-	
+
   {{> footer }}
+    <script type="text/javascript">
+    $(document).ready(function() {
+       $('#publish-form :input').val('');
+     }); 
+  </script>

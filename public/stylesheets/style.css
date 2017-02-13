@@ -38,7 +38,7 @@ nav .nav-wrapper ul li a {
 	padding: 0px auto;
 }
 .login-container {
-	height: 50%;
+	height: auto;
 	min-width: 50%;
 	background-color: white;
 	top: 30%;

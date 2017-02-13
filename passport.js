@@ -3,6 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var db = require('./db');
 
 passport.use(new LocalStrategy(authenticate))
+passport.use('local-register', new LocalStrategy({passReqToCallback: true}, register))
 
 function authenticate(email, password, done) {
 	db('users')
@@ -19,6 +20,31 @@ function authenticate(email, password, done) {
 		}, done)
 }
 
+function register(req, email, password, done) {
+	db('users')
+		.where('username', email)
+		.first()
+		.then((user) => {
+			if(user) {
+				return done(null, false, {message: '用户已存在'})
+			}
+			if (password !== req.body.password2) {
+				return done(null, false, {message: 'passwords dont match'})
+			}
+			const newUser = {
+				nickname: req.body.nickname,
+				username: req.body.username,
+				password: req.body.password
+			};
+
+			db('users')
+				.insert(newUser)
+				.then((ids) => {
+					newUser.id = ids[0]
+					done(null, newUser)
+				})
+		})
+}
 
 passport.serializeUser(function(user, done) {
 	done(null, user.id)

@@ -16,7 +16,7 @@ const db = knex({
 
 
 router
-	.get('/event/:event_id', (req, res, next) => {
+	.get('/event:event_id', (req, res, next) => {
 		const { event_id } = req.params;
 		db("events")
 		.where("id", event_id)

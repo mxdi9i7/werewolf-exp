@@ -10,23 +10,18 @@ router
 			authenticated: req.isAuthenticated(),
 		})
 	})
-	.get('/login', (req, res, next) => {
-		res.render('login', {
+	.get('/signup', (req, res, next) => {
+		res.render('signup', {
 			partials: {
 				header: './partials/header',
 				footer: './partials/footer'
 			}
 		})
 	})
-	.post('/login', passport.authenticate('local', {
-		successRedirect: '/',
-		failureRedirect: '/login',
+	.post('/signup', passport.authenticate('local-register', {
+		successRedirect: '/users',
+		failureRedirect: '/signupFailed',
 	}))
-	.get('/logout', (req, res, next) => {
-		req.session.destroy(() => {
-			res.redirect('/')
-		})
-	})
 
 
 

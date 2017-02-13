@@ -2,7 +2,7 @@
 
 <section class="login-bg">
 		<div class="login-container">
-			<h3>登录／注册</h3>
+			<h3>登录</h3>
 			<div class="row">
 			    <form class="col s12" action="/login" method="post">
 			      <div class="row">
@@ -17,8 +17,8 @@
 			          <label for="password">登录密码</label>
 			        </div>
 			      </div>
+			      <span>没有账户？ <a href="/signup">注册一个</a> </span>
 			      <button class="btn login-button waves-effect light-blue accent-3" type="submit">登录</button>
-			      <button class="btn register-button light-blue accent-3 waves-effect" type="submit">注册</button>
 			    </form>
 			  </div>
 		</div>
