@@ -18,14 +18,31 @@ const db = knex({
 /* GET home page. */
 router
 	.get('/', (req, res, next) => {
-
-		
-		db('events').orderBy('events.id', 'desc')
-		.then((events) => {
+		if (req.isAuthenticated()) {
 			db('users')
 			.where('id', req.user.id)
 			.then((users) => {
-				console.log(users.nickname);
+				db('events')
+				.orderBy('events.id', 'desc')
+				.then((events) => {
+					console.log(users[0].nickname);
+					res.render('index', {
+						partials: {
+							header: './partials/header',
+							footer: './partials/footer'
+						},
+						title: '面杀网',
+						events,
+						nickname: users[0].nickname,
+						id: users[0].id,
+						username: users[0].username
+					})
+				})
+				
+			})
+		} else {
+			db('events').orderBy('events.id', 'desc')
+			.then((events) => {
 				res.render('index', {
 					partials: {
 						header: './partials/header',
@@ -33,13 +50,11 @@ router
 					},
 					title: '面杀网',
 					events,
-					nickname: users[0].nickname,
-					id: users[0].id,
-					username: users[0].username
+					nickname: null
 				})
+				console.log(res.nickname);
 			})
-			
-		})
+		}
 	})
 
 

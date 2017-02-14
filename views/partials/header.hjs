@@ -16,9 +16,13 @@
 	        <li><a href="../users">个人主页</a></li>
 	        <li><a href="./rank">名人堂</a></li>
 	        <li><a href="./settings">设置</a></li>
-	        <li><a href="../login" class="btn white-text light-blue accent-3 waves-effect" id="login_btn">登录/注册</a></li>
-	        <li><a href="./logout" class="btn white-text red accent-3 waves-effect" id="logout_btn">退出登录</a></li>
-	        <li><a href="">{{nickname}}</a></li>
+	        <div id="logged-in">
+	        	<li><a href="../users">{{nickname}}</a></li>
+				<li><a href="./logout" class="btn white-text red accent-3 waves-effect" id="logout_btn">退出登录</a></li>
+	        </div>
+	        <div id="logged-out">
+	        	<li><a href="../login" class="btn white-text light-blue accent-3 waves-effect" id="login_btn">登录/注册</a></li>
+	        </div>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
 	        <li><a href="../">主页</a></li>
