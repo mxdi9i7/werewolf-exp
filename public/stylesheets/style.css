@@ -87,3 +87,9 @@ nav .nav-wrapper ul li a {
 div.input-field.publish-textarea {
 	margin-top: 50px;
 }
+.card {
+	cursor: pointer;
+}
+.exitBtn {
+	cursor: pointer;
+}

@@ -12,25 +12,22 @@
 	      <a href="../" class="brand-logo black-text">Logo</a>
 	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <ul class="right hide-on-med-and-down">
-	        <li><a href="../">主页</a></li>
-	        <li><a href="../users">个人主页</a></li>
-	        <li><a href="./rank">名人堂</a></li>
-	        <li><a href="./settings">设置</a></li>
-	        <div id="logged-in">
-	        	<li><a href="../users">{{nickname}}</a></li>
-				<li><a href="./logout" class="btn white-text red accent-3 waves-effect" id="logout_btn">退出登录</a></li>
-	        </div>
-	        <div id="logged-out">
-	        	<li><a href="../login" class="btn white-text light-blue accent-3 waves-effect" id="login_btn">登录/注册</a></li>
-	        </div>
+	        <li><a href="../">首页</a></li>
+	        <li id="nickname_tag"><a href="../users">{{currentUser}}</a></li>
+	        <!-- <li><a href="./rank">名人堂</a></li>
+	        <li><a href="./settings">设置</a></li> -->
+	        <li id="login_btn"><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
+	        
+			<li id="logout_btn"><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
-	        <li><a href="../">主页</a></li>
-	        <li><a href="./users">个人主页</a></li>
-	        <li><a href="./rank">名人堂</a></li>
-	        <li><a href="./settings">设置</a></li>
+	        <li><a href="../">首页</a></li>
+	        <li id="nickname_tag"><a href="../users">{{currentUser}}</a></li>
+	        <!-- <li><a href="./rank">名人堂</a></li>
+	        <li><a href="./settings">设置</a></li> -->
 	        <li><a href="./login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
 	        <li><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
 	      </ul>
 	    </div>
 	  </nav>
+	   	<input type="text" value="{{authenticated}}" id="hidden-input">

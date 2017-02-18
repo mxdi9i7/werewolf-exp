@@ -20,6 +20,7 @@ function loginRequired(req, res, next) {
   next()
 }
 
+////////////Your own profile//////////////////
 router
 	.get("/users", loginRequired, (req, res, next) => {
 		db('events')
@@ -42,9 +43,55 @@ router
 					partials: {
 						header: './partials/header',
 						footer: './partials/footer'
-					}
+					},
+					authenticated: req.isAuthenticated(),
+					person: '我'
 				})			
 			})
+	})
+
+////////////Other people's profile//////////////////
+
+	.get('/user:id', loginRequired, (req,res,next) => {
+		const { id } = req.params;
+		db('events')
+		.where('user_id', id)
+		.then((events) => {
+			db('users')
+			.where('id', id)
+			.first()
+			.then((users) => {
+				req.session.userInfo = users;
+				var userData = req.session.userInfo;
+				res.render('users', {
+						partials: {
+							header: './partials/header',
+							footer: './partials/footer'
+						},
+						title: '面杀网',
+						events,
+						nickname: userData.nickname,
+						email: userData.username,
+						identity: function() {
+							if (userData.is_admin == 1) {
+								return '管理员'
+							} else {
+								return '普通用户'
+							}
+						},
+						id: userData.id,
+						authenticated: req.isAuthenticated(),
+						person: function() {
+							if (req.user.id == id) {
+								return '我'
+							} else {
+								return '他'
+							}
+						},
+						currentUser: req.user.nickname
+				})
+			})
+		})
 	})
 
 
