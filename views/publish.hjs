@@ -8,7 +8,7 @@
               <label for="event-name">活动名称</label>
             </div>
             <div class="input-field col m12 l6">
-              <input placeholder="您的名字" id="event-host" type="text" class="validate" name="eventHost">
+              <input readonly placeholder="{{host}}" id="event-host" type="text" class="validate" name="eventHost" value="{{host}}">
               <label for="event-host">发起人</label>
             </div>
             <div class="input-field col m12 l12">

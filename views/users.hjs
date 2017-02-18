@@ -2,7 +2,7 @@
 
 	
 	      <section class="row main-content">
-	      	<h2>你好，{{ nickname }}</h2>
+	      	<h2>你好，{{ currentUser }}</h2>
 	  		<div class="col s12 m8 l8">
 		  		  <div class="card light-blue accent-3">
 				    <div class="card-content">
@@ -31,7 +31,7 @@
 		  	</div>
 		  	<div class="col s12 m4 l4">
 		  		<div class="main-content-header">
-		  			<h3 class="main-content-title">我发布的活动</h3>
+		  			<h3 class="main-content-title">{{person}}发布的活动</h3>
 		  			<a href="./publish" class="btn btn-large publishBtn white-text light-blue accent-3 waves-effect">发布新活动</a>
 		  		</div>
 		  		<hr>
@@ -40,8 +40,8 @@
 				        <div class="col s12 m12 l12">
 				          <div class="card white">
 				            <div class="card-content black-text">
+				           	  <span class="exitBtn right">x</span>	
 				              <span class="card-title">{{ title }}</span>
-				              <span class="card-title right">{{ host_id }}</span>
 				              	<p>游戏类型：<b id="{{type}}">{{type}}</b></p>
 				              	<p>地址：{{address}}</p>
 				              	<p>日期：<b>{{date}}</b></p>

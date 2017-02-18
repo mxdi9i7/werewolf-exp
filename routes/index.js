@@ -14,18 +14,45 @@ const db = knex({
 })
 
 
+function loginRequired(req, res, next) {
+  if (!req.isAuthenticated()) {
+    return res.redirect('/login');
+  }
+  next()
+}
 
 /* GET home page. */
 router
 	.get('/', (req, res, next) => {
-
-		
-		db('events').orderBy('events.id', 'desc')
-		.then((events) => {
+		var authenticated;
+		if (req.isAuthenticated()) {
 			db('users')
 			.where('id', req.user.id)
 			.then((users) => {
-				console.log(users.nickname);
+				db('events')
+				.orderBy('events.id', 'desc')
+				.then((events) => {
+					res.render('index', {
+						partials: {
+							header: './partials/header',
+							footer: './partials/footer'
+						},
+						title: '面杀网',
+						events,
+						nickname: users[0].nickname,
+						id: users[0].id,
+						username: users[0].username,
+						authenticated: req.isAuthenticated(),
+						rsvp: users[0].rsvp,
+						currentUser: req.user.nickname
+					})
+				})
+				
+			})
+		} else {
+			authenticatedStatus = false;
+			db('events').orderBy('events.id', 'desc')
+			.then((events) => {
 				res.render('index', {
 					partials: {
 						header: './partials/header',
@@ -33,14 +60,14 @@ router
 					},
 					title: '面杀网',
 					events,
-					nickname: users[0].nickname,
-					id: users[0].id,
-					username: users[0].username
+					nickname: null,
+					authenticated: req.isAuthenticated()
 				})
 			})
-			
-		})
+		}
 	})
+
+
 
 
 

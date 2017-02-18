@@ -19,8 +19,8 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2017 由 <a href="http://www.peterz.us" class="white-text">Peter Zheng</a> 设计，开发，维护
+            <span class="grey-text text-lighten-4 right">本平台为开源项目，采用了 <a class="white-text" href="https://choosealicense.com/licenses/gpl-3.0/">GNU GPLv3 Open Source License</a></span>
             </div>
           </div>
         </footer>

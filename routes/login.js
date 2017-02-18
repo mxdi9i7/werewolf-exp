@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+
+
+
 /* GET home page. */
 router
 	.get('/status', (req, res, next) => {
@@ -11,12 +14,13 @@ router
 		})
 	})
 	.get('/login', (req, res, next) => {
-		res.render('login', {
-			partials: {
-				header: './partials/header',
-				footer: './partials/footer'
-			}
-		})
+			res.render('login', {
+				partials: {
+					header: './partials/header',
+					footer: './partials/footer'
+				},
+				authenticated: req.isAuthenticated()
+			})
 	})
 	.post('/login', passport.authenticate('local', {
 		successRedirect: '/',

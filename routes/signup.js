@@ -15,7 +15,8 @@ router
 			partials: {
 				header: './partials/header',
 				footer: './partials/footer'
-			}
+			},
+			authenticate: req.isAuthenticated()
 		})
 	})
 	.post('/signup', passport.authenticate('local-register', {

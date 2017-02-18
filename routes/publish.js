@@ -26,7 +26,9 @@ router
           partials: {
             header: './partials/header',
             footer: './partials/footer'
-          }
+          },
+          host: req.user.nickname,
+          authenticated: req.isAuthenticated()
 				})
 		})
   .post('/publish', loginRequired, function (req, res) {
@@ -35,10 +37,13 @@ router
         type: req.body.eventType,
         date: '2017-01-01 19:00:00',
         capacity: req.body.eventCapacity,
-        currentFill: 0,
         address: req.body.eventAddress,
         note: req.body.eventNote,
-        user_id: req.user.id
+        user_id: req.user.id,
+        user_nickname: req.user.nickname,
+        participants: req.user.nickname,
+        currentFill: 1,
+        participantsID: req.user.id
       }
       db('events')
         .insert(newEvent)
