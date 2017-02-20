@@ -34,7 +34,8 @@ function register(req, email, password, done) {
 			const newUser = {
 				nickname: req.body.nickname,
 				username: req.body.username,
-				password: req.body.password
+				password: req.body.password,
+				profilePic: 'default.jpg'
 			};
 
 			db('users')

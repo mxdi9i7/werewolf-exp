@@ -3,7 +3,7 @@
 	  			  <ul class="collection">
 	  			  	{{#users}}
 		  			  		<li class="collection-item avatar">
-						      <img src="profi" alt="" class="circle">
+						      <img src="profilePic/{{profilePic}}" alt="" class="circle">
 						      	<a href="user{{id}}">
 						      		<span class="title">{{nickname}}</span>
 						      	</a>

@@ -79,7 +79,6 @@ router
 			.where('id', req.user.id)
 			.first()
 			.then((user)=> {
-				if (user.profilePic === null) {
 					res.render('users', {
 						user,
 						currentUser: user.nickname,
@@ -94,38 +93,14 @@ router
 						events,
 						partials: {
 							header: './partials/header',
-							footer: './partials/footer',
-							profile: './partials/defaultProfile'
+							footer: './partials/footer'
 						},
 						authenticated: req.isAuthenticated(),
 						person: '我'
-					})	
-				} else {
-					res.render('users', {
-						user,
-						currentUser: user.nickname,
-						identity: function() {
-							if (user.identity == 1) {
-								return "管理员"
-							} else {
-								return "普通用户"
-							}
-						},
-						title: user.id + "的主页",
-						events,
-						partials: {
-							header: './partials/header',
-							footer: './partials/footer',
-							profile: './partials/profile'
-						},
-						authenticated: req.isAuthenticated(),
-						person: '我'
-					})	
-				}
-				
-			})		
+					})
+				})		
+			})
 		})
-	})
 
 ////////////Other people's profile//////////////////
 	.get('/user:id', loginRequired, (req,res,next) => {
@@ -154,13 +129,11 @@ router
 					db('users')
 					.where('id', id)
 					.first()
-					.then((user)=>{			
-						if (user.profilePic === null) {
-								res.render('users', {
+					.then((user)=>{
+							res.render('users', {
 										partials: {
 											header: './partials/header',
-											footer: './partials/footer',
-											profile: './partials/defaultProfile'
+											footer: './partials/footer'
 										},
 										title: '面杀网',
 										user,
@@ -182,36 +155,7 @@ router
 										},
 										currentUser: req.user.nickname,
 										own: identity
-								})
-							} else {
-								res.render('users', {
-										partials: {
-											header: './partials/header',
-											footer: './partials/footer',
-											profile: './partials/profile'
-										},
-										title: '面杀网',
-										user,
-										events,
-										identity: function() {
-											if (user.is_admin == 1) {
-												return '管理员'
-											} else {
-												return '普通用户'
-											}
-										},
-										authenticated: req.isAuthenticated(),
-										person: function() {
-											if (req.user.id == id) {
-												return '我'
-											} else {
-												return '他'
-											}
-										},
-										currentUser: req.user.nickname,
-										own: identity
-								})
-							}
+							})
 						})
 					})
 				})

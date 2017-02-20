@@ -1,3 +1,0 @@
-{{#user}}
-<img src="profilePic/{{profilePic}}" class="profilePic">
-{{/user}}
