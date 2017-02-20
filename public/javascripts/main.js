@@ -43,7 +43,11 @@ $(document).ready(function(){
 	}
 	$('.joined').addClass('disabled').text('已报名');
 
-	//delete event logic
+	//user page authentication logic
+	if ($('.ownership').val() == 'notOwned') {
+		$('li.sensitive').find('a.light-blue-text').addClass('grey-text');
+		$('li.sensitive').addClass('disabled');
+	}
 
 
 

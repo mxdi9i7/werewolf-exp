@@ -107,3 +107,13 @@ div.input-field.publish-textarea {
 	color: red;
 	font-weight: bold;
 }
+div.profilePic {
+	margin-top: 0;
+	padding: 40px;
+}
+img.profilePic {
+	margin: 0 auto;
+	display: block;
+	height: 250px;
+	width: 250px;
+}

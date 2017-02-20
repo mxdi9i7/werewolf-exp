@@ -1,7 +1,8 @@
-{{> header }}
+ {{> header }}
 
 	
 	      <section class="row main-content">
+	      	<input type="text" value="{{own}}" class="ownership" hidden>
 	  		<div class="col s12 m8 l8">
 		  		  <div class="card light-blue accent-3">
 				    <div class="card-content">
@@ -10,24 +11,48 @@
 				    <div class="card-tabs">
 				      <ul class="tabs tabs-fixed-width">
 				        <li class="tab"><a href="#test4" class="active light-blue-text accent-3 bold">基本信息</a></li>
-				        <li class="tab"><a class="light-blue-text accent-3 bold" href="#test5">历史战绩</a></li>
-				        <li class="tab"><a class="light-blue-text accent-3 bold" href="#test6">积分排名</a></li>
+				        <li class="tab sensitive"><a class="light-blue-text accent-3 bold" href="#test5">修改头像</a></li>
+				        <li class="tab sensitive"><a class="light-blue-text accent-3 bold" href="#test6">修改信息</a></li>
 				      </ul>
 				    </div>
 				    <div class="card-content grey lighten-4">
-				      <div id="test4">
-				      	{{#user}}
-				      	    <ul class="collection">
-						      <li class="collection-item"><strong>昵称：</strong>{{nickname}}</li>
-						      <li class="collection-item"><strong>登陆邮箱：</strong>{{username}}</li>
-						      <li class="collection-item"><strong>身份：</strong>{{identity}}</li>
-						      <li class="collection-item"><strong>用户ID：</strong>{{id}}</li>
-						      <li class="collection-item"><strong>热门指数：</strong>{{clickCount}}</li>
-						    </ul>
-						{{/user}}
+				      <div id="test4" class="row">
+				      	<div class="col l6 m6 s12">
+				      			{{>profile}}
+				      	</div>
+				      	<div class="col l6 m6 s12">
+				      		{{#user}}
+				      	    	<ul class="collection">
+							      <li class="collection-item"><strong>昵称：</strong>{{nickname}}</li>
+							      <li class="collection-item"><strong>登陆邮箱：</strong>{{username}}</li>
+							      <li class="collection-item"><strong>身份：</strong>{{identity}}</li>
+							      <li class="collection-item"><strong>用户ID：</strong>{{id}}</li>
+							      <li class="collection-item"><strong>热门指数：</strong>{{clickCount}}</li>
+							    </ul>
+							{{/user}}
+				      	</div>
 				      </div>
-				      <div id="test5">Test 2</div>
-				      <div id="test6">Test 3</div>
+				      <div id="test5">
+				      	<form action="/profilePic" method="post" enctype="multipart/form-data">
+						    <div class="file-field input-field profilePic">
+						      <div class="btn">
+						        <span>上传照片</span>
+						        <input type="file" name="profilePic">
+						      </div>
+						      <div class="file-path-wrapper">
+						        <input class="file-path validate" type="text" placeholder="为了避免图片变形，最好是正方形的照片哦！">
+						      </div>
+						      <button type="submit" class="btn btn-large white-text light-blue accent-3 waves-effect">确认修改</button>
+						    </div>
+						  </form>
+				      </div>
+				      <div id="test6">
+				      	<form method="post">
+				      		<label for="nickname">新用户名</label>
+				      		<input type="text" name="nickname" placeholder="输入新的用户名">
+				      		<button class="btn btn-large white-text light-blue accent-3 waves-effect">确认修改</button>
+				      	</form>
+				      </div>
 				    </div>
 				  </div>
 				  <h3 class="center review-header">客观评价</h3>
