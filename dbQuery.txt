@@ -12,13 +12,13 @@ CREATE TABLE `events` (
   `user_nickname` text COLLATE utf8mb4_unicode_ci,
   `participants` text COLLATE utf8mb4_unicode_ci,
   `participantsID` text COLLATE utf8mb4_unicode_ci,
+  `clickCount` int(11) DEFAULT NULL,
+  `filePath` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `events_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -27,5 +27,6 @@ CREATE TABLE `users` (
   `is_admin` int(1) DEFAULT '0',
   `nickname` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `rsvp` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `clickCount` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12313 DEFAULT CHARSET=latin1;
