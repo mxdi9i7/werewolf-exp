@@ -18,7 +18,9 @@
 				    <div class="card-content grey lighten-4">
 				      <div id="test4" class="row">
 				      	<div class="col l6 m6 s12">
-				      			{{>profile}}
+				      		{{#user}}
+				      			<img src="profilePic/{{profilePic}}" class="profilePic">
+				      		{{/user}}
 				      	</div>
 				      	<div class="col l6 m6 s12">
 				      		{{#user}}
