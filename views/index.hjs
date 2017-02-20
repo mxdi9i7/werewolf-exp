@@ -36,6 +36,7 @@
 				              	<p>地址：{{address}}</p>
 				              	<p>日期：<b>{{date}}</b></p>
 				              	<p>参与人数： <b>{{currentFill}}/{{capacity}}</b></p>
+				              	<p class="floating-count right">活跃度:<span>{{clickCount}}</span></p>
 				            </div>
 				          </div>
 				        </div>
@@ -43,7 +44,7 @@
 			    {{/events}}
 	  	</div>
 	  	<div class="col s12 m4 l4">
-	  		<div class=""></div>
+	  		{{>rank}}
 	  	</div>
 	  </section>
 

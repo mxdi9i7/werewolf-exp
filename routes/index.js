@@ -28,40 +28,52 @@ router
 		if (req.isAuthenticated()) {
 			db('users')
 			.where('id', req.user.id)
-			.then((users) => {
+			.first()
+			.then((user) => {
 				db('events')
 				.orderBy('events.id', 'desc')
 				.then((events) => {
-					res.render('index', {
-						partials: {
-							header: './partials/header',
-							footer: './partials/footer'
-						},
-						title: '面杀网',
-						events,
-						nickname: users[0].nickname,
-						id: users[0].id,
-						username: users[0].username,
-						authenticated: req.isAuthenticated(),
-						rsvp: users[0].rsvp,
-						currentUser: req.user.nickname
+					db('users')
+					.orderBy('users.clickCount', 'desc')
+					.then((users)=> {
+						res.render('index', {
+							partials: {
+								header: './partials/header',
+								footer: './partials/footer',
+								rank: './partials/rank'
+							},
+							title: '面杀网',
+							events,
+							users,
+							nickname: user.nickname,
+							id: user.id,
+							username: user.username,
+							authenticated: req.isAuthenticated(),
+							rsvp: user.rsvp,
+							currentUser: req.user.nickname
+						})
 					})
 				})
 				
 			})
 		} else {
-			authenticatedStatus = false;
 			db('events').orderBy('events.id', 'desc')
 			.then((events) => {
-				res.render('index', {
-					partials: {
-						header: './partials/header',
-						footer: './partials/footer'
-					},
-					title: '面杀网',
-					events,
-					nickname: null,
-					authenticated: req.isAuthenticated()
+				db('users')
+				.orderBy('users.clickCount', 'desc')
+				.then((users) => {
+					res.render('index', {
+						partials: {
+							header: './partials/header',
+							footer: './partials/footer',
+							rank: './partials/rank'
+						},
+						title: '面杀网',
+						events,
+						users,
+						nickname: null,
+						authenticated: req.isAuthenticated()
+					})
 				})
 			})
 		}

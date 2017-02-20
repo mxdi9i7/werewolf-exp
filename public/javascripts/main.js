@@ -1,4 +1,5 @@
-$(document).ready(function(){
+$(document).ready(function(){       
+	$('#publish-form :input').val('');
 	$('#A').text('狼人杀');
 	$('#B').text('三国杀');
 	$('#C').text('麻将');
@@ -25,6 +26,8 @@ $(document).ready(function(){
 	$('#event-host-name').hide();
 	$('.hidden-join-input').hide();
 	$('#hidden-id-array').hide();
+	$('.notOwned').hide();
+
 	var x = $('#hidden-name-array').text().split(',') //returns array
 	var currentFill = x.length;
 
@@ -41,10 +44,6 @@ $(document).ready(function(){
 	$('.joined').addClass('disabled').text('已报名');
 
 	//delete event logic
-	// $('.exitBtn').click(() => {
-	// 	$('.exitBtn').parentsUntil('.row').hide();
-	// })
-
 
 
 

@@ -4,16 +4,9 @@
 
 		
 			<h1>活动详情</h1>
-			    <div class="slider">
-				    <ul class="slides">
-				      <li>
-				        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-				        <div class="caption center-align">
-				          <h3>活动场地图片</h3>
-				        </div>
-				      </li>
-				    </ul>
-				  </div>
+			{{#event}}
+			    <img src="{{filePath}}">
+			{{/event}}
 		<hr>
 		<div class="row">
 			<div class="col s12 m6 l6">
@@ -25,11 +18,12 @@
 					<li><b>活动人数 -</b>{{currentFill}}/{{capacity}}</li>
 					<li><b>活动地址 -</b>{{address}}</li>
 					<li><b>活动详情 -</b>{{note}}</li>
+					<li><b>&nbsp;&nbsp;&nbsp;活跃度 -</b><span style="color: red">{{clickCount}}</span></li>
 				</ul>
+				<button class="btn-large yellow {{owned}}" onclick="location.href='/update{{id}}'">修改活动</button>
+				<button class="btn-large red {{owned}}"  onclick="location.href='/delete{{id}}'">取消活动</button>
 				{{/event}}
-				<form method="post" action="/eventDelete">
-					<button class="btn-large red" type="submit">取消活动</button>
-				</form>
+
 			</div>
 			<div class="col s12 m6 l6">
 				{{#event}}
@@ -48,6 +42,27 @@
 			</div>
 		</div>
 		<hr>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		/*
+		var disqus_config = function () {
+		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = '//egiang.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<script id="dsq-count-scr" src="//egiang.disqus.com/count.js" async></script>
 	      
 	</section>
 {{> footer }}

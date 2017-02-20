@@ -14,6 +14,8 @@ var publish = require('./routes/publish');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var users = require('./routes/users');
+var test = require('./routes/test');
+var uploadSuccess = require('./routes/uploadSuccess');
 var app = express();
 var db = require('./db');
 var passport = require('passport');
@@ -50,6 +52,8 @@ app
 	.use(event)
 	.use(publish)
 	.use(users)
+	.use(test)
+	.use(uploadSuccess)
 	// .get('/users', (req, res, next) => {
 	// 	db('users').then((users) => {
 	// 		res.send(users);

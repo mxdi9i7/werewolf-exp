@@ -19,7 +19,7 @@ function loginRequired(req, res, next) {
   }
   next()
 }
-
+var count = 1;
 ////////////Your own profile//////////////////
 router
 	.get("/users", loginRequired, (req, res, next) => {
@@ -32,63 +32,80 @@ router
 			} else {
 				identity = '普通用户'
 			}
-			res.render('users', {
-					nickname: req.user.nickname,
-					email: req.user.username,
-					identity: identity,
-					id: req.user.id,
-					host_id: req.user.id,
-					title: 'Your posts',
-					events,
-					partials: {
-						header: './partials/header',
-						footer: './partials/footer'
-					},
-					authenticated: req.isAuthenticated(),
-					person: '我'
-				})			
+			db('users')
+			.where('id', req.user.id)
+			.first()
+			.then((user)=> {
+				res.render('users', {
+						user,
+						currentUser: user.nickname,
+						identity: function() {
+							if (user.identity == 1) {
+								return "管理员"
+							} else {
+								return "普通用户"
+							}
+						},
+						title: user.id + "的主页",
+						events,
+						partials: {
+							header: './partials/header',
+							footer: './partials/footer'
+						},
+						authenticated: req.isAuthenticated(),
+						person: '我'
+					})	
+				})		
 			})
-	})
+		})
 
 ////////////Other people's profile//////////////////
-
 	.get('/user:id', loginRequired, (req,res,next) => {
 		const { id } = req.params;
+		count += 18;
 		db('events')
 		.where('user_id', id)
 		.then((events) => {
 			db('users')
 			.where('id', id)
 			.first()
-			.then((users) => {
-				req.session.userInfo = users;
-				var userData = req.session.userInfo;
-				res.render('users', {
-						partials: {
-							header: './partials/header',
-							footer: './partials/footer'
-						},
-						title: '面杀网',
-						events,
-						nickname: userData.nickname,
-						email: userData.username,
-						identity: function() {
-							if (userData.is_admin == 1) {
-								return '管理员'
-							} else {
-								return '普通用户'
-							}
-						},
-						id: userData.id,
-						authenticated: req.isAuthenticated(),
-						person: function() {
-							if (req.user.id == id) {
-								return '我'
-							} else {
-								return '他'
-							}
-						},
-						currentUser: req.user.nickname
+			.then((user) => {
+				db('users')
+				.where('id', id)
+				.update({
+					clickCount: count
+				})
+				.then((user)=> {
+					db('users')
+					.where('id', id)
+					.first()
+					.then((user)=>{
+						res.render('users', {
+								partials: {
+									header: './partials/header',
+									footer: './partials/footer'
+								},
+								title: '面杀网',
+								user,
+								events,
+								identity: function() {
+									if (user.is_admin == 1) {
+										return '管理员'
+									} else {
+										return '普通用户'
+									}
+								},
+								authenticated: req.isAuthenticated(),
+								person: function() {
+									if (req.user.id == id) {
+										return '我'
+									} else {
+										return '他'
+									}
+								},
+								currentUser: req.user.nickname
+						})
+					})
 				})
 			})
 		})

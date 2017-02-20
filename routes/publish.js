@@ -32,6 +32,7 @@ router
 				})
 		})
   .post('/publish', loginRequired, function (req, res) {
+    var fileName = 'images/' + req.session.filePath;
       const newEvent = {
         title: req.body.eventName,
         type: req.body.eventType,
@@ -43,7 +44,8 @@ router
         user_nickname: req.user.nickname,
         participants: req.user.nickname,
         currentFill: 1,
-        participantsID: req.user.id
+        participantsID: req.user.id,
+        filePath: fileName
       }
       db('events')
         .insert(newEvent)
@@ -51,8 +53,7 @@ router
           newEvent.id = ids[0];
           res.redirect('/event'+newEvent.id);
         })
-
-  });
+  })
 
 
 module.exports = router;

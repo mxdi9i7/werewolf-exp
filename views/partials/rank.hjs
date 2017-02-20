@@ -1,0 +1,14 @@
+<div class="ranking board">
+	  			<h3>本月热门玩家排行榜</h3>
+	  			  <ul class="collection">
+	  			  	{{#users}}
+		  			  		<li class="collection-item avatar">
+						      <img src="images/starbucks.jpeg" alt="" class="circle">
+						      	<a href="user{{id}}">
+						      		<span class="title">{{nickname}}</span>
+						      	</a>
+						      <p>热门指数: {{clickCount}}</p>
+						    </li>
+					{{/users}}
+				  </ul>
+</div>

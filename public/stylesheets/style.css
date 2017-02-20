@@ -71,6 +71,10 @@ nav .nav-wrapper ul li a {
 	margin: 20px;
 	font-size: 16px;
 }
+.event-detail-list li {
+	text-align: left;
+	margin: 10px 0;
+}
 #color-carousel .carousel-item {
 	padding-top: 80px;
 	height: 500px;
@@ -79,7 +83,7 @@ nav .nav-wrapper ul li a {
 	padding: 50px 5%;
 	background-color: #00b0ff;
 }
-.publish-form {
+#publish-form {
 	background-color: #fff;
 	padding: 2% 5%;
 	margin-top: 50px;
@@ -92,4 +96,14 @@ div.input-field.publish-textarea {
 }
 .exitBtn {
 	cursor: pointer;
+}
+.review-header {
+	margin-top: 50px;
+}
+.thread-div {
+	margin-bottom: 50px;
+}
+.floating-count span {
+	color: red;
+	font-weight: bold;
 }
