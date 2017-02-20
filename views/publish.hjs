@@ -15,11 +15,19 @@
               <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="event-address" type="text" class="validate" name="eventAddress">
               <label for="event-address">活动地址</label>
             </div>
-            <div class="input-field col s12 m6 l6">
-              <input type="datetime-local" class="timepicker" name="eventTime" required>
-              <label>具体时间（请单击选择）</label>
+            <div class="input-field col s12 m6 l3">
+              <input type="number" class="yearpicker" name="eventYear" required>
+              <label>年</label>
             </div>
-            <div class="input-field col s12 m6 l6">
+            <div class="input-field col s12 m6 l3">
+              <input type="number" class="monthpicker" name="eventMonth" required>
+              <label>月</label>
+            </div>
+            <div class="input-field col s12 m6 l3">
+              <input type="number" class="daypicker" name="eventDay" required>
+              <label>日</label>
+            </div>
+            <div class="input-field col s12 m6 l3">
               <select name="eventCapacity">
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
