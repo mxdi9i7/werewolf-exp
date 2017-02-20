@@ -16,8 +16,8 @@
               <label for="event-address">活动地址</label>
             </div>
             <div class="input-field col s12 m6 l6">
-              <input type="date" class="datepicker" name="eventDate">
-              <label>活动日期（请单击选择）</label>
+              <input type="datetime-local" class="timepicker" name="eventTime" required>
+              <label>具体时间（请单击选择）</label>
             </div>
             <div class="input-field col s12 m6 l6">
               <select name="eventCapacity">

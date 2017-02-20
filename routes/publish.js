@@ -32,11 +32,21 @@ router
 				})
 		})
   .post('/publish', loginRequired, function (req, res) {
+    var time = req.body.eventTime;
     var fileName = 'images/' + req.session.filePath;
+    var date = new Date(time);
+          Y = date.getFullYear() + '-';
+          M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+          D = date.getDate() + ' ';
+          h = date.getHours() + ':';
+          m = date.getMinutes() + ':';
+          s = date.getSeconds();
+    var format = Y+M+D+h+m+s;
+    console.log(format); 
       const newEvent = {
         title: req.body.eventName,
         type: req.body.eventType,
-        date: '2017-01-01 19:00:00',
+        date: format,
         capacity: req.body.eventCapacity,
         address: req.body.eventAddress,
         note: req.body.eventNote,
