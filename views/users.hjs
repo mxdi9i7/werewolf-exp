@@ -1,4 +1,4 @@
-{{> header }}
+ {{> header }}
 
 	
 	      <section class="row main-content">
@@ -10,8 +10,8 @@
 				    <div class="card-tabs">
 				      <ul class="tabs tabs-fixed-width">
 				        <li class="tab"><a href="#test4" class="active light-blue-text accent-3 bold">基本信息</a></li>
-				        <li class="tab"><a class="light-blue-text accent-3 bold" href="#test5">历史战绩</a></li>
-				        <li class="tab"><a class="light-blue-text accent-3 bold" href="#test6">积分排名</a></li>
+				        <li class="tab"><a class="light-blue-text accent-3 bold" href="#test5">修改头像</a></li>
+				        <li class="tab"><a class="light-blue-text accent-3 bold" href="#test6">修改信息</a></li>
 				      </ul>
 				    </div>
 				    <div class="card-content grey lighten-4">
@@ -26,8 +26,27 @@
 						    </ul>
 						{{/user}}
 				      </div>
-				      <div id="test5">Test 2</div>
-				      <div id="test6">Test 3</div>
+				      <div id="test5">
+				      	<form action="/profilePic" method="post" enctype="multipart/form-data">
+						    <div class="file-field input-field profilePic">
+						      <div class="btn">
+						        <span>上传照片</span>
+						        <input type="file" name="profilePic">
+						      </div>
+						      <div class="file-path-wrapper">
+						        <input class="file-path validate" type="text">
+						      </div>
+						      <button type="submit" class="btn btn-large white-text light-blue accent-3 waves-effect">确认修改</button>
+						    </div>
+						  </form>
+				      </div>
+				      <div id="test6">
+				      	<form method="post">
+				      		<label for="nickname">新用户名</label>
+				      		<input type="text" name="nickname" placeholder="输入新的用户名">
+				      		<button class="btn btn-large white-text light-blue accent-3 waves-effect">确认修改</button>
+				      	</form>
+				      </div>
 				    </div>
 				  </div>
 				  <h3 class="center review-header">客观评价</h3>

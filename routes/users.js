@@ -1,7 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('knex');
+var multer = require('multer');
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/profilePic')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+  }
+})
 
+var upload = multer({ storage: storage })
 
 
 const db = knex({
@@ -22,6 +32,39 @@ function loginRequired(req, res, next) {
 var count = 1;
 ////////////Your own profile//////////////////
 router
+	.post('/profilePic', loginRequired, upload.single('profilePic'), (req, res, next)=> {
+		db('users')
+		.where('id', req.user.id)
+		.first()
+		.then((user)=> {
+			db('users')
+			.where('id', req.user.id)
+			.first()
+			.update({
+				profilePic: req.file.filename
+			})
+			.then(()=> {
+				console.log(req.file)
+				res.redirect('/users')
+			})
+		})
+	})
+	.post('/users', loginRequired, (req, res, next) => {
+		db('users')
+		.where('id', req.user.id)
+		.first()
+		.then((user) => {
+			db('users')
+			.where('id', req.user.id)
+			.first()
+			.update({
+				nickname: req.body.nickname
+			})
+			.then(()=> {
+				res.redirect('/users')
+			})
+		})
+	})
 	.get("/users", loginRequired, (req, res, next) => {
 		db('events')
 		.where('user_id', req.user.id)
