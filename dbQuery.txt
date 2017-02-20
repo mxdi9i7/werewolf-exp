@@ -28,5 +28,6 @@ CREATE TABLE `users` (
   `nickname` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `rsvp` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `clickCount` int(11) DEFAULT NULL,
+  `profilePic` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12313 DEFAULT CHARSET=latin1;
