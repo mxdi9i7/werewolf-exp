@@ -32,16 +32,12 @@ router
 				})
 		})
   .post('/publish', loginRequired, function (req, res) {
-    var Y = req.body.eventYear;
-    var M = req.body.eventMonth;
-    var D = req.body.eventDay;
     var fileName = 'images/' + req.session.filePath;
-    var format = Y + "-"+M + "-" + D;
-    console.log(format); 
+    var time = req.body.eventYear + "年" + req.body.eventMonth + "月" + req.body.eventDay + "日" + " " + req.body.eventHour + ":" + req.body.eventMinute;
       const newEvent = {
         title: req.body.eventName,
         type: req.body.eventType,
-        date: format,
+        date: time,
         capacity: req.body.eventCapacity,
         address: req.body.eventAddress,
         note: req.body.eventNote,
