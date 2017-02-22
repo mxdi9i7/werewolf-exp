@@ -125,7 +125,6 @@
               </select>
               <label for="eventMinute">分钟</label>
             </div>
-            </div>
             <div class="input-field col s12 m2 l2">
               <select name="eventCapacity">
                   <option value="" disabled selected>选择活动人数</option>
