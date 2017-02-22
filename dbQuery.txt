@@ -2,7 +2,11 @@ CREATE TABLE `events` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+<<<<<<< HEAD
+  `date` text DEFAULT NULL,
+=======
   `date` text COLLATE utf8mb4_unicode_ci,
+>>>>>>> a22121211be7eda4e9e184006fa37f0f0a3e365f
   `currentFill` int(11) DEFAULT NULL,
   `capacity` int(11) DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci,

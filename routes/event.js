@@ -136,10 +136,11 @@ router
 	.post('/update:event_id', loginRequired, (req, res, next) => {
 		const { event_id } = req.params;
 		console.log(req.params);
+		var time = req.body.eventYear + "年" + req.body.eventMonth + "月" + req.body.eventDay + "日" + " " + req.body.eventHour + ":" + req.body.eventMinute;
 		const newEvent = {
 	        title: req.body.eventName,
 	        type: req.body.eventType,
-	        date: '2017-01-01 19:00:00',
+	        date: time,
 	        capacity: req.body.eventCapacity,
 	        address: req.body.eventAddress,
 	        note: req.body.eventNote,
