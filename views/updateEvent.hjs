@@ -121,7 +121,6 @@
                   <option value="30">30</option>
                   <option value="40">40</option>
                   <option value="50">50</option>
-                  <option value="60">60</option>
               </select>
               <label for="eventMinute">分钟</label>
             </div>

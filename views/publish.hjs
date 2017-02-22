@@ -94,7 +94,7 @@
                   <option value="上午 9">9 AM</option>
                   <option value="上午 10">10 AM</option>
                   <option value="上午 11">11 AM</option>
-                  <option value="上午 12a">12 AM</option>
+                  <option value="上午 12">12 AM</option>
                   <option value="下午 1">1 PM</option>
                   <option value="下午 2">2 PM</option>
                   <option value="下午 3">3 PM</option>
@@ -120,7 +120,6 @@
                   <option value="30">30</option>
                   <option value="40">40</option>
                   <option value="50">50</option>
-                  <option value="60">60</option>
               </select>
               <label for="eventMinute">分钟</label>
             </div>
