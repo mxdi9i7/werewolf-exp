@@ -29,7 +29,7 @@
 							      <li class="collection-item"><strong>登陆邮箱：</strong>{{username}}</li>
 							      <li class="collection-item"><strong>身份：</strong>{{identity}}</li>
 							      <li class="collection-item"><strong>用户ID：</strong>{{id}}</li>
-							      <li class="collection-item"><strong>热门指数：</strong>{{clickCount}}</li>
+							      <li class="collection-item"><strong>人气值：</strong>{{clickCount}}</li>
 							    </ul>
 							{{/user}}
 				      	</div>

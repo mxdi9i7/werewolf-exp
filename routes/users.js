@@ -96,7 +96,8 @@ router
 							footer: './partials/footer'
 						},
 						authenticated: req.isAuthenticated(),
-						person: '我'
+						person: '我',
+						profilePic: req.user.profilePic,
 					})
 				})		
 			})

@@ -50,7 +50,8 @@ router
 							username: user.username,
 							authenticated: req.isAuthenticated(),
 							rsvp: user.rsvp,
-							currentUser: req.user.nickname
+							currentUser: req.user.nickname,
+							profilePic: req.user.profilePic
 						})
 					})
 				})

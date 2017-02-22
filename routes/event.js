@@ -55,6 +55,7 @@ router
 									}
 								},
 								currentUser: req.user.nickname,
+								profilePic: req.user.profilePic,
 								owned: function() {
 									if (event.user_id !== req.user.id) {
 										return 'notOwned';
