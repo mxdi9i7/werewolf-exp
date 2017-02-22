@@ -7,7 +7,7 @@
 						      	<a href="user{{id}}">
 						      		<span class="title">{{nickname}}</span>
 						      	</a>
-						      <p>热门指数: {{clickCount}}</p>
+						      <p>人气值: {{clickCount}}</p>
 						    </li>
 					{{/users}}
 				  </ul>

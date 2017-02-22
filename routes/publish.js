@@ -28,6 +28,7 @@ router
             footer: './partials/footer'
           },
           host: req.user.nickname,
+          profilePic: req.user.profilePic,
           authenticated: req.isAuthenticated()
 				})
 		})
@@ -46,7 +47,8 @@ router
         participants: req.user.nickname,
         currentFill: 1,
         participantsID: req.user.id,
-        filePath: fileName
+        filePath: fileName,
+        host_profile: req.user.profilePic
       }
       db('events')
         .insert(newEvent)

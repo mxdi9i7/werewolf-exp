@@ -31,7 +31,12 @@
 				        <div class="col s12 m12 l12">
 				          <div class="card white hoverable" onclick="location.href = '/event{{id}}'">
 				            <div class="card-content black-text">
-							  <h3 class="card-title"><strong><a href="/user{{user_id}}">{{ user_nickname }}</a></strong>发布了活动: {{title}}</h3>
+							  <h3 class="card-title">
+							  	<strong>
+								  	<a href="/user{{user_id}}">
+								  		<img class="circle nav-prof" src="profilePic/{{host_profile}}">{{ user_nickname }}
+								  	</a>
+							  	</strong>发布了活动: {{title}}</h3>
 				              	<p>游戏类型：<b id="{{type}}">{{type}}</b></p>
 				              	<p>地址：{{address}}</p>
 				              	<p>日期：<b>{{date}}</b></p>

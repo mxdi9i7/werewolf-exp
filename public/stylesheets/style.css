@@ -117,3 +117,14 @@ img.profilePic {
 	height: 250px;
 	width: 250px;
 }
+.nav-prof {
+	height: 35px;
+	width: 35px;
+	margin: 0 10px;
+	margin-bottom: 4px;
+	display: inline;
+	vertical-align: middle;
+}
+.brand-logo img {
+	vertical-align: middle;margin: 0 15px 5px 15px;
+}
