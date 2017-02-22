@@ -2,7 +2,7 @@ CREATE TABLE `events` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
+  `date` text DEFAULT NULL,
   `currentFill` int(11) DEFAULT NULL,
   `capacity` int(11) DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci,
