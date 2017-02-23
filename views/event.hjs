@@ -5,7 +5,7 @@
 		
 			<h1>活动详情</h1>
 			{{#event}}
-			    <img src="{{filePath}}">
+			    <img class="event-img" src="{{filePath}}">
 			{{/event}}
 		<hr>
 		<div class="row">

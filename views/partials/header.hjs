@@ -4,6 +4,7 @@
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
+    <link rel="icon" type="img/png" href="/images/logo.png">
   </head>
   <body id="body">
     
