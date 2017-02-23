@@ -15,42 +15,10 @@
 		      <h2>公告牌#3</h2>
 		      <p class="white-text">广告位招商， 请联系微信：peterbugman</p>
 		    </div>
-	  </div>
-	        	
+	  </div>      	
 	  <section class="row main-content">
-
-	  
-	  	<div class="col s12 m8 l8">
-	  		<div class="main-content-header">
-	  			<h3 class="main-content-title">附近的面杀局</h3>
-	  			<a href="./publish" class="btn btn-large publishBtn white-text light-blue accent-3 waves-effect">发布活动</a>
-	  		</div>
-	  		<hr>
-	  			{{#events}}
-			  		  <div class="row">
-				        <div class="col s12 m12 l12">
-				          <div class="card white hoverable" onclick="location.href = '/event{{id}}'">
-				            <div class="card-content black-text">
-							  <h3 class="card-title">
-							  	<strong>
-								  	<a href="/user{{user_id}}">
-								  		<img class="circle nav-prof" src="profilePic/{{host_profile}}">{{ user_nickname }}
-								  	</a>
-							  	</strong>发布了活动: {{title}}</h3>
-				              	<p>游戏类型：<b id="{{type}}">{{type}}</b></p>
-				              	<p>地址：{{address}}</p>
-				              	<p>日期：<b>{{date}}</b></p>
-				              	<p>参与人数： <b>{{currentFill}}/{{capacity}}</b></p>
-				              	<p class="floating-count right">活跃度:<span>{{clickCount}}</span></p>
-				            </div>
-				          </div>
-				        </div>
-				      </div>
-			    {{/events}}
-	  	</div>
-	  	<div class="col s12 m4 l4">
+	  	<div class="col s12 m12 l12">
 	  		{{>rank}}
 	  	</div>
 	  </section>
-
 {{> footer }}
