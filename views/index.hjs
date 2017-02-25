@@ -18,6 +18,7 @@
 	  </div>      	
 	  <section class="row main-content">
 	  	<div class="col s12 m12 l12">
+	  		{{>eventList}}
 	  		{{>rank}}
 	  	</div>
 	  </section>

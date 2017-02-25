@@ -1,6 +1,5 @@
 {{> header }}
   <section class="publish-section">
-
         <form class="row publish-form" method="post" id="publish-form">
         {{#event}}
             <h3 class="center-align">活动策划表格</h3>
@@ -157,23 +156,24 @@
                 <option value="C">麻将</option>
               </select>
             </div>
+            <div class="input-field col m12 s12">
+              <textarea id="textarea1" class="materialize-textarea" name="eventNote" value="{{note}}"></textarea>
+              <label for="textarea1">活动详情</label>
+            </div>
             <div class="input-field col s12 m12 l12">
-            <form action="/upload" method="post">
-                <div class="file-field input-field">
-                  <div class="btn btn-large white-text light-blue accent-3 waves-effect">
+              <form action="/upload" method="post">
+                <div class="file-field input-field row">
+                  <div class="btn btn-large white-text light-blue accent-3 waves-effect col s12 m2 l2">
                       <span>上传照片</span>
                       <input type="file" name="eventFile">
                   </div>
-                  <div class="file-path-wrapper">
+                  <div class="col s12 m2 l2">
+                    <input class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">确认图片</input>
+                  </div>
+                  <div class="file-path-wrapper col s12 m8 l8">
                       <input class="file-path validate" type="text">
                   </div>
-                  <input class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">确认照片</input>
-                </div>
-            </form>
-            </div>
-            <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea" name="eventNote" value="{{note}}"></textarea>
-              <label for="textarea1">活动详情</label>
+              </form>
             </div>
             <button class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">修改活动</button>
           {{/event}}
