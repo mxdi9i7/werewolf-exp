@@ -15,6 +15,7 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var users = require('./routes/users');
 var test = require('./routes/test');
+var tournament = require('./routes/tournament');
 var uploadSuccess = require('./routes/uploadSuccess');
 var app = express();
 var db = require('./db');
@@ -47,6 +48,7 @@ app.use(logger('dev'))
 
 app
 	.use(index)
+	.use(tournament)
 	.use(login)
 	.use(signup)
 	.use(event)
