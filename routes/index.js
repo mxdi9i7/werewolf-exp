@@ -40,7 +40,8 @@ router
 							partials: {
 								header: './partials/header',
 								footer: './partials/footer',
-								rank: './partials/rank'
+								rank: './partials/rank',
+								eventList: './partials/eventList'
 							},
 							title: '面杀网',
 							events,
@@ -67,7 +68,8 @@ router
 						partials: {
 							header: './partials/header',
 							footer: './partials/footer',
-							rank: './partials/rank'
+							rank: './partials/rank',
+							eventList: './partials/eventList'
 						},
 						title: '面杀网',
 						events,
