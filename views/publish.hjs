@@ -115,11 +115,7 @@
               <select name="eventMinute">
                   <option value="" disabled>选择活动时间（分）</option>
                   <option value="00">00</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
                   <option value="30">30</option>
-                  <option value="40">40</option>
-                  <option value="50">50</option>
               </select>
               <label for="eventMinute">分钟</label>
             </div>
@@ -154,6 +150,7 @@
                 <option value="A">狼人杀</option>
                 <option value="B">三国杀</option>
                 <option value="C">麻将</option>
+                <option value="D">其他（在详情说明）</option>
               </select>
             </div>
             <div class="input-field col s12">

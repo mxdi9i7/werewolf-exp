@@ -22,4 +22,5 @@
 	  		{{>rank}}
 	  	</div>
 	  </section>
+	  <!-- test -->
 {{> footer }}
