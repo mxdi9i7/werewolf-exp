@@ -4,19 +4,19 @@
         {{#event}}
             <h3 class="center-align">活动策划表格</h3>
             <div class="input-field col m12 l6">
-              <input type="text" class="validate" name="eventName" placeholder="{{title}}">
+              <input type="text" class="validate" name="eventName" placeholder="{{title}}" required>
               <label for="event-name">活动名称</label>
             </div>
             <div class="input-field col m12 l6">
-              <input readonly placeholder="{{user_nickname}}" id="event-host" type="text" class="validate" name="eventHost" value="{{user_nickname}}">
+              <input readonly placeholder="{{user_nickname}}" id="event-host" type="text" class="validate" name="eventHost" value="{{user_nickname}}" required>
               <label for="event-host">发起人</label>
             </div>
             <div class="input-field col m12 l12">
-              <input placeholder="{{address}}" id="event-address" type="text" class="validate" name="eventAddress">
+              <input placeholder="{{address}}" id="event-address" type="text" class="validate" name="eventAddress" required>
               <label for="event-address">活动地址</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventYear">
+              <select name="eventYear" required>
                   <option value="" disabled>选择活动年份</option>
                   <option value="2017">2017</option>
                   <option value="2018">2018</option>
@@ -26,7 +26,7 @@
               <label for="eventYear">年</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventMonth">
+              <select name="eventMonth" required>
                   <option value="" disabled>选择活动月份</option>
                   <option value="01">1月</option>
                   <option value="02">2月</option>
@@ -44,7 +44,7 @@
               <label for="eventMonth">月</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventDay">
+              <select name="eventDay" required>
                   <option value="" disabled>选择活动日期</option>
                   <option value="01">1</option>
                   <option value="02">2</option>
@@ -81,7 +81,7 @@
               <label for="eventDay">日</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventHour">
+              <select name="eventHour" required>
                   <option value="" disabled>选择活动时间（时）</option>
                   <option value="上午 1">1 AM</option>
                   <option value="上午 2">2 AM</option>
@@ -112,7 +112,7 @@
               <label for="eventMonth">时</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventMinute">
+              <select name="eventMinute" required>
                   <option value="" disabled>选择活动时间（分）</option>
                   <option value="00">00</option>
                   <option value="10">10</option>
@@ -124,7 +124,7 @@
               <label for="eventMinute">分钟</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventCapacity">
+              <select name="eventCapacity" required>
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
                   <option value="3">3 人</option>
@@ -149,7 +149,7 @@
                 </select>
             </div>
             <div class="input-field col s12 m12 l12">
-              <select name="eventType">
+              <select name="eventType" required>
                 <option value="">活动类型</option>
                 <option value="A">狼人杀</option>
                 <option value="B">三国杀</option>
@@ -157,7 +157,7 @@
               </select>
             </div>
             <div class="input-field col m12 s12">
-              <textarea id="textarea1" class="materialize-textarea" name="eventNote" value="{{note}}"></textarea>
+              <textarea id="textarea1" class="materialize-textarea" name="eventNote" value="{{note}}" required></textarea>
               <label for="textarea1">活动详情</label>
             </div>
             <div class="input-field col s12 m12 l12">
@@ -167,10 +167,7 @@
                       <span>上传照片</span>
                       <input type="file" name="eventFile">
                   </div>
-                  <div class="col s12 m2 l2">
-                    <input class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">确认图片</input>
-                  </div>
-                  <div class="file-path-wrapper col s12 m8 l8">
+                  <div class="file-path-wrapper col s12 m10 l10">
                       <input class="file-path validate" type="text">
                   </div>
               </form>
