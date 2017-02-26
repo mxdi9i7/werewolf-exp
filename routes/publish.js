@@ -54,8 +54,24 @@ router
         .insert(newEvent)
         .then((ids) => {
           newEvent.id = ids[0];
-          res.redirect('/event'+newEvent.id);
+          db('users')
+          .where('id', req.user.id)
+          .first()
+          .then((user)=> {
+            var parsedRSVP = ',' + newEvent.id + "/" + newEvent.title;
+            var updatedRSVP = user.rsvp + parsedRSVP;
+            db('users')
+            .where('id', req.user.id)
+            .first()
+            .update({
+              rsvp: updatedRSVP
+            })
+            .then(() => {
+                res.redirect('/event'+newEvent.id);
+            })
+          })
         })
+
   })
 
 

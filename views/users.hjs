@@ -11,8 +11,9 @@
 				    <div class="card-tabs">
 				      <ul class="tabs tabs-fixed-width">
 				        <li class="tab"><a href="#test4" class="active light-blue-text accent-3 bold">基本信息</a></li>
-				        <li class="tab sensitive"><a class="light-blue-text accent-3 bold" href="#test5">修改头像</a></li>
-				        <li class="tab sensitive"><a class="light-blue-text accent-3 bold" href="#test6">修改信息</a></li>
+				        <li class="tab"><a href="#test5" class="active light-blue-text accent-3 bold">参加的活动</a></li>
+				        <li class="tab sensitive"><a class="light-blue-text accent-3 bold" href="#test6">修改头像</a></li>
+				        <li class="tab sensitive"><a class="light-blue-text accent-3 bold" href="#test7">修改信息</a></li>
 				      </ul>
 				    </div>
 				    <div class="card-content grey lighten-4">
@@ -35,6 +36,13 @@
 				      	</div>
 				      </div>
 				      <div id="test5">
+				      	{{#user}}
+				      		<input type="text" value="{{rsvp}}" hidden id="rsvpList">
+				      	{{/user}}
+				      		<div class="collection" id="rsvpEventList">
+						    </div>
+				      </div>
+				      <div id="test6">
 				      	<form action="/profilePic" method="post" enctype="multipart/form-data">
 						    <div class="file-field input-field profilePic">
 						      <div class="btn">
@@ -48,7 +56,7 @@
 						    </div>
 						  </form>
 				      </div>
-				      <div id="test6">
+				      <div id="test7">
 				      	<form method="post">
 				      		<label for="nickname">新用户名</label>
 				      		<input type="text" name="nickname" placeholder="输入新的用户名">

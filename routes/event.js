@@ -87,8 +87,23 @@ router
 					    currentFill: currentFillNumber,
 					    participantsID: updatedID
 					})
-					.then(()=> {
-						res.redirect('event'+event_id)
+					.then((event) => {
+						db('users')
+						.where('id', req.user.id)
+						.first()
+						.then((user)=> {
+							var parsedRSVP = ',' + event_id + "/" + event.title;
+							var updatedRSVP = user.rsvp + parsedRSVP;
+							db('users')
+							.where('id', req.user.id)
+							.first()
+							.update({
+								rsvp: updatedRSVP
+							})
+							.then(()=> {
+								res.redirect('event'+event_id)
+							})
+						})
 					})
 			})
 			
@@ -105,13 +120,19 @@ router
 				db('events')
 				.where('id', event_id)
 				.first()
-				.delete()
-				.then((result) => {
-				if (result === 0) {
-					return res.send(404)
-					}
-					res.redirect('/');
-				}, next)
+				.update({
+					is_available: 0
+				})
+				.then((event) => {
+					res.redirect('/event' + event_id)
+				})
+				// .delete()
+				// .then((result) => {
+				// if (result === 0) {
+				// 	return res.send(404)
+				// 	}
+				// 	res.redirect('/');
+				// }, next)
 			})
 		})
 	.get('/update:event_id', loginRequired, (req, res, next) => {
