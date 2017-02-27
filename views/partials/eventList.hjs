@@ -4,43 +4,47 @@
 		<a href="./publish" class="btn btn-large publishBtn white-text light-blue accent-3 waves-effect">发布活动</a>
 	</div>
 	<hr>
+  	<div class="row">
 		{{#events}}
-  		  <div class="row">
 	        <div class="col s12 m12 l12">
-	        	<div class="event-cards" onclick="location.href='/event{{id}}'">
-	        		<p class="event-cards-type"><span class="new badge black white-text">{{type}}</span></p>
-	        		<img src="{{filePath}}">
-	        		<div class="event-cards-content">
-	        			<p class="event-cards-date">{{date}}</p>
-	        			<strong>{{title}}</strong>
-	        			<p class="event-cards-address">{{address}}</p>
-	        			<span class="right new badge blue">{{clickCount}}<i class="small material-icon">trending_up</i></span>
-	        		</div>
-	        		<div class="event-cards-footer">
-	        			<a href="/user{{user_id}}">
-	        				<img src="profilePic/{{host_profile}}">
-	        				<span>{{user_nickname}}</span>
-	        			</a>
-	        			<span class="right"><strong>({{currentFill}}/{{capacity}})</strong></span>
-	        		</div>
-	        	</div>
+	        	<div class="container">
 
-	          <div class="card white hoverable" onclick="location.href = '/event{{id}}'">
-	            <div class="card-content black-text">
-				  <h3 class="card-title">
-				  	<strong>
-					  	<a href="/user{{user_id}}">
-					  		<img class="circle nav-prof" src="profilePic/{{host_profile}}">{{ user_nickname }}
-					  	</a>
-				  	</strong>发布了活动: {{title}}</h3>
-	              	<p>游戏类型：<b id="{{type}}">{{type}}</b></p>
-	              	<p>地址：{{address}}</p>
-	              	<p>日期：<b>{{date}}</b></p>
-	              	<p>参与人数： <b>{{currentFill}}/{{capacity}}</b></p>
-	              	<p class="floating-count right">活跃度:<span>{{clickCount}}</span></p>
-	            </div>
-	          </div>
+				  <div class="card-media">
+				    <!-- media container -->
+				    <div class="card-media-object-container">
+				      <div class="card-media-object" style="background-image: url({{filePath}});"></div>
+				      <span class="card-media-object-tag subtle {{type}}">{{type}}</span>
+				      <ul class="card-media-object-social-list">
+				        <li>
+				          <img src="profilePic/{{host_profile}}" class="">
+				        </li>
+				        <li>
+				          <img src="profilePic/girl.jpeg" class="">
+				        </li>
+				        <li class="card-media-object-social-list-item-additional">
+				          <span>+{{currentFill}}</span>
+				        </li>
+				      </ul>
+				    </div>
+				    <!-- body container -->
+				    <div class="card-media-body">
+				    	<span class="card-media-object-tag subtle orange-text"><i class="fa fa-fire orange-text"></i>{{clickCount}}</span>
+				      <div class="card-media-body-top">
+				        <span class="subtle">{{date}}</span>
+				      </div>
+				      <span class="card-media-body-heading">{{title}}</span>
+				      <div class="card-media-body-supporting-bottom">
+				        <span class="card-media-body-supporting-bottom-text subtle">{{address}}</span>
+				        <span class="card-media-body-supporting-bottom-text subtle u-float-right"><i class="fa fa-user"></i>({{currentFill}}/{{capacity}})</span>
+				      </div>
+				      <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+				        <span class="card-media-body-supporting-bottom-text subtle" id="{{type}}">{{user_nickname}}</span>
+				        <a href="/event{{id}}" class="card-media-body-supporting-bottom-text card-media-link u-float-right">了解更多</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>
 	        </div>
-	      </div>
     {{/events}}
+    </div>
 </div>
