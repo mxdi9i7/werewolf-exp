@@ -31,6 +31,7 @@ router
 			.first()
 			.then((user) => {
 				db('events')
+				.where('is_available', 1)
 				.orderBy('events.id', 'desc')
 				.then((events) => {
 					db('users')
@@ -59,7 +60,9 @@ router
 				
 			})
 		} else {
-			db('events').orderBy('events.id', 'desc')
+			db('events')
+			.where('is_available', 1)
+			.orderBy('events.id', 'desc')
 			.then((events) => {
 				db('users')
 				.orderBy('users.clickCount', 'desc')

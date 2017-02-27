@@ -71,7 +71,6 @@
 		  	<div class="col s12 m4 l4">
 		  		<div class="main-content-header">
 		  			<h3 class="main-content-title">{{person}}发布的活动</h3>
-		  			<a href="./publish" class="btn btn-large publishBtn white-text light-blue accent-3 waves-effect">发布新活动</a>
 		  		</div>
 		  		<hr>
 		  			{{#events}}

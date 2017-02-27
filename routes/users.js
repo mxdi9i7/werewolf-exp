@@ -68,6 +68,7 @@ router
 	.get("/users", loginRequired, (req, res, next) => {
 		db('events')
 		.where('user_id', req.user.id)
+		.where('is_available', 1)
 		.then((events) => {
 			var identity;
 			if (req.user.is_admin == 1) {
@@ -109,6 +110,7 @@ router
 		count += 18;
 		db('events')
 		.where('user_id', id)
+		.where('is_available', 1)
 		.then((events) => {
 			db('users')
 			.where('id', id)
@@ -155,7 +157,8 @@ router
 											}
 										},
 										currentUser: req.user.nickname,
-										own: identity
+										own: identity,
+										profilePic: req.user.profilePic,
 							})
 						})
 					})
