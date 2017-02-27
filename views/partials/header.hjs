@@ -18,6 +18,7 @@
 	        <li><a href="/tournament">比赛专区</a></li>
 	        <li id="nickname_tag"><a href="../users"><img class="circle nav-prof" src="profilePic/{{profilePic}}">{{currentUser}}</a></li>
 	        <li id="login_btn"><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
+	        <li><a href="./publish" class="btn publishBtn white-text light-blue accent-3 waves-effect">发布活动</a></li>
 			<li id="logout_btn"><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">

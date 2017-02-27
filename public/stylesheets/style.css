@@ -27,10 +27,6 @@ nav .nav-wrapper ul li a {
 }
 .publishBtn {
 	display: inline;
-	float: right;
-	position: relative;
-	bottom: 10px;
-	right: 10px;
 }
 .main-content-header {
 	display: block;
