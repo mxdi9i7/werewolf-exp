@@ -34,7 +34,7 @@ router
 		})
   .post('/publish', loginRequired, function (req, res) {
     var fileName = 'images/' + req.session.filePath;
-    var time = req.body.eventYear + "年" + req.body.eventMonth + "月" + req.body.eventDay + "日" + " " + req.body.eventHour + ":" + req.body.eventMinute;
+    var time = req.body.eventYear + "年" + req.body.eventMonth + "月" + req.body.eventDay + "日" + " " + req.body.eventHour + " 点";
       const newEvent = {
         title: req.body.eventName,
         type: req.body.eventType,
@@ -48,7 +48,8 @@ router
         currentFill: 1,
         participantsID: req.user.id,
         filePath: fileName,
-        host_profile: req.user.profilePic
+        host_profile: req.user.profilePic,
+        admission: req.body.eventAdmission
       }
       db('events')
         .insert(newEvent)

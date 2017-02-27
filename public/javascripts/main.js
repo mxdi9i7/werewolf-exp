@@ -53,24 +53,11 @@ $(document).ready(function(){
 		$('li.sensitive').addClass('disabled');
 	}
 
-	//display rsvp Event list logic
-	var rsvpList = $('#rsvpList').val().split(',').filter(function(item, i, rsvpList) {
-		return i == rsvpList.indexOf(item);
-	});
-	var newRSVPList = [];
-	for (i = 0; i <= rsvpList.length; i ++) {
-		if (rsvpList[i] !== 'undefined' && rsvpList[i] !== undefined) {
-			newRSVPList.push(rsvpList[i])
-		}
-	}
+
+		
 
 	
-	
-	for (i = 0; i < newRSVPList.length; i ++) {
-		$('#rsvpEventList').append(
-			"<a href='/event" + newRSVPList[i] + "' class='collection-item'>" + newRSVPList[i] +"</a>"
-		)
-	}
+
 
 
 

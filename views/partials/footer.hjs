@@ -25,7 +25,7 @@
           </div>
         </footer>
 
-	<script src="/javascripts/jquery-3.1.1.min.js"></script>  
+	
     <script src="/javascripts/materialize.min.js"></script>
     <script type="text/javascript" src="/javascripts/main.js"></script>
 	</body>

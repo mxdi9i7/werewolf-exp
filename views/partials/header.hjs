@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
     <link rel="icon" type="img/png" href="/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="/javascripts/jquery-3.1.1.min.js"></script>  
   </head>
   <body id="body">
     
@@ -31,4 +32,3 @@
 	    </div>
 	  </nav>
 	   	<input type="text" value="{{authenticated}}" id="hidden-input">
-	   	

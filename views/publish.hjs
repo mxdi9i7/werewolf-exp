@@ -3,16 +3,16 @@
 
         <form class="row publish-form" method="post" id="publish-form" enctype="multipar/form-data">
             <h3 class="center-align">活动策划表格</h3>
-            <div class="input-field col m12 l6">
+            <div class="input-field col s12 m12 l6">
               <input placeholder="请输入您的活动名称" type="text" class="validate" name="eventName" required>
               <label for="event-name">活动名称</label>
             </div>
-            <div class="input-field col m12 l6">
+            <div class="input-field col s12 m12 l6">
               <input readonly placeholder="{{host}}" id="event-host" type="text" class="validate" name="eventHost" value="{{host}}">
               <label for="event-host">发起人</label>
             </div>
-            <div class="input-field col m12 l12">
-              <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="event-address" type="text" class="validate" name="eventAddress">
+            <div class="input-field col s12 m12 l12">
+              <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="autocomplete" onFocus="geolocate()" type="text" class="validate" name="eventAddress">
               <label for="event-address">活动地址</label>
             </div>
             <div class="input-field col s12 m2 l2">
@@ -112,12 +112,8 @@
               <label for="eventMonth">时</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventMinute">
-                  <option value="" disabled>选择活动时间（分）</option>
-                  <option value="00">00</option>
-                  <option value="30">30</option>
-              </select>
-              <label for="eventMinute">分钟</label>
+              <input type="text" name="eventAdmission" placeholder="$$/人">
+              <label for="eventMinute">活动费用</label>
             </div>
             <div class="input-field col s12 m2 l2">
               <select name="eventCapacity">
@@ -157,11 +153,51 @@
               <textarea id="textarea1" class="materialize-textarea" name="eventNote"></textarea>
               <label for="textarea1">活动详情</label>
             </div>
-            <div class="btn btn-large white-text light-blue accent-3 waves-effect">
+            <div class="btn btn-large white-text light-blue accent-3 waves-effect col s4 m3 l2">
                     <a href="/test" class="white-text" target="_blank">上传照片</a>
             </div>
-            <button class="btn btn-large white-text light-blue accent-3 waves-effect" type="submit">发布活动</button>
+            <div class="col s4 m6 l8"></div>
+            <button class="btn btn-large white-text light-blue accent-3 waves-effect col s4 m3 l2" type="submit">发布活动</button>
         </form>
   </section>
 
   {{> footer }}
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBexX-iLYpcQEEION4zdnUc3BcjyY9yM_I&libraries=places"></script>
+  <script>
+      var placeSearch, autocomplete;
+
+      function initialize() {
+          // Create the autocomplete object, restricting the search
+          // to geographical location types.
+          autocomplete = new google.maps.places.Autocomplete(
+          /** @type {HTMLInputElement} */
+          (document.getElementById('autocomplete')), {
+              types: ['geocode']
+          });
+
+          google.maps.event.addDomListener(document.getElementById('autocomplete'), 'focus', geolocate);
+      }
+
+      function geolocate() {
+
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function (position) {
+
+                  var geolocation = new google.maps.LatLng(
+                  position.coords.latitude, position.coords.longitude);
+                  var circle = new google.maps.Circle({
+                      center: geolocation,
+                      radius: position.coords.accuracy
+                  });
+                  autocomplete.setBounds(circle.getBounds());
+
+                  // Log autocomplete bounds here
+                  console.log(autocomplete.getBounds());
+              });
+          }
+      }
+
+      initialize();
+    </script>
+

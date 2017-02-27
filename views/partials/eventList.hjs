@@ -27,7 +27,7 @@
 				    </div>
 				    <!-- body container -->
 				    <div class="card-media-body">
-				    	<span class="card-media-object-tag subtle orange-text"><i class="fa fa-fire orange-text"></i>{{clickCount}}</span>
+				    	<span class="card-media-object-tag subtle orange-text"><i class="fa fa-eye orange-text"></i>{{clickCount}}</span>
 				      <div class="card-media-body-top">
 				        <span class="subtle">{{date}}</span>
 				      </div>
@@ -37,7 +37,7 @@
 				        <span class="card-media-body-supporting-bottom-text subtle u-float-right"><i class="fa fa-user"></i>({{currentFill}}/{{capacity}})</span>
 				      </div>
 				      <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-				        <span class="card-media-body-supporting-bottom-text subtle" id="{{type}}">{{user_nickname}}</span>
+				        <span class="card-media-body-supporting-bottom-text subtle">活动费用：{{admission}}/人</span>
 				        <a href="/event{{id}}" class="card-media-body-supporting-bottom-text card-media-link u-float-right">了解更多</a>
 				      </div>
 				    </div>
