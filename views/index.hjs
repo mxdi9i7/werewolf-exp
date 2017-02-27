@@ -23,4 +23,5 @@
 	  	</div>
 	  </section>
 	  <!-- test -->
+	  <a href="./publish" class="btn-floating btn-large publishBtn white-text red waves-effect"><i class="fa fa-plus"></i></a>
 {{> footer }}

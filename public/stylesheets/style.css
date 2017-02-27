@@ -25,8 +25,11 @@ a {
 nav .nav-wrapper ul li a {
 	color: #333;
 }
-.publishBtn {
-	display: inline;
+a.publishBtn {
+	position: fixed;
+	bottom: 10%;
+	right: 10%;
+	z-index: 999;
 }
 .main-content-header {
 	display: block;
