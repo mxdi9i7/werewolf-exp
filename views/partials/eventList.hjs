@@ -7,6 +7,24 @@
 		{{#events}}
   		  <div class="row">
 	        <div class="col s12 m12 l12">
+	        	<div class="event-cards" onclick="location.href='/event{{id}}'">
+	        		<p class="event-cards-type"><span class="new badge black white-text">{{type}}</span></p>
+	        		<img src="{{filePath}}">
+	        		<div class="event-cards-content">
+	        			<p class="event-cards-date">{{date}}</p>
+	        			<strong>{{title}}</strong>
+	        			<p class="event-cards-address">{{address}}</p>
+	        			<span class="right new badge blue">{{clickCount}}<i class="small material-icon">trending_up</i></span>
+	        		</div>
+	        		<div class="event-cards-footer">
+	        			<a href="/user{{user_id}}">
+	        				<img src="profilePic/{{host_profile}}">
+	        				<span>{{user_nickname}}</span>
+	        			</a>
+	        			<span class="right"><strong>({{currentFill}}/{{capacity}})</strong></span>
+	        		</div>
+	        	</div>
+
 	          <div class="card white hoverable" onclick="location.href = '/event{{id}}'">
 	            <div class="card-content black-text">
 				  <h3 class="card-title">

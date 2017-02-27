@@ -5,6 +5,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
     <link rel="icon" type="img/png" href="/images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
   <body id="body">
     
