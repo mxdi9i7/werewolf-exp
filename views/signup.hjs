@@ -1,33 +1,85 @@
-{{> header }}
+	<title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
+    <link rel="icon" type="img/png" href="/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="/javascripts/jquery-3.1.1.min.js"></script>  
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
 
-<section class="login-bg">
+
+
+<section class="login-bg" id="login-section">
 		<div class="login-container">
-			<h3>注册</h3>
-			<div class="row">
-			    <form class="col s12" action="/signup" method="post">
-			      <div class="row">
-			      	<div class="input-field col s12">
-			          <input id="nickname" type="text" name="nickname" class="validate" required>
-			          <label for="nickname">个性昵称</label>
-			        </div>
-			        <div class="input-field col s12">
-			          <input id="email" type="text" name="username" class="validate" required>
-			          <label for="email">注册邮箱</label>
-			        </div>
-			        <div class="input-field col s12">
-			          <input id="password" type="password" name="password" class="validate" required>
-			          <label for="password">注册密码</label>
-			        </div>
-			        <div class="input-field col s12">
-			          <input id="password" type="password" name="password2" class="validate" required>
-			          <label for="password">注册密码（确认）</label>
-			        </div>
-			      </div>
-			      <button class="btn register-button light-blue accent-3 waves-effect" type="submit">注册</button>
-			    </form>
-			  </div>
+
+		  <div class="login">
+		    <div class="box card-panel z-depth-3">
+
+		      <h4 class="title">登录／注册</h4>
+		      <p class="instructions">第三方平台</p>
+		      <div class="flexbox">
+		        <a class="oauth">
+		          <div class="chip btn white waves-effect waves-dark">
+		            <img src="https://lh3.googleusercontent.com/-IhVc_Wxy6dY/AAAAAAAAAAI/AAAAAAAAAAA/fl45Fty4PEI/photo.jpg" /> Google
+		          </div>
+		        </a>
+
+		        <a class="oauth">
+		          <div class="chip btn white waves-effect waves-dark">
+		            <img src="http://digitalmarketingjobs.ie/wp-content/uploads/2013/11/facebook-logo-round.png" />Facebook
+		          </div>
+		        </a>
+
+		        <a class="oauth">
+		          <div class="chip btn white waves-effect waves-dark">
+		            <img src="https://img.clipartfest.com/60414c58e954d7236837248225e0216f_new-twitter-logo-vector-eps-twitter-logo-clipart_518-518.png" /> Twitter
+		          </div>
+		        </a>
+		      </div>
+		      <p class="instructions">或者</p>
+		      <form action="/signup" method="post">
+		      		 <div class="input-field">
+				        <label for="email">邮箱地址</label>
+				        <input type="text" name="username" id="email" class="validate">
+				        <span class="spin"></span>
+				      </div>
+				       <div class="input-field">
+				        <label for="nickname">个性昵称</label>
+				        <input type="text" name="nickname" id="nickname" class="validate">
+				        <span class="spin"></span>
+				      </div>
+				      <div class="input-field">
+				        <label for="password">密码</label>
+				        <input type="password" name="password" id="password">
+				        <span class="spin"></span>
+				      </div>
+				      <div class="input-field">
+				        <label for="password">密码</label>
+				        <input type="password" name="password2" id="password">
+				        <span class="spin"></span>
+				      </div>
+				      <a href="" class="pass-forgot">忘记密码？</a>
+				      <div class="signInBox">
+				        <div class="button login">
+				          <button class="btn-large btn white waves-effect waves-dark" type="submit"><span>注册</span></button>
+				        </div>
+
+				        <div class="button register">
+				          <a href="/login" class="btn-large white btn waves-effect waves-dark register"><span>我有账号</span></a>
+				        </div>
+				      </div>
+		      </form>
+		     
+
+		    </div>
+
+		    <p class="sign-up" style="color:#ffffff;">
+		      登录，或注册一个新账号
+		  </div>
+
 		</div>
 </section>
 
   
-{{> footer }}
+  
+    <script src="/javascripts/materialize.min.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
