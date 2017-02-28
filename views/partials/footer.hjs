@@ -1,12 +1,12 @@
-        <footer class="page-footer light-blue lighten-1">
+        <footer class="page-footer">
           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
+              <div class="col l5 m5 offset-l1 offset-m1 s11 offset-s1">
                 <h5 class="white-text">面杀网</h5>
                 <h6 class="white-text italics">Egiang.com</h6>
                 <p class="grey-text text-lighten-4">在这里你可以发起，加入，寻找你附近的面杀局</p>
               </div>
-              <div class="col l4 offset-l2 s12">
+              <div class="col l5 m5 offset-l1 offset-m1 s11 offset-s1">
                 <h5 class="white-text">更多链接</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!">首页</a></li>
@@ -19,8 +19,8 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2017 由 <a href="http://www.peterz.us" class="white-text">Peter Zheng</a> 设计，开发，维护
-            <span class="grey-text text-lighten-4 right">本平台为开源项目，采用了 <a class="white-text" href="https://choosealicense.com/licenses/gpl-3.0/">GNU GPLv3 Open Source License</a></span>
+              © 2017 由 <a href="http://www.peterz.us" class="white-text">Peter Zheng</a> 设计，开发，维护
+              <span class="grey-text text-lighten-4 right">本平台为开源项目，采用了 <a class="white-text" href="https://choosealicense.com/licenses/gpl-3.0/">GNU GPLv3 Open Source License</a></span>
             </div>
           </div>
         </footer>

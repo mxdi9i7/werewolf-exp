@@ -367,14 +367,23 @@ img.profilePic {
   color: #41C1F2;
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
+#body .nav-wrapper {
+	background-color: #2B2D42;
+}
+#body .page-footer {
+	background-color: #2B2D42;
+}
+#body {
+	background-color: #EDF2F4
+}
+#body .btn-floating {
+	background-color: #D90429;
+}
+#body .carousel-item {
+	background-image: url(../images/nav-bg.jpg);
+	background-size: cover;
+}
+#body .footer-copyright {
+	padding: 0 10%;
+}
 
