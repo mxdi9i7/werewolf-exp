@@ -107,7 +107,6 @@
                   <option value="下午 10">10 PM</option>
                   <option value="下午 11">11 PM</option>
                   <option value="下午 12">12 PM</option>
-                  
               </select>
               <label for="eventMonth">时</label>
             </div>

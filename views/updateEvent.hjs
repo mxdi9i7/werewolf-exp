@@ -112,16 +112,8 @@
               <label for="eventMonth">时</label>
             </div>
             <div class="input-field col s12 m2 l2">
-              <select name="eventMinute" required>
-                  <option value="" disabled>选择活动时间（分）</option>
-                  <option value="00">00</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="40">40</option>
-                  <option value="50">50</option>
-              </select>
-              <label for="eventMinute">分钟</label>
+              <input type="text" name="eventAdmission" placeholder="$$/人">
+              <label for="eventMinute">活动费用</label>
             </div>
             <div class="input-field col s12 m2 l2">
               <select name="eventCapacity" required>

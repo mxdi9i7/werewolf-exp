@@ -169,7 +169,8 @@ router
 	        user_nickname: req.user.nickname,
 	        participants: req.user.nickname,
 	        currentFill: 1,
-	        participantsID: req.user.id
+	        participantsID: req.user.id,
+	        admission: req.body.eventAdmission
 	      }
 		db('events')
 			.where('id', event_id)
