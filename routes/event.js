@@ -170,7 +170,11 @@ router
 	        participants: req.user.nickname,
 	        currentFill: 1,
 	        participantsID: req.user.id,
-	        admission: req.body.eventAdmission
+	        admission: req.body.eventAdmission,
+	        year: req.body.eventYear,
+	        month: req.body.eventMonth,
+	        day: req.body.eventDay,
+	        hour: req.body.eventHour
 	      }
 		db('events')
 			.where('id', event_id)

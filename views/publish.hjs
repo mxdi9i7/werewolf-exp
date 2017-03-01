@@ -15,6 +15,7 @@
               <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="autocomplete" onFocus="geolocate()" type="text" class="validate" name="eventAddress">
               <label for="event-address">活动地址</label>
             </div>
+            <h5 class="col s12 m12 l12">活动时间:</h5>
             <div class="input-field col s12 m2 l2">
               <select name="eventYear">
                   <option value="" disabled>选择活动年份</option>

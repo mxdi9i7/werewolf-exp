@@ -15,7 +15,8 @@
               <input placeholder="{{address}}" id="event-address" type="text" class="validate" name="eventAddress" required>
               <label for="event-address">活动地址</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <h5 class="col s12 m12 l12">活动时间:</h5>
+            <div class="input-field col s12 m3 l3">
               <select name="eventYear" required>
                   <option value="" disabled>选择活动年份</option>
                   <option value="2017">2017</option>
@@ -25,7 +26,7 @@
               </select>
               <label for="eventYear">年</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m3 l3">
               <select name="eventMonth" required>
                   <option value="" disabled>选择活动月份</option>
                   <option value="01">1月</option>
@@ -43,7 +44,7 @@
               </select>
               <label for="eventMonth">月</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m3 l3">
               <select name="eventDay" required>
                   <option value="" disabled>选择活动日期</option>
                   <option value="01">1</option>
@@ -80,7 +81,7 @@
               </select>
               <label for="eventDay">日</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m3 l3">
               <select name="eventHour" required>
                   <option value="" disabled>选择活动时间（时）</option>
                   <option value="上午 1">1 AM</option>
@@ -111,11 +112,11 @@
               </select>
               <label for="eventMonth">时</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m4 l4">
               <input type="text" name="eventAdmission" placeholder="$$/人">
               <label for="eventMinute">活动费用</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m4 l4">
               <select name="eventCapacity" required>
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
@@ -140,7 +141,7 @@
                   <option value="20+">20+ 人</option>
                 </select>
             </div>
-            <div class="input-field col s12 m12 l12">
+            <div class="input-field col s12 m4 l4">
               <select name="eventType" required>
                 <option value="">活动类型</option>
                 <option value="A">狼人杀</option>
