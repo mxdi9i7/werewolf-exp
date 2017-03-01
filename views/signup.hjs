@@ -48,6 +48,16 @@
 				        <span class="spin"></span>
 				      </div>
 				      <div class="input-field">
+				        <label for="gender">性别</label>
+				        <select>
+					      <option value="" disabled selected>性别</option>
+					      <option value="female">小姐姐</option>
+					      <option value="male">小哥哥</option>
+					      <option value="trans">第三方阵营</option>
+					    </select>
+				        <span class="spin"></span>
+				      </div>
+				      <div class="input-field">
 				        <label for="password">密码</label>
 				        <input type="password" name="password" id="password">
 				        <span class="spin"></span>
