@@ -69,12 +69,11 @@
 				      </div>
 				      <a href="" class="pass-forgot">忘记密码？</a>
 				      <div class="signInBox">
-				        <div class="button login">
-				          <button class="btn-large btn white waves-effect waves-dark" type="submit"><span>注册</span></button>
-				        </div>
-
-				        <div class="button register">
+				      	<div class="button register">
 				          <a href="/login" class="btn-large white btn waves-effect waves-dark register"><span>我有账号</span></a>
+				        </div>
+				        <div class="button login">
+				          <button class="btn-large btn white-text waves-effect waves-light" type="submit"><span>注册</span></button>
 				        </div>
 				      </div>
 		      </form>

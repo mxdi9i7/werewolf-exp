@@ -389,4 +389,15 @@ img.profilePic {
 .collection li strong {
   font-weight: bolder;
 }
-
+.card.user-card {
+  background-color: #2B2D42;
+}
+.button.login button {
+  background-color: #2B2D42;
+}
+.button.register a.register span {
+  color: #2B2D42;
+}
+.login h4.title {
+  color: #2B2D42;
+}
