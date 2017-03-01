@@ -31,7 +31,25 @@ router
 			res.redirect('/')
 		})
 	})
+	.get('/auth/facebook',
+  passport.authenticate('facebook', { scope: 'public_profile' })
+)
 
+	.get('/auth/facebook/callback',
+	  passport.authenticate('facebook', { failureRedirect: '/login' }),
+	  function(req, res) {
+	    // Successful authentication, redirect home.
+	    res.redirect('/');
+	  })
+
+	.get('/auth/google', passport.authenticate('google'))
+
+	.get('/auth/google/return', 
+	  passport.authenticate('google', { failureRedirect: '/login' }),
+	  function(req, res) {
+	    // Successful authentication, redirect home.
+	    res.redirect('/');
+	  })
 
 
 module.exports = router;

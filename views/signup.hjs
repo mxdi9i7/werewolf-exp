@@ -17,13 +17,13 @@
 		      <h4 class="title">登录／注册</h4>
 		      <p class="instructions">第三方平台</p>
 		      <div class="flexbox">
-		        <a class="oauth">
+		        <a class="oauth" href="/auth/google">
 		          <div class="chip btn white waves-effect waves-dark">
 		            <img src="https://lh3.googleusercontent.com/-IhVc_Wxy6dY/AAAAAAAAAAI/AAAAAAAAAAA/fl45Fty4PEI/photo.jpg" /> Google
 		          </div>
 		        </a>
 
-		        <a class="oauth">
+		        <a class="oauth" href="/auth/facebook">
 		          <div class="chip btn white waves-effect waves-dark">
 		            <img src="http://digitalmarketingjobs.ie/wp-content/uploads/2013/11/facebook-logo-round.png" />Facebook
 		          </div>

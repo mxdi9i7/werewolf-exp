@@ -20,7 +20,7 @@
 				      <div id="test4" class="row">
 				      	<div class="col l6 m6 s12">
 				      		{{#user}}
-				      			<img src="profilePic/{{profilePic}}" class="profilePic">
+				      			<img src="{{profilePic}}" class="profilePic">
 				      		{{/user}}
 				      	</div>
 				      	<div class="col l6 m6 s12">

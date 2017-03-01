@@ -41,7 +41,7 @@ router
 			.where('id', req.user.id)
 			.first()
 			.update({
-				profilePic: req.file.filename
+				profilePic: 'profilePic/' + req.file.filename
 			})
 			.then(()=> {
 				console.log(req.file)
