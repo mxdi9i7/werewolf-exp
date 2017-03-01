@@ -386,4 +386,7 @@ img.profilePic {
 #body .footer-copyright {
 	padding: 0 10%;
 }
+.collection li strong {
+  font-weight: bolder;
+}
 
