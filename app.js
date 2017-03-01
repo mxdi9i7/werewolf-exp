@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 
 
 var index = require('./routes/index');
@@ -35,7 +36,15 @@ app.use(logger('dev'))
    .use(bodyParser.urlencoded({ extended: false }))
    .use(cookieParser())
    .use(express.static(path.join(__dirname, 'public')))
-   .use(session({secret: "egiang", resave: false, saveUninitialized: false}))
+   .use(session({
+   	store: new RedisStore({
+   		port: 6379,
+   		host: 'localhost'
+   	}),
+   	secret: "egiang",
+   	resave: false, 
+   	saveUninitialized: false
+   }))
    .use(passport.initialize())
    .use(passport.session())
 
