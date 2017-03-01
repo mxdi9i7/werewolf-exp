@@ -27,6 +27,7 @@
 				      		{{#user}}
 				      	    	<ul class="collection">
 							      <li class="collection-item"><strong>昵称：</strong>{{nickname}}</li>
+							      <li class="collection-item"><strong>性别:</strong><span id="{{gender}}"> {{gender}}</span></li>
 							      <li class="collection-item"><strong>登陆邮箱：</strong>{{username}}</li>
 							      <li class="collection-item"><strong>身份：</strong>{{identity}}</li>
 							      <li class="collection-item"><strong>用户ID：</strong>{{id}}</li>

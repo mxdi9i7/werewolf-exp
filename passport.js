@@ -84,6 +84,7 @@ function register(req, email, password, done) {
 				nickname: req.body.nickname,
 				username: req.body.username,
 				password: req.body.password,
+				gender: req.body.gender,
 				profilePic: 'profilePic/default.jpg'
 			};
 

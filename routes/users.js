@@ -80,6 +80,7 @@ router
 			.where('id', req.user.id)
 			.first()
 			.then((user)=> {
+					console.log(user)
 					res.render('users', {
 						user,
 						currentUser: user.nickname,

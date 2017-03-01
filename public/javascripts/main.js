@@ -8,6 +8,9 @@ $(document).ready(function(){
 	$('.B').text('三国杀');
 	$('.C').text('麻将');
 	$('.D').text('其他');
+	$('#male').text('小哥哥');
+	$('#female').text('小姐姐');
+	$('#trans').text('第三方阵营');
 	$('.carousel.carousel-slider').carousel({fullWidth: true});
 	$('.slider').slider();
 	$('select').material_select();
