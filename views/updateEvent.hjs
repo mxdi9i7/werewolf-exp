@@ -9,7 +9,7 @@
             </div>
             <div class="input-field col m12 l6">
               <input readonly placeholder="{{user_nickname}}" id="event-host" type="text" class="validate" name="eventHost" value="{{user_nickname}}" required>
-              <label for="event-host">发起人</label>
+              <label for="event-host">活动发起人</label>
             </div>
             <div class="input-field col m12 l12">
               <input placeholder="{{address}}" id="event-address" type="text" class="validate" name="eventAddress" required>
@@ -108,7 +108,6 @@
                   <option value="下午 10">10 PM</option>
                   <option value="下午 11">11 PM</option>
                   <option value="下午 12">12 PM</option>
-                  
               </select>
               <label for="eventMonth">时</label>
             </div>
@@ -147,6 +146,7 @@
                 <option value="A">狼人杀</option>
                 <option value="B">三国杀</option>
                 <option value="C">麻将</option>
+                <option value="D">其他（在详情说明）</option>
               </select>
             </div>
             <div class="input-field col m12 s12">

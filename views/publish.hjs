@@ -166,7 +166,6 @@
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBexX-iLYpcQEEION4zdnUc3BcjyY9yM_I&libraries=places"></script>
   <script>
       var placeSearch, autocomplete;
-
       function initialize() {
           // Create the autocomplete object, restricting the search
           // to geographical location types.
