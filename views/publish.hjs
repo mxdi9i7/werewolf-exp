@@ -15,7 +15,7 @@
               <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="autocomplete" onFocus="geolocate()" type="text" class="validate" name="eventAddress">
               <label for="event-address">活动地址</label>
             </div>
-            <h5 class="col s12 m12 l12">活动时间:</h5>
+            <!-- <h5 class="col s12 m12 l12">活动时间:</h5>
             <div class="input-field col s12 m2 l2">
               <select name="eventYear">
                   <option value="" disabled>选择活动年份</option>
@@ -110,12 +110,46 @@
                   <option value="下午 12">12 PM</option>
               </select>
               <label for="eventMonth">时</label>
+            </div> -->
+            <div class="input-field col s12 m6 l6">
+              <input placeholder="请输入您的活动时间" type="date" class="datepicker" name="eventDate" required>
+              <label for="eventDate">活动时间</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m6 l6">
+              <select name="eventHour">
+                  <option value="" disabled>选择具体时间（小时）</option>
+                  <option value="上午 1:00">1 AM</option>
+                  <option value="上午 2:00">2 AM</option>
+                  <option value="上午 3:00">3 AM</option>
+                  <option value="上午 4:00">4 AM</option>
+                  <option value="上午 5:00">5 AM</option>
+                  <option value="上午 6:00">6 AM</option>
+                  <option value="上午 7:00">7 AM</option>
+                  <option value="上午 8:00">8 AM</option>
+                  <option value="上午 9:00">9 AM</option>
+                  <option value="上午 10:00">10 AM</option>
+                  <option value="上午 11:00">11 AM</option>
+                  <option value="上午 12:00">12 AM</option>
+                  <option value="下午 1:00">1 PM</option>
+                  <option value="下午 2:00">2 PM</option>
+                  <option value="下午 3:00">3 PM</option>
+                  <option value="下午 4:00">4 PM</option>
+                  <option value="下午 5:00">5 PM</option>
+                  <option value="下午 6:00">6 PM</option>
+                  <option value="下午 7:00">7 PM</option>
+                  <option value="下午 8:00">8 PM</option>
+                  <option value="下午 9:00">9 PM</option>
+                  <option value="下午 10:00">10 PM</option>
+                  <option value="下午 11:00">11 PM</option>
+                  <option value="下午 12:00">12 PM</option>
+              </select>
+              <label for="eventHour">活动具体时间</label>
+              </div>
+            <div class="input-field col s12 m4 l4">
               <input type="text" name="eventAdmission" placeholder="$$/人">
               <label for="eventMinute">活动费用</label>
             </div>
-            <div class="input-field col s12 m2 l2">
+            <div class="input-field col s12 m4 l4">
               <select name="eventCapacity">
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
@@ -140,7 +174,7 @@
                   <option value="20+">20+ 人</option>
                 </select>
             </div>
-            <div class="input-field col s12 m12 l12">
+            <div class="input-field col s12 m4 l4">
               <select name="eventType">
                 <option value="">活动类型</option>
                 <option value="A">狼人杀</option>
