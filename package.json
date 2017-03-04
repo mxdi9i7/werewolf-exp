@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "db": "knex migrate:latest && knex seed:run"
   },
   "dependencies": {
     "app-root-path": "^2.0.1",

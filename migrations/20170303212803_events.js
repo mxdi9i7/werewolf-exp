@@ -10,7 +10,6 @@ exports.up = function(knex, Promise) {
   capacity int(11) DEFAULT NULL,
   address text COLLATE utf8mb4_unicode_ci,
   note text COLLATE utf8mb4_unicode_ci,
-  photo text COLLATE utf8mb4_unicode_ci,
   user_id int(11) unsigned DEFAULT NULL,
   user_nickname text COLLATE utf8mb4_unicode_ci,
   participants text COLLATE utf8mb4_unicode_ci,
