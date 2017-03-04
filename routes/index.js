@@ -23,7 +23,7 @@ function loginRequired(req, res, next) {
 
 /* GET home page. */
 router
-	.get('/', cache.route({expire: 5, prefix: 'home'}), (req, res, next) => {
+	.get('/', cache.route({expire: 60, prefix: 'home'}), (req, res, next) => {
 		var authenticated;
 		if (req.isAuthenticated()) {
 			db('users')
