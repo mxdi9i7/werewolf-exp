@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('knex');
-
+var cache = require('express-redis-cache')();
 
 
 const db = knex({
@@ -23,7 +23,7 @@ function loginRequired(req, res, next) {
 
 /* GET home page. */
 router
-	.get('/', (req, res, next) => {
+	.get('/', cache.route({expire: 60, prefix: 'home'}), (req, res, next) => {
 		var authenticated;
 		if (req.isAuthenticated()) {
 			db('users')
