@@ -34,7 +34,9 @@ router
 		})
   .post('/publish', loginRequired, function (req, res) {
     var fileName = 'images/' + req.session.filePath;
-    var time = req.body.eventDate + " " + req.body.eventHour;
+    var weekday = new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var week = weekday[new Date(req.body.eventDate).getDay()];
+    var time = req.body.eventDate + " " + week + " " + req.body.eventHour;
       console.log(req.body.eventDate);
       const newEvent = {
         title: req.body.eventName,
