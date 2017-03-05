@@ -157,7 +157,10 @@ router
 	.post('/update:event_id', loginRequired, (req, res, next) => {
 		const { event_id } = req.params;
 		console.log(req.params);
-		var time = req.body.eventYear + "年" + req.body.eventMonth + "月" + req.body.eventDay + "日" + " " + req.body.eventHour + ":" + req.body.eventMinute;
+		// var time = req.body.eventYear + "年" + req.body.eventMonth + "月" + req.body.eventDay + "日" + " " + req.body.eventHour + ":" + req.body.eventMinute;
+		var weekday = new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    	var week = weekday[new Date(req.body.eventDate).getDay()];
+    	var time = req.body.eventDate + " " + week + " " + req.body.eventHour;
 		const newEvent = {
 	        title: req.body.eventName,
 	        type: req.body.eventType,
@@ -171,10 +174,6 @@ router
 	        currentFill: 1,
 	        participantsID: req.user.id,
 	        admission: req.body.eventAdmission,
-	        year: req.body.eventYear,
-	        month: req.body.eventMonth,
-	        day: req.body.eventDay,
-	        hour: req.body.eventHour
 	      }
 		db('events')
 			.where('id', event_id)
