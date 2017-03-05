@@ -27,7 +27,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "https://a8a676fb1b1999d4eeb1b7083eb7e3d27fe30964@github.com/mxdi9i7/werewolf-exp.git",
       path : "~/egiang",
-      "post-deploy" : "nvm install && npm install && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "nvm install && npm install && /root/.nvm/versions/node/v6.10.0/bin/pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
 }
