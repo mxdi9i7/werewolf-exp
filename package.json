@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "db": "knex migrate:latest && knex seed:run"
+    "db": "knex migrate:latest && knex seed:run",
+    "redis": "redis-server &"
   },
   "dependencies": {
     "app-root-path": "^2.0.1",
