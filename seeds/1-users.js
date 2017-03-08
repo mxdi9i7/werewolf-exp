@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
           profilePic: 'profilePic/default.jpg',
           auth_provider: null,
           auth_id: null,
-          gender: 'female'
+          gender: 'male'
         }),
         knex('users').insert({
           id: 3,

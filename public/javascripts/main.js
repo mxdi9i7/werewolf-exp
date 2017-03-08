@@ -8,8 +8,8 @@ $(document).ready(function(){
 	$('.B').text('三国杀');
 	$('.C').text('麻将');
 	$('.D').text('其他');
-	$('#male').text('小哥哥');
-	$('#female').text('小姐姐');
+	$('#male').html('<span> </span><span>小哥哥</span><span> </span><i id="maleIcon" class="fa fa-mars maleIcon" aria-hidden="true"></i>');
+	$('#female').html('<span> </span><span>小姐姐</span><span> </span><i id="femaleIcon" class="fa fa-venus femaleIcon" aria-hidden="true"></i>');
 	$('#trans').text('第三方阵营');
 	$('.carousel.carousel-slider').carousel({fullWidth: true});
 	$('.slider').slider();

@@ -401,3 +401,15 @@ img.profilePic {
 .login h4.title {
   color: #2B2D42;
 }
+.femaleIcon{
+  color: #ff6666;
+}
+#femaleIcon{
+  font-weight: bold;
+}
+.maleIcon{
+  color: #3399ff;
+}
+#maleIcon{
+  font-weight: bold;
+}
