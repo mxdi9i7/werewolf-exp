@@ -37,6 +37,7 @@ router
     var weekday = new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
     var week = weekday[new Date(req.body.eventDate).getDay()];
     var time = req.body.eventDate + " " + week + " " + req.body.eventHour;
+      console.log(req.body.eventDate);
       const newEvent = {
         title: req.body.eventName,
         type: req.body.eventType,

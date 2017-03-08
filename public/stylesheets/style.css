@@ -401,6 +401,7 @@ img.profilePic {
 .login h4.title {
   color: #2B2D42;
 }
+<<<<<<< HEAD
 @media only screen and (max-width: 500px) {
     .main-content.row {
       margin: 0;
@@ -411,4 +412,17 @@ img.profilePic {
 }
 .ranking h3 {
   font-size: 3em;
+=======
+.femaleIcon{
+  color: #ff6666;
+}
+#femaleIcon{
+  font-weight: bold;
+}
+.maleIcon{
+  color: #3399ff;
+}
+#maleIcon{
+  font-weight: bold;
+>>>>>>> e55f70c6684bdb383a8f2d2eab42279840442bcf
 }
