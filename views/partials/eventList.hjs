@@ -1,6 +1,6 @@
-<div class="col s12 m8 l8">
+
 	<div class="main-content-header">
-		<h3 class="main-content-title"></h3>
+		<h3 class="main-content-title">附近活动</h3>
 	</div>
 	<hr>
   	<div class="row">
@@ -46,4 +46,3 @@
 	        </div>
     {{/events}}
     </div>
-</div>

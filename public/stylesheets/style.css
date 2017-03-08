@@ -401,3 +401,14 @@ img.profilePic {
 .login h4.title {
   color: #2B2D42;
 }
+@media only screen and (max-width: 500px) {
+    .main-content.row {
+      margin: 0;
+    }
+    div.event-section {
+      padding: 50px 0;
+    }
+}
+.ranking h3 {
+  font-size: 3em;
+}

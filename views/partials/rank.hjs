@@ -1,5 +1,5 @@
-<div class="ranking board col s12 m4 l4">
-	  			<h3>本月热门玩家排行榜</h3>
+
+	  			<h3>玩家排行榜</h3>
 	  			  <ul class="collection">
 	  			  	{{#users}}
 		  			  		<li class="collection-item avatar">
@@ -11,4 +11,3 @@
 						    </li>
 					{{/users}}
 				  </ul>
-</div>
