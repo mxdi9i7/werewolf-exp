@@ -22,7 +22,7 @@ passport.use('local-register', new LocalStrategy({passReqToCallback: true}, regi
 passport.use(new FacebookStrategy({
     clientID: '1877134315835669',
     clientSecret: '92394ccc224f9f1197054203cba0e8e9',
-    callbackURL: "http://104.131.31.231/auth/facebook/callback",
+    callbackURL: "http://www.egiang.com/auth/facebook/callback",
     profileFields: ['email', 'profileUrl', 'gender', 'photos', 'displayName']
   },
   function(accessToken, refreshToken, profile, cb) {
