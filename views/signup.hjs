@@ -17,11 +17,11 @@
 		      <h4 class="title">登录／注册</h4>
 		      <p class="instructions">第三方平台</p>
 		      <div class="flexbox">
-		        <a class="oauth" href="/auth/google">
+		        <!-- <a class="oauth" href="/auth/google">
 		          <div class="chip btn white waves-effect waves-dark">
 		            <img src="https://lh3.googleusercontent.com/-IhVc_Wxy6dY/AAAAAAAAAAI/AAAAAAAAAAA/fl45Fty4PEI/photo.jpg" /> Google
 		          </div>
-		        </a>
+		        </a> -->
 
 		        <a class="oauth" href="/auth/facebook">
 		          <div class="chip btn white waves-effect waves-dark">
@@ -29,27 +29,27 @@
 		          </div>
 		        </a>
 
-		        <a class="oauth">
+		        <!-- <a class="oauth">
 		          <div class="chip btn white waves-effect waves-dark">
 		            <img src="https://img.clipartfest.com/60414c58e954d7236837248225e0216f_new-twitter-logo-vector-eps-twitter-logo-clipart_518-518.png" /> Twitter
 		          </div>
-		        </a>
+		        </a> -->
 		      </div>
 		      <p class="instructions">或者</p>
 		      <form action="/signup" method="post">
 		      		 <div class="input-field">
 				        <label for="email">邮箱地址</label>
-				        <input type="text" name="username" id="email" class="validate">
+				        <input type="text" name="username" id="email" class="validate" required>
 				        <span class="spin"></span>
 				      </div>
 				       <div class="input-field">
 				        <label for="nickname">个性昵称</label>
-				        <input type="text" name="nickname" id="nickname" class="validate">
+				        <input type="text" name="nickname" id="nickname" class="validate" required>
 				        <span class="spin"></span>
 				      </div>
 				      <div class="input-field">
 				        <label for="gender">性别</label>
-				        <select name="gender">
+				        <select name="gender" required>
 					      <option value="" disabled selected>性别</option>
 					      <option value="female">小姐姐</option>
 					      <option value="male">小哥哥</option>
@@ -59,15 +59,15 @@
 				      </div>
 				      <div class="input-field">
 				        <label for="password">密码</label>
-				        <input type="password" name="password" id="password">
+				        <input type="password" name="password" id="password" required>
 				        <span class="spin"></span>
 				      </div>
 				      <div class="input-field">
-				        <label for="password">密码</label>
-				        <input type="password" name="password2" id="password">
+				        <label for="password">重复密码</label>
+				        <input type="password" name="password2" id="password" required>
 				        <span class="spin"></span>
 				      </div>
-				      <a href="" class="pass-forgot">忘记密码？</a>
+				      <!-- <a href="" class="pass-forgot">忘记密码？</a> -->
 				      <div class="signInBox">
 				      	<div class="button register">
 				          <a href="/login" class="btn-large white btn waves-effect waves-dark register"><span>我有账号</span></a>
