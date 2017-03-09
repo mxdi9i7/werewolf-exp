@@ -84,7 +84,7 @@
 							      <span class="card-media-object-tag subtle {{type}}">{{type}}</span>
 							      <ul class="card-media-object-social-list">
 							        <li>
-							          <img src="profilePic/{{host_profile}}" class="">
+							          <img src="{{host_profile}}" class="">
 							        </li>
 							        <li>
 							          <img src="profilePic/girl.jpeg" class="">
