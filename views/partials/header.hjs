@@ -11,23 +11,23 @@
   <body id="body">
     
 	  <nav>
+
 	    <div class="nav-wrapper">
 	      <a href="../" class="brand-logo white-text"><img src="images/logo.png" height="50" width="50">面杀网</a>
-	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
 	      <ul class="right hide-on-med-and-down">
 	        <li><a href="../" class="white-text">首页</a></li>
-	        <li><a href="/tournament" class="white-text">比赛专区</a></li>
+	        <li><a href="/tournament" class="white-text">比赛专区<span class="new badge red" data-badge-caption="!">即将开放</span></a></li>
 	        <li id="nickname_tag"><a href="../users" class="white-text"><img class="circle nav-prof" src="{{profilePic}}">{{currentUser}}</a></li>
 	        <li id="login_btn"><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
 			<li id="logout_btn"><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
-	        <li><a href="../">首页</a></li>
-	        <li id="nickname_tag"><a href="../users">{{currentUser}}</a></li>
-	        <!-- <li><a href="./rank">名人堂</a></li>
-	        <li><a href="./settings">设置</a></li> -->
-	        <li><a href="./login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
-	        <li><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
+	        <li><a href="../" class="black-text">首页</a></li>
+	        <li><a href="/tournament" class="black-text">比赛专区<span class="new badge red" data-badge-caption="!">即将开放</span></a></li>
+	        <li id="nickname_tag"><a href="../users" class="black-text"><img class="circle nav-prof" src="{{profilePic}}">{{currentUser}}</a></li>
+	        <li id="login_btn"><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
+			<li id="logout_btn"><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
 	      </ul>
 	    </div>
 	  </nav>

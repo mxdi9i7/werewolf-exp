@@ -1,4 +1,5 @@
 $(document).ready(function(){       
+	$(".button-collapse").sideNav();
 	$('#publish-form :input').val('');
 	$('#A').text('狼人杀');
 	$('#B').text('三国杀');

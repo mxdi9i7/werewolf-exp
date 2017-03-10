@@ -39,7 +39,7 @@
 		      <form action="/signup" method="post">
 		      		 <div class="input-field">
 				        <label for="email">邮箱地址</label>
-				        <input type="text" name="username" id="email" class="validate" required>
+				        <input type="email" name="username" id="email" class="validate" required>
 				        <span class="spin"></span>
 				      </div>
 				       <div class="input-field">
