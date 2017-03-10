@@ -33,7 +33,7 @@
 		        </a> -->
 		      </div>
 		      <p class="instructions">或者</p>
-		      <form action="/login" method="post">
+		      <form action="/login" method="post" class="register-form">
 		      		 <div class="input-field">
 				        <label for="username">邮箱地址</label>
 				        <input type="text" name="username" id="email" class="validate" required>

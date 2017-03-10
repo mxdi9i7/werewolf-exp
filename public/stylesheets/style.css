@@ -424,3 +424,6 @@ img.profilePic {
 #maleIcon{
   font-weight: bold;
 }
+.register-form {
+  min-width: 255px;
+}
