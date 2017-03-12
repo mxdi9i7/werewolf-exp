@@ -4,7 +4,7 @@ var db = require('./db');
 var FacebookStrategy = require('passport-facebook').Strategy
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-passport.use(new LocalStrategy(authenticate))
+passport.use(new LocalStrategy({passReqToCallback: true}, authenticate))
 passport.use('local-register', new LocalStrategy({passReqToCallback: true}, register))
 
 
@@ -54,16 +54,16 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-function authenticate(email, password, done) {
+function authenticate(req, email, password, done) {
 	db('users')
 		.where('username', email)
 		.first()
 		.then((user) => {
 			if (!user) {
-				return done(null, false, req.flash('msg', '用户不存在！'));
+				return done(null, false, req.flash('msg1', '用户不存在！'));
 			}
 			if (user.password !== password) {
-				return done(null, false, req.flash('msg', '密码错误！'));
+				return done(null, false, req.flash('msg1', '密码错误！'));
 			}
 			done(null, user)
 		}, done)
@@ -78,7 +78,7 @@ function register(req, email, password, done) {
 				return done(null, false, req.flash('msg', '注册成功！'))
 			}
 			if (password !== req.body.password2) {
-				return done(null, false, req.flash('msg', '密码错误！'))
+				return done(null, false, req.flash('msg', '重复密码错误！'))
 			}
 			const newUser = {
 				nickname: req.body.nickname,

@@ -33,7 +33,6 @@
 		        </a> -->
 		      </div>
 		      <p class="instructions">或者</p>
-		      <p><span class="new badge red badge-no-float" data-badge-caption="">{{message}}</span></p>
 		      <form action="/login" method="post" class="register-form">
 		      		 <div class="input-field">
 				        <label for="username">邮箱地址</label>
@@ -70,3 +69,6 @@
   
     <script src="/javascripts/materialize.min.js"></script>
     <script type="text/javascript" src="/javascripts/main.js"></script>
+    <script type="text/javascript">
+		      	  Materialize.toast('{{message}}', 4000) // 4000 is the duration of the toast
+	</script>

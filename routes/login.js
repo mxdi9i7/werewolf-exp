@@ -20,7 +20,7 @@ router
 					footer: './partials/footer'
 				},
 				authenticated: req.isAuthenticated(),
-				message: req.flash('msg')
+				message: req.flash('msg1')
 			})
 	})
 	.post('/login', passport.authenticate('local', {
