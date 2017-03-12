@@ -60,10 +60,10 @@ function authenticate(email, password, done) {
 		.first()
 		.then((user) => {
 			if (!user) {
-				return done(null, false, {message: 'user not found'});
+				return done(null, false, req.flash('msg', '用户不存在！'));
 			}
 			if (user.password !== password) {
-				return done(null, false, {message: 'password does not match'});
+				return done(null, false, req.flash('msg', '密码错误！'));
 			}
 			done(null, user)
 		}, done)
@@ -75,10 +75,10 @@ function register(req, email, password, done) {
 		.first()
 		.then((user) => {
 			if(user) {
-				return done(null, false, {message: '用户已存在'})
+				return done(null, false, req.flash('msg', '注册成功！'))
 			}
 			if (password !== req.body.password2) {
-				return done(null, false, {message: 'passwords dont match'})
+				return done(null, false, req.flash('msg', '密码错误！'))
 			}
 			const newUser = {
 				nickname: req.body.nickname,

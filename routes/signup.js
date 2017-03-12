@@ -11,17 +11,20 @@ router
 		})
 	})
 	.get('/signup', (req, res, next) => {
+		req.flash('info', 'test')
 		res.render('signup', {
 			partials: {
 				header: './partials/header',
 				footer: './partials/footer'
 			},
-			authenticate: req.isAuthenticated()
+			authenticate: req.isAuthenticated(),
+			message: req.flash('msg')
 		})
 	})
 	.post('/signup', passport.authenticate('local-register', {
 		successRedirect: '/users',
-		failureRedirect: '/signupFailed',
+		failureRedirect: '/signup',
+		failureFlash: true
 	}))
 
 

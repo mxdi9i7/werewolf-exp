@@ -19,12 +19,14 @@ router
 					header: './partials/header',
 					footer: './partials/footer'
 				},
-				authenticated: req.isAuthenticated()
+				authenticated: req.isAuthenticated(),
+				message: req.flash('msg')
 			})
 	})
 	.post('/login', passport.authenticate('local', {
 		successRedirect: '/',
 		failureRedirect: '/login',
+		failureFlash: true
 	}))
 	.get('/logout', (req, res, next) => {
 		req.session.destroy(() => {
@@ -32,8 +34,8 @@ router
 		})
 	})
 	.get('/auth/facebook',
-  passport.authenticate('facebook', { scope: 'public_profile' })
-)
+		  passport.authenticate('facebook', { scope: 'public_profile' })
+	)
 
 	.get('/auth/facebook/callback',
 	  passport.authenticate('facebook', { failureRedirect: '/login' }),

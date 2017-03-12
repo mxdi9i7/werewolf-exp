@@ -8,6 +8,7 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var event = require('./routes/event');
@@ -22,6 +23,7 @@ var app = express();
 var db = require('./db');
 var passport = require('passport');
 require('./passport');
+var flash = require('connect-flash');
 
 
 
@@ -45,6 +47,7 @@ app.use(logger('dev'))
    	resave: false, 
    	saveUninitialized: false
    }))
+   .use(flash())
    .use(passport.initialize())
    .use(passport.session())
 

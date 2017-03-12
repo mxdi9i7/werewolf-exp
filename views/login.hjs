@@ -33,6 +33,7 @@
 		        </a> -->
 		      </div>
 		      <p class="instructions">或者</p>
+		      <p><span class="new badge red badge-no-float" data-badge-caption="">{{message}}</span></p>
 		      <form action="/login" method="post" class="register-form">
 		      		 <div class="input-field">
 				        <label for="username">邮箱地址</label>
