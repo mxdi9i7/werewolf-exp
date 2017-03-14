@@ -26,6 +26,8 @@ router
 				partials: {
 					header: './partials/header',
 					footer: './partials/footer',
+					tournamentList: './partials/tournamentList',
+					rank: './partials/rank'
 					},
 				currentUser: req.user.nickname,
 				profilePic: req.user.profilePic,

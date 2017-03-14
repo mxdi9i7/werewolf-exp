@@ -7,8 +7,7 @@
 		{{#events}}
 	        <div class="col s12 m12 l12">
 	        	<div class="container">
-
-				  <div class="card-media">
+				  <div class="card-media" onclick="location.href = '/event{{id}}'">
 				    <!-- media container -->
 				    <div class="card-media-object-container">
 				      <div class="card-media-object" style="background-image: url({{filePath}});"></div>

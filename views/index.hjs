@@ -3,15 +3,15 @@
 		    <div class="carousel-fixed-item center">
 		      <a class="btn waves-effect white grey-text darken-text-2">button</a>
 		    </div>
-		    <div class="carousel-item white-text" href="#two!">
+		    <div class="carousel-item carousel-item-one white-text" href="#two!">
 		      <h2>公告牌#333</h2>
 		      <p class="white-text">广告位招商， 请联系微信：peterbugman</p>
 		    </div>
-		    <div class="carousel-item white-text" href="#three!">
+		    <div class="carousel-item carousel-item-two white-text" href="#three!">
 		      <h2>公告牌#2</h2>
 		      <p class="white-text">广告位招商， 请联系微信：peterbugman</p>
 		    </div>
-		    <div class="carousel-item white-text" href="#four!">
+		    <div class="carousel-item carousel-item-three white-text" href="#four!">
 		      <h2>公告牌#3</h2>
 		      <p class="white-text">广告位招商， 请联系微信：peterbugman</p>
 		    </div>

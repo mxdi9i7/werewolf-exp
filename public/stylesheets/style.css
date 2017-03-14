@@ -202,6 +202,7 @@ img.profilePic {
 
 .card-media:hover {
   box-shadow: 0 5px 14px rgba(0, 0, 0, .2);
+  cursor: pointer;
 }
 
 .card-media-object-container {
@@ -427,4 +428,7 @@ img.profilePic {
 .register-form {
   min-width: 255px;
 }
+#body .parallax-container {
+      height: 450px;
+    }
 
