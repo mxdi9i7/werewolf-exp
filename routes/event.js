@@ -50,8 +50,14 @@ router
 								},
 								authenticated: req.isAuthenticated(),
 								joined: function() {
-									if (event.participantsID.indexOf(req.user.id) > -1) {
-										return 'joined'	
+									var eventParticipantsList = event.participantsID.split(',');
+									for (i = 0; i <= eventParticipantsList.length; i ++) {
+										if (eventParticipantsList[i] == req.user.id) {
+											console.log(eventParticipantsList[i] == req.user.id)
+											return 'joined'
+										} else {
+											i ++
+										}
 									}
 								},
 								currentUser: req.user.nickname,
@@ -74,7 +80,6 @@ router
 			.then((event) => {
 				var parsedString = ',' + req.user.nickname;
 				var updatedString = event.participants + parsedString;
-				console.log(updatedString)
 				var currentFillNumber = updatedString.split(',').length;
 
 				var parsedID = ',' + req.user.id;
@@ -92,17 +97,27 @@ router
 						.where('id', req.user.id)
 						.first()
 						.then((user)=> {
-							var parsedRSVP = ',' + event_id + "/" + event.title;
+							var parsedRSVP = ',' + event_id;
 							var updatedRSVP = user.rsvp + parsedRSVP;
-							db('users')
-							.where('id', req.user.id)
+							db('events')
+							.where('id', event_id)
 							.first()
-							.update({
-								rsvp: updatedRSVP
+							.then((event) => {
+								console.log(event.title)
+								var parsedRSVPEventName = ',' + event.title;
+								var updatedRSVPEventName = user.rsvpEventName + parsedRSVPEventName;
+								db('users')
+								.where('id', req.user.id)
+								.first()
+								.update({
+									rsvp: updatedRSVP,
+									rsvpEventName: updatedRSVPEventName
+								})
+								.then(()=> {
+									res.redirect('event'+event_id)
+								})
 							})
-							.then(()=> {
-								res.redirect('event'+event_id)
-							})
+							
 						})
 					})
 			})

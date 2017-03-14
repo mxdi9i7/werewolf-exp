@@ -38,8 +38,10 @@
 				      <div id="test5">
 				      	{{#user}}
 				      		<input type="text" value="{{rsvp}}" hidden id="rsvpList">
+				      		<input type="text" value="{{rsvpEventName}}" id="eventNameList" hidden>
 				      	{{/user}}
 				      		<div class="collection" id="rsvpEventList">
+
 						    </div>
 				      </div>
 				      <div id="test6">
@@ -148,10 +150,23 @@ s.setAttribute('data-timestamp', +new Date());
 			newRSVPList.push(rsvpList[i])
 		}
 	}
-		
-	for (i = 0; i < newRSVPList.length; i ++) {
+		console.log(newRSVPList)
+
+	//display rsvp Event list logic
+	var rsvpEvent = $('#eventNameList').val().split(',').filter(function(item, i, rsvpEvent) {
+		return i == rsvpEvent.indexOf(item);
+	});
+	var newEventList = [];
+	for (i = 0; i <= rsvpEvent.length; i ++) {
+		if (rsvpEvent[i] !== 'undefined' && rsvpEvent[i] !== undefined) {
+			newEventList.push(rsvpEvent[i])
+		}
+	}
+		console.log(newEventList)
+
+	for (i = 0; i < newEventList.length; i ++) {
 		$('#rsvpEventList').append(
-			"<a href='/event" + newRSVPList[i] + "' class='collection-item'>" + newRSVPList[i] +"</a>"
+			"<a href='/event" + newRSVPList[i] + "' class='collection-item'>" + newEventList[i] +"</a>"
 		)
 	}
 </script>

@@ -459,7 +459,12 @@ img.profilePic {
   top: 30%;
   font-size: 8rem;
 }
-
+#body input.nickname {
+  width: 70%;
+}
+button.verify.btn {
+  display: inline;
+}
 
 
 

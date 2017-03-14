@@ -44,7 +44,7 @@
 				      </div>
 				       <div class="input-field">
 				        <label for="nickname">个性昵称</label>
-				        <input type="text" name="nickname" id="nickname" class="validate" required>
+				        <input type="text" name="nickname" id="nickname" class="validate nickname" required>
 				        <span class="spin"></span>
 				      </div>
 				      <div class="input-field">
