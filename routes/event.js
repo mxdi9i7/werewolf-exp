@@ -52,11 +52,10 @@ router
 								joined: function() {
 									var eventParticipantsList = event.participantsID.split(',');
 									for (i = 0; i <= eventParticipantsList.length; i ++) {
-										if (eventParticipantsList[i] == req.user.id) {
-											console.log(eventParticipantsList[i] == req.user.id)
-											return 'joined'
-										} else {
+										if (eventParticipantsList[i] !== req.user.id) {											
 											i ++
+										} else {
+											return 'joined'
 										}
 									}
 								},
