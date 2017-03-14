@@ -1,7 +1,8 @@
 {{> header }}
   <section class="publish-section">
 
-        <form class="row publish-form" method="post" id="publish-form" enctype="multipar/form-data">
+        <form class="publish-form" method="post" id="publish-form" enctype="multipar/form-data">
+        <div class="row">
             <h3 class="center-align">活动策划表格</h3>
             <div class="input-field col s12 m12 l6">
               <input placeholder="请输入您的活动名称" type="text" class="validate" name="eventName" required>
@@ -20,7 +21,14 @@
               <label for="eventDate">活动时间</label>
             </div>
             <div class="input-field col s12 m6 l6">
-              <select name="eventHour">
+              <input type="text" name="eventAdmission" placeholder="$$/人">
+              <label for="eventMinute">活动费用</label>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="input-field col s12 m4 l4">
+              <select name="eventHour" class="selected-default">
                   <option value="" disabled>选择具体时间（小时）</option>
                   <option value="上午 1:00">1 AM</option>
                   <option value="上午 2:00">2 AM</option>
@@ -47,14 +55,9 @@
                   <option value="下午 11:00">11 PM</option>
                   <option value="下午 12:00">12 PM</option>
               </select>
-              <label for="eventHour">活动具体时间</label>
-              </div>
-            <div class="input-field col s12 m4 l4">
-              <input type="text" name="eventAdmission" placeholder="$$/人">
-              <label for="eventMinute">活动费用</label>
             </div>
             <div class="input-field col s12 m4 l4">
-              <select name="eventCapacity">
+              <select name="eventCapacity" class="selected-default">
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
                   <option value="3">3 人</option>
@@ -79,7 +82,7 @@
                 </select>
             </div>
             <div class="input-field col s12 m4 l4">
-              <select name="eventType">
+              <select name="eventType" class="selected-default">
                 <option value="">活动类型</option>
                 <option value="A">狼人杀</option>
                 <option value="B">三国杀</option>
@@ -96,6 +99,7 @@
             </div>
             <div class="col s4 m6 l8"></div>
             <button class="btn btn-large white-text light-blue accent-3 waves-effect col s4 m3 l2" type="submit">发布活动</button>
+        </div>
         </form>
   </section>
 

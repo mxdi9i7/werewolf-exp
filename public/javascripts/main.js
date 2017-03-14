@@ -58,7 +58,12 @@ $(document).ready(function(){
 		$('li.sensitive').addClass('disabled');
 	}
 
-
+	//determine if screen is smaller the select would be added a default browser style
+	if ($(window).width() < 1350) {
+		$('input.select-dropdown').hide();
+		$('.select-wrapper span.caret').hide();
+		$('select.initialized').addClass('browser-default');
+	}
 		
 	
 

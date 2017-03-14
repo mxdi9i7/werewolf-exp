@@ -5,9 +5,13 @@
     <div class="section white">
 	    <div class="row container">
 	      <h2 class="header">比赛专区</h2>
-	      <p class="grey-text text-darken-3 lighten-3">在这里，你可以发起线下比赛，并记录每一场比赛的胜负以及每一位参赛者的积分</p>
+	      <p class="grey-text text-darken-3 lighten-3">
+	      		在这里，你可以发起线下比赛，并记录每一场比赛的胜负以及每一位参赛者的积分
+	      </p>
+	      <div class="tournament-content">
+	      	<img src="images/kingofwolf.jpg" class="tournament-banner responsive-img">
+	      </div>
 	    </div>
-	    {{>tournamentList}}
   	</div>
     <div class="parallax-container">
       <div class="parallax"><img src="images/tournamentbg2.jpg"></div>

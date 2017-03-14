@@ -431,4 +431,15 @@ img.profilePic {
 #body .parallax-container {
       height: 450px;
     }
-
+.tournament-content {
+  width: 100%;
+}
+.tournament-content img.banner {
+  width: 100%;
+}
+.QRSection img.small-pic {
+  width: 150px;
+}
+.no-margin {
+  margin: 0;
+}
