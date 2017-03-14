@@ -1,13 +1,11 @@
 {{>header}}
 	<div class="parallax-container">
-      <div class="parallax"><img src="images/tournamentbg1.jpg"></div>
+      <div class="parallax"><img src="images/tournamentbg3.png"></div>
+      <h1 class="parallax-header">比赛专区</h1>
     </div>
     <div class="section white">
 	    <div class="row container">
-	      <h2 class="header">比赛专区</h2>
-	      <p class="grey-text text-darken-3 lighten-3">
-	      		在这里，你可以发起线下比赛，并记录每一场比赛的胜负以及每一位参赛者的积分
-	      </p>
+	      <h2 class="header">纽约首届狼王杯冠军赛</h2>
 	      <div class="tournament-content">
 	      	<img src="images/kingofwolf.jpg" class="tournament-banner responsive-img">
 	      </div>
@@ -15,5 +13,22 @@
   	</div>
     <div class="parallax-container">
       <div class="parallax"><img src="images/tournamentbg2.jpg"></div>
+      <h1 class="parallax-header">比赛规则</h1>
     </div>
+    <div class="section white">
+	    <div class="row container">
+	      <h2 class="header">即将上线</h2>
+	      
+	    </div>
+  	</div>
+  	<div class="parallax-container">
+      <div class="parallax"><img src="images/tournamentbg1.jpg"></div>
+      <h1 class="parallax-header">赛程信息</h1>
+    </div>
+    <div class="section white">
+	    <div class="row container">
+	      <h2 class="header">即将上线</h2>
+	      
+	    </div>
+  	</div>
 {{>footer}}

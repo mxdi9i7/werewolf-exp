@@ -402,12 +402,20 @@ img.profilePic {
 .login h4.title {
   color: #2B2D42;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .main-content.row {
       margin: 0;
     }
     div.event-section {
       padding: 50px 0;
+    }
+    #body h1.parallax-header {
+      font-size: 3rem;
+    }
+}
+@media only screen and (max-width: 980px) {
+    h1.parallax-header {
+      font-size: 5.5rem;
     }
 }
 .ranking h3 {
@@ -443,3 +451,35 @@ img.profilePic {
 .no-margin {
   margin: 0;
 }
+.parallax-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  top: 30%;
+  font-size: 8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
