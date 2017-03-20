@@ -35,6 +35,7 @@ router
 		})
   .post('/publish', loginRequired, function (req, res) {
     var fileName = 'images/' + req.session.filePath;
+    var defaultFileName = 'images/tournamentbg3.png'
     var weekday = new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
     var week = weekday[new Date(req.body.eventDate).getDay()];
     var time = req.body.eventDate + " " + week + " " + req.body.eventHour;
@@ -50,9 +51,9 @@ router
         participants: req.user.nickname,
         currentFill: 1,
         participantsID: req.user.id,
-        filePath: fileName,
+        filePath: req.session.filePath ? filename : defaultFileName,
         host_profile: req.user.profilePic,
-        admission: req.body.eventAdmission
+        admission: req.body.eventAdmission ? req.body.eventAdmission : '免费', 
       }
       db('events')
         .insert(newEvent)
@@ -65,14 +66,13 @@ router
             db('events')
             var parsedRSVP = ',' + newEvent.id;
             var updatedRSVP = user.rsvp + parsedRSVP;
-            var parsedRSVPEventName = ',' + newEvent.title;
-            var updatedRSVPEventName = user.rsvpEventName + parsedRSVPEventName;
+            // var parsedRSVPEventName = ',' + newEvent.title;
+            // var updatedRSVPEventName = user.rsvpEventName + parsedRSVPEventName;
             db('users')
             .where('id', req.user.id)
             .first()
             .update({
-              rsvp: updatedRSVP,
-              rsvpEventName: updatedRSVPEventName
+              rsvp: updatedRSVP
             })
             .then(() => {
                 res.redirect('/event'+newEvent.id);

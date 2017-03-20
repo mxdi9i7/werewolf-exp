@@ -13,7 +13,7 @@
               <label for="event-host">发起人</label>
             </div>
             <div class="input-field col s12 m12 l12">
-              <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="autocomplete" onFocus="geolocate()" type="text" class="validate" name="eventAddress">
+              <input placeholder="这次活动的详细地址，包括门牌号，街道，郡／城市，州／省／道" id="autocomplete" onFocus="geolocate()" type="text" class="validate" name="eventAddress" required>
               <label for="event-address">活动地址</label>
             </div>
             <div class="input-field col s12 m6 l6">
@@ -28,7 +28,7 @@
         <div class="row">
             
             <div class="input-field col s12 m4 l4">
-              <select name="eventHour" class="selected-default">
+              <select name="eventHour" class="selected-default" required>
                   <option value="" disabled>选择具体时间（小时）</option>
                   <option value="上午 1:00">1 AM</option>
                   <option value="上午 2:00">2 AM</option>
@@ -57,7 +57,7 @@
               </select>
             </div>
             <div class="input-field col s12 m4 l4">
-              <select name="eventCapacity" class="selected-default">
+              <select name="eventCapacity" class="selected-default" required>
                   <option value="" disabled selected>选择活动人数</option>
                   <option value="2">2 人</option>
                   <option value="3">3 人</option>
@@ -82,7 +82,7 @@
                 </select>
             </div>
             <div class="input-field col s12 m4 l4">
-              <select name="eventType" class="selected-default">
+              <select name="eventType" class="selected-default" required>
                 <option value="">活动类型</option>
                 <option value="A">狼人杀</option>
                 <option value="B">三国杀</option>
