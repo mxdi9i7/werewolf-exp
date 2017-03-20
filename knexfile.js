@@ -4,6 +4,7 @@ module.exports = {
 	  	connection: {
 		    host: '127.0.0.1',
 		    user: 'root',
+		    password: 'jjnn123',
 		    database: 'test',
   		}
   	},
@@ -11,6 +12,7 @@ module.exports = {
 	  	client: 'mysql',
 	  	connection: {
 		    host: '127.0.0.1',
+		    password: 'jjnn123',
 		    user: 'root',
 		    database: 'test',
 	  	}
