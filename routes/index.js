@@ -36,6 +36,7 @@ router
 				.orderBy('events.id', 'desc')
 				.then((events) => {
 					db('users')
+					.limit(10)
 					.orderBy('users.clickCount', 'desc')
 					.then((users)=> {
 						res.render('index', {
@@ -66,6 +67,7 @@ router
 			.orderBy('events.id', 'desc')
 			.then((events) => {
 				db('users')
+				.limit(10)
 				.orderBy('users.clickCount', 'desc')
 				.then((users) => {
 					res.render('index', {

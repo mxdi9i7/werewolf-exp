@@ -1,5 +1,5 @@
 
-	  			<h3>玩家排行榜</h3>
+	  			<h3 class="gamer-header">玩家排行榜</h3>
 	  			  <ul class="collection">
 	  			  	{{#users}}
 		  			  		<li class="collection-item avatar">
@@ -7,7 +7,15 @@
 						      	<a href="user{{id}}">
 						      		<span class="title">{{nickname}}</span>
 						      	</a>
-						      <p>人气值: {{clickCount}}</p>
+						      <p>人气值:<span class="clickCountP"> {{clickCount}}</span></p>
+						      <script type="text/javascript">
+						      		//Click count display different color
+									if (Number($('.clickCount').text()) > 100) {
+										$('.clickCount p').css('color', 'cornflowerblue')
+									}
+									console.log(Number($('.clickCountP').text()))
+									$('.clickCountP').css('color', 'red')
+						      </script>
 						    </li>
 					{{/users}}
 				  </ul>

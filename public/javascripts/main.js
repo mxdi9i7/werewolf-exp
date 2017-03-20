@@ -65,9 +65,6 @@ $(document).ready(function(){
 		$('select.initialized').addClass('browser-default');
 	}
 		
-	
-
-
 
 
 

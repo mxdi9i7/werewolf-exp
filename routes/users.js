@@ -30,7 +30,7 @@ function loginRequired(req, res, next) {
   }
   next()
 }
-var count = 1;
+
 ////////////Your own profile//////////////////
 router
 	.post('/profilePic', loginRequired, upload.single('profilePic'), (req, res, next)=> {
@@ -105,11 +105,9 @@ router
 				})		
 			})
 		})
-
 ////////////Other people's profile//////////////////
 	.get('/user:id', loginRequired, (req,res,next) => {
 		const { id } = req.params;
-		count += 18;
 		db('events')
 		.where('user_id', id)
 		.where('is_available', 1)
@@ -118,11 +116,10 @@ router
 			.where('id', id)
 			.first()
 			.then((user) => {
-				console.log(typeof user.profilePic)
 				db('users')
 				.where('id', id)
 				.update({
-					clickCount: count
+					clickCount: user.clickCount + 18
 				})
 				.then((user)=> {
 					var identity;
