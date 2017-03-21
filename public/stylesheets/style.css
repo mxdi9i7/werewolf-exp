@@ -442,8 +442,10 @@ img.profilePic {
 .tournament-content {
   width: 100%;
 }
-.tournament-content img.banner {
+.tournament-content .tournament-banner {
   width: 100%;
+  margin: 0 auto;
+  display: block;
 }
 .QRSection img.small-pic {
   width: 150px;
@@ -465,9 +467,21 @@ img.profilePic {
 button.verify.btn {
   display: inline;
 }
+.tour-strong-text {
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 10px;
+}
+blockquote {
+  font-size: 2rem;
+}
+.tournament-content p{
+  font-size: 1.5rem;
+}
 
-
-
+.rule-list li {
+  font-size: 1.5rem;
+}
 
 
 
