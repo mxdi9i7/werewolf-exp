@@ -66,8 +66,6 @@ router
             db('events')
             var parsedRSVP = ',' + newEvent.id;
             var updatedRSVP = user.rsvp + parsedRSVP;
-            // var parsedRSVPEventName = ',' + newEvent.title;
-            // var updatedRSVPEventName = user.rsvpEventName + parsedRSVPEventName;
             db('users')
             .where('id', req.user.id)
             .first()

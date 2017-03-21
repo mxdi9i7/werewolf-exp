@@ -39,6 +39,7 @@ router
 					.where("id", event_id)
 					.first()
 					.then((event) => {
+						var eventParticipantsList = event.participantsID.split(',');
 						res.render('event', {
 								event,
 								title: event.title,
@@ -51,12 +52,10 @@ router
 								},
 								authenticated: req.isAuthenticated(),
 								joined: function() {
-									var eventParticipantsList = event.participantsID.split(',');
-									for (i = 0; i <= eventParticipantsList.length; i ++) {
+									for (i = 0; i <= eventParticipantsList.length; i++) {
+										console.log(eventParticipantsList[i])
 										if (eventParticipantsList[i] == req.user.id) {											
 											return 'joined'
-										} else {
-											i++
 										}
 									}
 								},
@@ -103,15 +102,11 @@ router
 							.where('id', event_id)
 							.first()
 							.then((event) => {
-								console.log(event.title)
-								var parsedRSVPEventName = ',' + event.title;
-								var updatedRSVPEventName = user.rsvpEventName + parsedRSVPEventName;
 								db('users')
 								.where('id', req.user.id)
 								.first()
 								.update({
 									rsvp: updatedRSVP,
-									rsvpEventName: updatedRSVPEventName
 								})
 								.then(()=> {
 									res.redirect('event'+event_id)
