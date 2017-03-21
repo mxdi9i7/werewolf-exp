@@ -441,6 +441,7 @@ img.profilePic {
     }
 .tournament-content {
   width: 100%;
+  padding: 0 10%;
 }
 .tournament-content .tournament-banner {
   width: 100%;
