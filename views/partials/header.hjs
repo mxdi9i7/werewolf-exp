@@ -19,7 +19,7 @@
 	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
 	      <ul class="right hide-on-med-and-down">
 	        <li><a href="../" class="white-text">首页</a></li>
-	        <li><a href="/tournament" class="white-text">比赛专区<span class="new badge white" data-badge-caption="!">狼王争霸赛</span></a></li>
+	        <li><a href="/tournament" class="white-text">比赛专区<span class="new badge white black-text" data-badge-caption="!">狼王争霸赛</span></a></li>
 	        <li id="nickname_tag"><a href="../users" class="white-text"><img class="circle nav-prof" src="{{profilePic}}">{{currentUser}}</a></li>
 	        <li id="login_btn"><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
 			<li id="logout_btn"><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
