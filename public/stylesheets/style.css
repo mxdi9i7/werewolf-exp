@@ -469,19 +469,19 @@ button.verify.btn {
   display: inline;
 }
 .tour-strong-text {
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: bolder;
   padding: 10px;
 }
 blockquote {
-  font-size: 2rem;
+  font-size: 2em;
 }
 .tournament-content p{
-  font-size: 1.5rem;
+  font-size: 1.2em;
 }
 
 .rule-list li {
-  font-size: 1.5rem;
+  font-size: 1.2em;
 }
 
 
