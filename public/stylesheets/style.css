@@ -20,6 +20,7 @@ a {
 #body nav {
 	position: fixed;
 	opacity: 0.9;
+  top: 0;
 	z-index: 999;
 }
 nav .nav-wrapper ul li a {
@@ -483,7 +484,10 @@ blockquote {
 .rule-list li {
   font-size: 1.2em;
 }
-
+.games-section {
+  width: 100%;
+  padding:100px 10%;
+}
 
 
 

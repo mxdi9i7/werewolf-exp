@@ -16,6 +16,7 @@ var publish = require('./routes/publish');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var users = require('./routes/users');
+var games = require('./routes/games');
 var test = require('./routes/test');
 var tournament = require('./routes/tournament');
 var uploadSuccess = require('./routes/uploadSuccess');
@@ -68,6 +69,7 @@ app
 	.use(users)
 	.use(test)
 	.use(uploadSuccess)
+	.use(games)
 	// .get('/users', (req, res, next) => {
 	// 	db('users').then((users) => {
 	// 		res.send(users);
