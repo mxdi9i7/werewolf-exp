@@ -29,7 +29,6 @@ router
 		.where('id', gameId)
 		.first()
 		.then((game)=> {
-			console.log(game);
 			res.render('gamePage',{
 				partials: {
 					header: './partials/header',
@@ -41,6 +40,28 @@ router
 				profilePic: req.user.profilePic,
 				game,
 			})
+		})
+	})
+	.post('/addGamer', loginRequired, (req, res, next)=> {
+		var currentGame = req.body.gameId;
+		
+		db('gamersData')
+		.where('gameId', currentGame)
+		.then((gamers)=> {
+			var gamerSerial = gamers.length + 1
+			var newGamer = {
+				userId: req.body.gamerId,
+				gameId: currentGame,
+				gamePoints: 0,
+				gamerSerial: gamerSerial
+			}
+			db('gamersData')
+			.insert(newGamer)
+			.then((ids) => {
+	          newGamer.id = ids[0];
+	        }).then(()=> {
+	        	res.redirect('/game' + currentGame)
+	        })
 		})
 		
 	})
