@@ -488,7 +488,10 @@ blockquote {
   width: 100%;
   padding:100px 10%;
 }
-
+button.add-gamer.btn.btn-large {
+  margin: 0 auto;
+  display: block;
+}
 
 
 

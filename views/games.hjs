@@ -3,8 +3,8 @@
 	<section class="games-section">
 		<h1>排位赛列表</h1>
 				<div class="row">
+				{{#games}}
 					<div class="col s12 m6 l6">
-					{{#games}}
 						  <div class="example-2 card">
 						    <div class="wrapper">
 						      <div class="header">
@@ -24,16 +24,16 @@
 						      </div>
 						      <div class="data">
 						        <div class="content">
-						          <span class="author">Jane Doe</span>
-						          <h1 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h1>
-						          <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
-						          <a href="#" class="button">Read more</a>
+						          <span class="author"></span>
+						          <h1 class="title"><a href="#">{{title}}</a></h1>
+						          <p class="text">{{description}}</p>
+						          <a href="/game{{id}}" class="button">查看详情</a>
 						        </div>
 						      </div>
 						    </div>
-						  </div>
-					  {{/games}}
+						  </div>					
 					</div>
+				{{/games}}
 		</div>
 	</section>
 {{>footer}}

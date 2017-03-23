@@ -93,7 +93,7 @@ h1 {
 
 
 .example-2 .wrapper {
-  background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center/cover no-repeat;
+  background: url(../images/shortwolf.jpg) center/cover no-repeat;
 }
 .example-2 .wrapper:hover .menu-content span {
   -webkit-transform: translate(-50%, -10px);

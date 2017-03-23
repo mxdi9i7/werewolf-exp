@@ -23,10 +23,14 @@ function loginRequired(req, res, next) {
 
 /* GET home page. */
 router
-	.get('/games', loginRequired, (req, res, next) => {
+	.get('/game:gameId', loginRequired, (req, res, next) => {
+		const { gameId } = req.params;
 		db('games')
-		.then((games) => {
-			res.render('games',{
+		.where('id', gameId)
+		.first()
+		.then((game)=> {
+			console.log(game);
+			res.render('gamePage',{
 				partials: {
 					header: './partials/header',
 					footer: './partials/footer'
@@ -35,23 +39,10 @@ router
 				authenticated: req.isAuthenticated(),
 				currentUser: req.user.nickname,
 				profilePic: req.user.profilePic,
-				games,
+				game,
 			})
 		})
-	})
-	.get('/games:gameId', loginRequired, (req, res, next) => {
-		const { gameId } = req.params;
-		res.render('games',{
-			partials: {
-				header: './partials/header',
-				footer: './partials/footer'
-			},
-			nickname: req.user.nickname,
-			authenticated: req.isAuthenticated(),
-			currentUser: req.user.nickname,
-			profilePic: req.user.profilePic			
-
-		})
+		
 	})
 
 
