@@ -418,6 +418,9 @@ img.profilePic {
     h1.parallax-header {
       font-size: 5.5rem;
     }
+    #modal2 li.gamerList {
+      font-size: 13px;
+    }
 }
 .ranking h3 {
   font-size: 3em;
@@ -493,10 +496,16 @@ button.add-gamer.btn.btn-large {
   display: block;
 }
 
+.gameRecordInput ul select{
+  display: inline;
+}
 
-
-
-
+#modal2 li.gamerList {
+  font-size: 22px;
+  border-bottom: 1px solid #555;
+  position: relative;
+  top: 50px;
+}
 
 
 

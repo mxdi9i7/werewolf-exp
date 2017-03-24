@@ -33,20 +33,27 @@ router
 		.then((game)=> {
 			db('gamersData')
 			.where('gameId', gameId)
+			.orderBy('gamerSerial')
 			.then((gamers)=> {
-				res.render('gamePage',{
-					partials: {
-						header: './partials/header',
-						footer: './partials/footer'
-					},
-					nickname: req.user.nickname,
-					authenticated: req.isAuthenticated(),
-					currentUser: req.user.nickname,
-					profilePic: req.user.profilePic,
-					game,
-					gamers,
-					message: req.flash('msg3')
-				})
+				db('gamesData')
+					.where('gameId', gameId)
+					.then((gamesData)=> {
+						res.render('gamePage',{
+							partials: {
+								header: './partials/header',
+								footer: './partials/footer'
+							},
+							nickname: req.user.nickname,
+							authenticated: req.isAuthenticated(),
+							currentUser: req.user.nickname,
+							profilePic: req.user.profilePic,
+							game,
+							gamers,
+							gamesData,
+							message: req.flash('msg3')
+						})
+					})
+				
 			
 			})
 		})
@@ -120,7 +127,34 @@ router
 		        })
 			})
 		})
-
+		.post('/addRecord:gameId', loginRequired, (req, res, next) => {
+			const gameId = req.params.gameId;
+			
+			db('gamesData')
+				.where('gameId', gameId)
+				.then((gameSeries)=> {
+					var newGameData = {
+							gameId: gameId,
+							gameSerial: gameSeries.length + 1,
+							player1: req.body.winOrLose1,
+							player1Role: req.body.roles1,
+							player2: req.body.winOrLose2,
+							player2Role: req.body.roles2,
+							player3: req.body.winOrLose3,
+							player3Role: req.body.roles3,
+							player4: req.body.winOrLose4,
+							player4Role: req.body.roles4,
+						}
+					
+					db('gamesData')
+						.insert(newGameData)
+						.then((ids) => {
+							newGameData.id = ids[0]
+						}).then(()=> {
+							res.redirect('/game' + gameId)
+						})
+				})
+		})
 
 
 

@@ -3,7 +3,33 @@
 	<section class="games-section">
 		<h1>{{game.title}}</h1>
 		<div class="row">
-			<div class="col s12 m4 l4">
+			<div class="col s12 m12 l12">
+		      <table class="responsive-table bordered striped">
+		        <thead>
+		          <tr>
+
+		          	  <th>局数/玩家</th>
+		          	{{#gamers}}
+		              <th>{{gamerNickname}}</th>
+		          	{{/gamers}}
+		          	
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		        	{{#gamesData}}
+		          <tr>
+		            <td>{{gameSerial}}</td>
+		            <td>{{player1}}</td>
+		            <td>{{player2}}</td>
+		            <td>{{player3}}</td>
+		          </tr>
+		          {{/gamesData}}
+		        </tbody>
+		      </table>
+			</div>
+			<button class="btn btn-large white black-text left" data-target="modal2">添加战绩</button>
+			<div class="col s12 m12 l12">
 							
 			  <ul class="collection">
 			  {{#gamers}}
@@ -30,36 +56,56 @@
 				  </form>
 			    </div>
 			  </div>
+			  <div id="modal2" class="modal bottom-sheet">
+			    <div class="modal-content">
+				  	<div class="s12 m12 l12 input-field">
+				  		<div class="row">
+				  			<h3>记录玩家的战绩</h3>
+				  			<ul>
+				  				<form method="post" action="/addRecord{{game.id}}">
+				  				{{#gamers}}
+				  					<div class="col s6 m6 l6">
+				  						<li class="gamerList">
+					  						{{gamerSerial}}. {{gamerNickname}}
+					  					</li>
+				  					</div>
+				  					<div class="col s6 m6 l6">
+							  			<ul class="gameRecordInput">
+							  					<div class="row">
+							  						<div class="col s6 m6 l6">
+							  							<select name="roles{{gamerSerial}}">
+							  								<option selected>身份牌</option>
+								  							<option value="1">村民</option>
+								  							<option value="2">狼人</option>
+								  							<option value="3">女巫</option>
+								  							<option value="4">猎人</option>
+								  							<option value="5">守卫</option>
+								  							<option value="6">白痴</option>
+								  							<option value="7">预言家</option>
+								  							<option value="8">丘比特</option>
+								  						</select>
+							  						</div>
+							  						<div class="col s6 m6 l6">
+							  							<select name="winOrLose{{gamerSerial}}">
+							  								<option selected>比赛结果</option>
+								  							<option value="1">胜利</option>
+								  							<option value="0">失败</option>
+								  						</select>
+							  						</div>
+							  					</div>
+							  			</ul>
+							  		</div>
+				  				{{/gamers}}
+				  					<button type="submit" class="btn btn-large black white-text add-gamer">添加战绩</button>
+				  				</form>
+				  			</ul>
+				  		</div>
+				  		<input type="text" name="gamerId" id="gamerId">
+				  		<input type="text" name="gameId" hidden value="{{game.id}}">
+				  	</div>
+			    </div>
+			  </div>
 
-			</div>
-			<div class="col s12 m8 l8">
-		      <table>
-		        <thead>
-		          <tr>
-		              <th>Name</th>
-		              <th>Item Name</th>
-		              <th>Item Price</th>
-		          </tr>
-		        </thead>
-
-		        <tbody>
-		          <tr>
-		            <td>Alvin</td>
-		            <td>Eclair</td>
-		            <td>$0.87</td>
-		          </tr>
-		          <tr>
-		            <td>Alan</td>
-		            <td>Jellybean</td>
-		            <td>$3.76</td>
-		          </tr>
-		          <tr>
-		            <td>Jonathan</td>
-		            <td>Lollipop</td>
-		            <td>$7.00</td>
-		          </tr>
-		        </tbody>
-		      </table>
 			</div>
 		</div>
 		</div>
