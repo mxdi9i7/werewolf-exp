@@ -21,6 +21,8 @@ function loginRequired(req, res, next) {
   next()
 }
 
+
+
 /* GET home page. */
 router
 	.get('/game:gameId', loginRequired, (req, res, next) => {
@@ -29,43 +31,95 @@ router
 		.where('id', gameId)
 		.first()
 		.then((game)=> {
-			res.render('gamePage',{
-				partials: {
-					header: './partials/header',
-					footer: './partials/footer'
-				},
-				nickname: req.user.nickname,
-				authenticated: req.isAuthenticated(),
-				currentUser: req.user.nickname,
-				profilePic: req.user.profilePic,
-				game,
+			db('gamersData')
+			.where('gameId', gameId)
+			.then((gamers)=> {
+				res.render('gamePage',{
+					partials: {
+						header: './partials/header',
+						footer: './partials/footer'
+					},
+					nickname: req.user.nickname,
+					authenticated: req.isAuthenticated(),
+					currentUser: req.user.nickname,
+					profilePic: req.user.profilePic,
+					game,
+					gamers,
+					message: req.flash('msg3')
+				})
+			
 			})
 		})
 	})
-	.post('/addGamer', loginRequired, (req, res, next)=> {
-		var currentGame = req.body.gameId;
-		
+	.post('/game:gameId', loginRequired, (req, res, next)=> {
+		const gameId = req.params.gameId;
 		db('gamersData')
-		.where('gameId', currentGame)
+		.where('gameId', gameId)
 		.then((gamers)=> {
-			var gamerSerial = gamers.length + 1
-			var newGamer = {
-				userId: req.body.gamerId,
-				gameId: currentGame,
-				gamePoints: 0,
-				gamerSerial: gamerSerial
-			}
-			db('gamersData')
-			.insert(newGamer)
-			.then((ids) => {
-	          newGamer.id = ids[0];
-	        }).then(()=> {
-	        	res.redirect('/game' + currentGame)
-	        })
+			db('users')
+				.where('id', req.body.gamerId)
+				.first()
+				.then((user)=> {
+					db('gamersData')
+						.where('userId', req.body.gamerId)
+						.then((duplicatedGamers)=> {
+							var gamerSerial = gamers.length + 1;
+							if (user && duplicatedGamers.length == 0) {
+								var newGamer = {
+										userId: req.body.gamerId,
+										gameId: gameId,
+										gamePoints: 0,
+										gamerSerial: gamerSerial,
+										gamerNickname: user.nickname,
+										gamerProfile: user.profilePic,
+										gamerGender: user.gender
+								}
+								db('gamersData')
+								.insert(newGamer)
+								.then((ids) => {
+							        newGamer.id = ids[0];
+							    }).then(()=> {
+							        res.redirect('/game' + gameId)
+								})
+							} else if (duplicatedGamers.length !== 0){
+								db('gamersData')
+								.where('gameId', gameId)
+								.then((gamers)=> {
+									res.render('gamePage',{
+										partials: {
+											header: './partials/header',
+											footer: './partials/footer'
+										},
+										nickname: req.user.nickname,
+										authenticated: req.isAuthenticated(),
+										currentUser: req.user.nickname,
+										profilePic: req.user.profilePic,
+										gamers,
+										message: '用户名重复！!'
+									})
+								})
+							}else {
+								db('gamersData')
+								.where('gameId', gameId)
+								.then((gamers)=> {
+									res.render('gamePage',{
+										partials: {
+											header: './partials/header',
+											footer: './partials/footer'
+										},
+										nickname: req.user.nickname,
+										authenticated: req.isAuthenticated(),
+										currentUser: req.user.nickname,
+										profilePic: req.user.profilePic,
+										gamers,
+										message: '用户不存在!'
+									})
+								})
+							}
+						})
+		        })
+			})
 		})
-		
-	})
-
 
 
 

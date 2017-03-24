@@ -6,20 +6,21 @@
 			<div class="col s12 m4 l4">
 							
 			  <ul class="collection">
+			  {{#gamers}}
 			    <li class="collection-item avatar">
-			      <img src="images/yuna.jpg" alt="" class="circle">
-			      <span class="title">Title</span>
-			      <p>First Line <br>
-			         Second Line
+			      <img src="{{gamerProfile}}" alt="" class="circle">
+			      <span class="title">{{gamerNickname}}</span>
+			      <p>{{gamerGender}}<br>
 			      </p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+			      <a href="#!" class="secondary-content"><i class="material-icons">{{gamerPoint}}</i></a>
 			    </li>
+			   {{/gamers}}
 			  </ul>
 			  <button class="btn btn-large white black-text left" data-target="modal1">添加玩家</button>
 			  
 			  <div id="modal1" class="modal bottom-sheet">
 			    <div class="modal-content">
-			      <form method="post" class="row" action="/addGamer">
+			      <form method="post" class="row">
 				  	<div class="offset-m4 offset-l4 s12 m4 l4 input-field">
 				  		<label for="gamerId">输入玩家的ID：</label>
 				  		<input type="text" name="gamerId" id="gamerId">
@@ -64,3 +65,6 @@
 		</div>
 	</section>
 {{>footer}}
+<script type="text/javascript">
+		      	  Materialize.toast('{{message}}', 4000) // 4000 is the duration of the toast
+	</script>
