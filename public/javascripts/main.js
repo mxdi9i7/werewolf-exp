@@ -91,6 +91,8 @@ $(document).ready(function(){
 	$('.500').text('情侣')
 	$('.1').text('胜利')
 	$('.-1').text('失败')
+	$('.50').text('法官')
+	$('.2').text('法官')
 })
 
 	//change gender text to chinese
@@ -99,7 +101,12 @@ $(document).ready(function(){
 		$('.female').text('小姐姐')
 
 
+	//game change data authorizing
 
+	if ($('#is_host').val() == 'is_not_authorized') {
+		$('.trigger-record').hide()
+		$('.trigger-gamer').hide()
+	}
 
 
 

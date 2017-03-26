@@ -39,10 +39,16 @@ router
 					.where('gameId', gameId)
 					.then((gamesData)=> {
 						var playerResultList = [];
+						var is_authorized;
 						for (i = 1; i <= game.totalPlayers; i++) {
 								playerResultList.push("<td><span class='playerRole'>{{player" + i + "Role}}</span> / <span class='playerGame'>{{player" + i + "}}</span></td>")
 						}
-
+						if (req.user.id == game.host) {
+							is_authorized = 'is_authorized'
+						} else {
+							is_authorized = 'is_not_authorized'
+						}
+						console.log(is_authorized)
 						res.render('gamePage',{
 							partials: {
 								header: './partials/header',
@@ -56,8 +62,9 @@ router
 							gamers,
 							gamesData,
 							message: req.session.message,
-							historyList: playerResultList
-						})
+							historyList: playerResultList,
+							is_host: is_authorized
+							})
 					})
 			})
 		})

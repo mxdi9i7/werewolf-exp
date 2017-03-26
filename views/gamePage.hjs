@@ -81,9 +81,10 @@
 		        </tbody>
 		      </table>
 			</div>
-			<button class="btn btn-large white black-text left" data-target="modal2">添加战绩</button>
+			<input id="is_host" value="{{is_host}}" hidden>
+			<button class="btn btn-large white black-text left trigger-record" data-target="modal2">添加战绩</button>
 			<div class="col s12 m12 l12">
-							
+			<h2>排行榜</h2>
 			  <ul class="collection">
 			  {{#gamers}}
 			    <li class="collection-item avatar">
@@ -98,7 +99,7 @@
 			    </li>
 			   {{/gamers}}
 			  </ul>
-			  <button class="btn btn-large white black-text left" data-target="modal1">添加玩家</button>
+			  <button class="btn btn-large white black-text left trigger-gamer" data-target="modal1">添加玩家</button>
 			  
 			  <div id="modal1" class="modal bottom-sheet">
 			    <div class="modal-content">
@@ -140,7 +141,7 @@
 								  							<option value="251">预言家</option>
 								  							<option value="300">丘比特</option>
 								  							<option value="500">情侣</option>
-								  							<option value="100">法官</option>
+								  							<option value="50">法官</option>
 								  						</select>
 							  						</div>
 							  						<div class="col s6 m6 l6">
@@ -148,7 +149,7 @@
 							  								<option selected value="0">比赛结果</option>
 								  							<option value="1">胜利</option>
 								  							<option value="-1">失败</option>
-								  							<option value="1">法官</option>
+								  							<option value="2">法官</option>
 								  						</select>
 							  						</div>
 							  					</div>
