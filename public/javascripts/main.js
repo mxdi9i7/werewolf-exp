@@ -92,3 +92,17 @@ $(document).ready(function(){
 	$('.1').text('胜利')
 	$('.-1').text('失败')
 })
+
+	//change gender text to chinese
+		$('.male').text('小哥哥')
+		$('.trans').text('第三方阵营')
+		$('.female').text('小姐姐')
+
+
+
+
+
+
+
+
+

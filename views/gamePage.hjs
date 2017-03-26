@@ -18,11 +18,13 @@
 
 		        <tbody>
 		        	{{#gamesData}}
-		          <tr>
+		          <tr class="gameRecords">
 		            <td>{{gameSerial}}</td>
-		            <td>{{player1}}</td>
-		            <td>{{player2}}</td>
-		            <td>{{player3}}</td>
+		            <td><span class="{{player1Role}}">{{player1Role}}</span>/<span class="{{player1}}">{{player1}}</span></td>
+		            <td><span class="{{player2Role}}">{{player2Role}}</span>/<span class="{{player2}}">{{player2}}</span></td>
+		            <td><span class="{{player3Role}}">{{player3Role}}</span>/<span class="{{player3}}">{{player3}}</span></td>
+		            <td><span class="{{player1Role}}">{{player4Role}}</span>/<span class="{{player1}}">{{player4}}</span></td>
+		            <td><span class="{{player1Role}}">{{player5Role}}</span>/<span class="{{player1}}">{{player5}}</span></td>
 		          </tr>
 		          {{/gamesData}}
 		        </tbody>
@@ -36,9 +38,12 @@
 			    <li class="collection-item avatar">
 			      <img src="{{gamerProfile}}" alt="" class="circle">
 			      <span class="title">{{gamerNickname}}</span>
-			      <p>{{gamerGender}}<br>
+			      <p class="{{gamerGender}}">{{gamerGender}}<br>
+			      <p>胜率： {{KDA}}</p>
+			      <p>{{win}} 胜 | {{lose}} 败</p>
+			      <p>{{numberGames}} 场游戏</p>
 			      </p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">{{gamerPoint}}</i></a>
+			      <a href="#!" class="secondary-content"><i class="material-icons">{{gamePoints}}</i></a>
 			    </li>
 			   {{/gamers}}
 			  </ul>
@@ -74,22 +79,23 @@
 							  					<div class="row">
 							  						<div class="col s6 m6 l6">
 							  							<select name="roles{{gamerSerial}}">
-							  								<option selected>身份牌</option>
-								  							<option value="1">村民</option>
-								  							<option value="2">狼人</option>
-								  							<option value="3">女巫</option>
-								  							<option value="4">猎人</option>
-								  							<option value="5">守卫</option>
-								  							<option value="6">白痴</option>
-								  							<option value="7">预言家</option>
-								  							<option value="8">丘比特</option>
+							  								<option selected value="0">身份牌</option>
+								  							<option value="150">村民</option>
+								  							<option value="250">狼人</option>
+								  							<option value="249">女巫</option>
+								  							<option value="248">猎人</option>
+								  							<option value="247">守卫</option>
+								  							<option value="246">白痴</option>
+								  							<option value="251">预言家</option>
+								  							<option value="300">丘比特</option>
+								  							<option value="500">情侣</option>
 								  						</select>
 							  						</div>
 							  						<div class="col s6 m6 l6">
 							  							<select name="winOrLose{{gamerSerial}}">
-							  								<option selected>比赛结果</option>
+							  								<option selected value="0">比赛结果</option>
 								  							<option value="1">胜利</option>
-								  							<option value="0">失败</option>
+								  							<option value="-1">失败</option>
 								  						</select>
 							  						</div>
 							  					</div>
