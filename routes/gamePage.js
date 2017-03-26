@@ -320,8 +320,520 @@ router
 																												numberGames: totalGames,
 																												KDA: Math.floor(updatedWin / totalGames * 100) + "%",
 																											}).then(()=>{
-																												req.session.message = '添加成功'
-																												res.redirect('/game' + gameId)
+																												db('gamersData')
+																													.where('gameId', gameId)
+																													.where('gamerSerial', 5)
+																													.first()
+																													.then((gamer5)=> {
+																														if (!gamer5) {
+																															console.log('No gamer found')
+																														} else {
+																															db('gamesData')
+																																.where('gameId', gameId)
+																																.where('gameSerial', serialOfGame)
+																																.first()
+																																.then((currentGame)=> {
+																																	var updatedPoint = Number(gamer5.gamePoints) + Number(currentGame.player5Point);
+																																	var updatedWin = Number(gamer5.win) + ifWin(currentGame.player5);
+																																	var updatedLose = Number(gamer5.lose) + ifLose(currentGame.player5);
+																																	var totalGames = updatedWin + updatedLose;
+																																	db('gamersData')
+																																	.where('gameId', gameId)
+																																	.where('gamerSerial', 5)
+																																	.first()
+																																	.update({
+																																		gamePoints: updatedPoint,
+																																		win: updatedWin,
+																																		lose: updatedLose,
+																																		numberGames: totalGames,
+																																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																	}).then(()=>{
+																																		db('gamersData')
+																																			.where('gameId', gameId)
+																																			.where('gamerSerial', 6)
+																																			.first()
+																																			.then((gamer6)=> {
+																																				if (!gamer6) {
+																																					console.log('No gamer found')
+																																				} else {
+																																					db('gamesData')
+																																						.where('gameId', gameId)
+																																						.where('gameSerial', serialOfGame)
+																																						.first()
+																																						.then((currentGame)=> {
+																																							var updatedPoint = Number(gamer6.gamePoints) + Number(currentGame.player6Point);
+																																							var updatedWin = Number(gamer6.win) + ifWin(currentGame.player6);
+																																							var updatedLose = Number(gamer6.lose) + ifLose(currentGame.player6);
+																																							var totalGames = updatedWin + updatedLose;
+																																							db('gamersData')
+																																							.where('gameId', gameId)
+																																							.where('gamerSerial', 6)
+																																							.first()
+																																							.update({
+																																								gamePoints: updatedPoint,
+																																								win: updatedWin,
+																																								lose: updatedLose,
+																																								numberGames: totalGames,
+																																								KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																							}).then(()=>{
+																																								db('gamersData')
+																																								.where('gameId', gameId)
+																																								.where('gamerSerial', 7)
+																																								.first()
+																																								.then((gamer7)=> {
+																																									if (!gamer7) {
+																																										console.log('No gamer found')
+																																									} else {
+																																										db('gamesData')
+																																											.where('gameId', gameId)
+																																											.where('gameSerial', serialOfGame)
+																																											.first()
+																																											.then((currentGame)=> {
+																																												var updatedPoint = Number(gamer7.gamePoints) + Number(currentGame.player7Point);
+																																												var updatedWin = Number(gamer7.win) + ifWin(currentGame.player7);
+																																												var updatedLose = Number(gamer7.lose) + ifLose(currentGame.player7);
+																																												var totalGames = updatedWin + updatedLose;
+																																												db('gamersData')
+																																												.where('gameId', gameId)
+																																												.where('gamerSerial', 7)
+																																												.first()
+																																												.update({
+																																													gamePoints: updatedPoint,
+																																													win: updatedWin,
+																																													lose: updatedLose,
+																																													numberGames: totalGames,
+																																													KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																												}).then(()=>{
+																																													db('gamersData')
+																																													.where('gameId', gameId)
+																																													.where('gamerSerial', 8)
+																																													.first()
+																																													.then((gamer8)=> {
+																																														if (!gamer8) {
+																																															console.log('No gamer found')
+																																														} else {
+																																															db('gamesData')
+																																																.where('gameId', gameId)
+																																																.where('gameSerial', serialOfGame)
+																																																.first()
+																																																.then((currentGame)=> {
+																																																	var updatedPoint = Number(gamer8.gamePoints) + Number(currentGame.player8Point);
+																																																	var updatedWin = Number(gamer8.win) + ifWin(currentGame.player8);
+																																																	var updatedLose = Number(gamer8.lose) + ifLose(currentGame.player8);
+																																																	var totalGames = updatedWin + updatedLose;
+																																																	db('gamersData')
+																																																	.where('gameId', gameId)
+																																																	.where('gamerSerial', 8)
+																																																	.first()
+																																																	.update({
+																																																		gamePoints: updatedPoint,
+																																																		win: updatedWin,
+																																																		lose: updatedLose,
+																																																		numberGames: totalGames,
+																																																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																																	}).then(()=>{
+																																																		db('gamersData')
+																																																		.where('gameId', gameId)
+																																																		.where('gamerSerial', 9)
+																																																		.first()
+																																																		.then((gamer9)=> {
+																																																			if (!gamer9) {
+																																																				console.log('No gamer found')
+																																																			} else {
+																																																				db('gamesData')
+																																																					.where('gameId', gameId)
+																																																					.where('gameSerial', serialOfGame)
+																																																					.first()
+																																																					.then((currentGame)=> {
+																																																						var updatedPoint = Number(gamer9.gamePoints) + Number(currentGame.player9Point);
+																																																						var updatedWin = Number(gamer9.win) + ifWin(currentGame.player9);
+																																																						var updatedLose = Number(gamer9.lose) + ifLose(currentGame.player9);
+																																																						var totalGames = updatedWin + updatedLose;
+																																																						db('gamersData')
+																																																						.where('gameId', gameId)
+																																																						.where('gamerSerial', 9)
+																																																						.first()
+																																																						.update({
+																																																							gamePoints: updatedPoint,
+																																																							win: updatedWin,
+																																																							lose: updatedLose,
+																																																							numberGames: totalGames,
+																																																							KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																																						}).then(()=>{
+																																																							db('gamersData')
+																																																								.where('gameId', gameId)
+																																																								.where('gamerSerial', 10)
+																																																								.first()
+																																																								.then((gamer10)=> {
+																																																									if (!gamer10) {
+																																																										console.log('No gamer found')
+																																																									} else {
+																																																										db('gamesData')
+																																																											.where('gameId', gameId)
+																																																											.where('gameSerial', serialOfGame)
+																																																											.first()
+																																																											.then((currentGame)=> {
+																																																												var updatedPoint = Number(gamer10.gamePoints) + Number(currentGame.player10Point);
+																																																												var updatedWin = Number(gamer10.win) + ifWin(currentGame.player10);
+																																																												var updatedLose = Number(gamer10.lose) + ifLose(currentGame.player10);
+																																																												var totalGames = updatedWin + updatedLose;
+																																																												db('gamersData')
+																																																												.where('gameId', gameId)
+																																																												.where('gamerSerial', 10)
+																																																												.first()
+																																																												.update({
+																																																													gamePoints: updatedPoint,
+																																																													win: updatedWin,
+																																																													lose: updatedLose,
+																																																													numberGames: totalGames,
+																																																													KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																																												}).then(()=>{
+																																																													db('gamersData')
+																																																													.where('gameId', gameId)
+																																																													.where('gamerSerial', 11)
+																																																													.first()
+																																																													.then((gamer11)=> {
+																																																														if (!gamer11) {
+																																																															console.log('No gamer found')
+																																																														} else {
+																																																															db('gamesData')
+																																																																.where('gameId', gameId)
+																																																																.where('gameSerial', serialOfGame)
+																																																																.first()
+																																																																.then((currentGame)=> {
+																																																																	var updatedPoint = Number(gamer11.gamePoints) + Number(currentGame.player11Point);
+																																																																	var updatedWin = Number(gamer11.win) + ifWin(currentGame.player11);
+																																																																	var updatedLose = Number(gamer11.lose) + ifLose(currentGame.player11);
+																																																																	var totalGames = updatedWin + updatedLose;
+																																																																	db('gamersData')
+																																																																	.where('gameId', gameId)
+																																																																	.where('gamerSerial', 11)
+																																																																	.first()
+																																																																	.update({
+																																																																		gamePoints: updatedPoint,
+																																																																		win: updatedWin,
+																																																																		lose: updatedLose,
+																																																																		numberGames: totalGames,
+																																																																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																																																																	}).then(()=>{
+																																																																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 12)
+													.first()
+													.then((gamer12)=> {
+														if (!gamer12) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer12.gamePoints) + Number(currentGame.player12Point);
+																	var updatedWin = Number(gamer12.win) + ifWin(currentGame.player12);
+																	var updatedLose = Number(gamer12.lose) + ifLose(currentGame.player12);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 12)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 13)
+													.first()
+													.then((gamer13)=> {
+														if (!gamer13) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer13.gamePoints) + Number(currentGame.player13Point);
+																	var updatedWin = Number(gamer13.win) + ifWin(currentGame.player13);
+																	var updatedLose = Number(gamer13.lose) + ifLose(currentGame.player13);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 13)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 14)
+													.first()
+													.then((gamer14)=> {
+														if (!gamer14) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer14.gamePoints) + Number(currentGame.player14Point);
+																	var updatedWin = Number(gamer14.win) + ifWin(currentGame.player14);
+																	var updatedLose = Number(gamer14.lose) + ifLose(currentGame.player14);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 14)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 15)
+													.first()
+													.then((gamer15)=> {
+														if (!gamer15) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer15.gamePoints) + Number(currentGame.player15Point);
+																	var updatedWin = Number(gamer15.win) + ifWin(currentGame.player15);
+																	var updatedLose = Number(gamer15.lose) + ifLose(currentGame.player15);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 15)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 16)
+													.first()
+													.then((gamer16)=> {
+														if (!gamer16) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer16.gamePoints) + Number(currentGame.player16Point);
+																	var updatedWin = Number(gamer16.win) + ifWin(currentGame.player16);
+																	var updatedLose = Number(gamer16.lose) + ifLose(currentGame.player16);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 16)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 17)
+													.first()
+													.then((gamer17)=> {
+														if (!gamer17) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer17.gamePoints) + Number(currentGame.player17Point);
+																	var updatedWin = Number(gamer17.win) + ifWin(currentGame.player17);
+																	var updatedLose = Number(gamer17.lose) + ifLose(currentGame.player17);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 17)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 18)
+													.first()
+													.then((gamer18)=> {
+														if (!gamer18) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer18.gamePoints) + Number(currentGame.player18Point);
+																	var updatedWin = Number(gamer18.win) + ifWin(currentGame.player18);
+																	var updatedLose = Number(gamer18.lose) + ifLose(currentGame.player18);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 18)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 19)
+													.first()
+													.then((gamer19)=> {
+														if (!gamer19) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer19.gamePoints) + Number(currentGame.player19Point);
+																	var updatedWin = Number(gamer19.win) + ifWin(currentGame.player19);
+																	var updatedLose = Number(gamer19.lose) + ifLose(currentGame.player19);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 19)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		db('gamersData')
+													.where('gameId', gameId)
+													.where('gamerSerial', 20)
+													.first()
+													.then((gamer20)=> {
+														if (!gamer20) {
+															console.log('No gamer found')
+														} else {
+															db('gamesData')
+																.where('gameId', gameId)
+																.where('gameSerial', serialOfGame)
+																.first()
+																.then((currentGame)=> {
+																	var updatedPoint = Number(gamer20.gamePoints) + Number(currentGame.player20Point);
+																	var updatedWin = Number(gamer20.win) + ifWin(currentGame.player20);
+																	var updatedLose = Number(gamer20.lose) + ifLose(currentGame.player20);
+																	var totalGames = updatedWin + updatedLose;
+																	db('gamersData')
+																	.where('gameId', gameId)
+																	.where('gamerSerial', 20)
+																	.first()
+																	.update({
+																		gamePoints: updatedPoint,
+																		win: updatedWin,
+																		lose: updatedLose,
+																		numberGames: totalGames,
+																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+																	}).then(()=>{
+																		req.session.message = '添加成功'
+																		res.redirect('/game' + gameId)
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																	})
+																})
+														}
+													})
+																																																																	})
+																																																																})
+																																																														}
+																																																													})
+																																																												})
+																																																											})
+																																																									}
+																																																								})
+																																																						})
+																																																					})
+																																																			}
+																																																		})
+																																																	})
+																																																})
+																																														}
+																																													})
+																																												})
+																																											})
+																																									}
+																																								})
+																																							})
+																																						})
+																																				}
+																																			})
+																																	})
+																																})
+																														}
+																													})
 																											})
 																										})
 																								}
