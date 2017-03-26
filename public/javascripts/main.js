@@ -79,7 +79,16 @@ $(document).ready(function(){
 		$('select.initialized').addClass('browser-default');
 	}
 		
-
-
-
+	//table item generation for game records
+	$('.150').text('村民')
+	$('.250').text('狼人')
+	$('.249').text('女巫')
+	$('.248').text('猎人')
+	$('.247').text('守卫')
+	$('.246').text('白痴')
+	$('.251').text('预言家')
+	$('.300').text('丘比特')
+	$('.500').text('情侣')
+	$('.1').text('胜利')
+	$('.-1').text('失败')
 })
