@@ -326,7 +326,7 @@ router
 																													.first()
 																													.then((gamer5)=> {
 																														if (!gamer5) {
-																															console.log('No gamer found')
+																															res.redirect('/game' + gameId)
 																														} else {
 																															db('gamesData')
 																																.where('gameId', gameId)
@@ -354,7 +354,7 @@ router
 																																			.first()
 																																			.then((gamer6)=> {
 																																				if (!gamer6) {
-																																					console.log('No gamer found')
+																																					res.redirect('/game' + gameId)
 																																				} else {
 																																					db('gamesData')
 																																						.where('gameId', gameId)
@@ -382,7 +382,7 @@ router
 																																								.first()
 																																								.then((gamer7)=> {
 																																									if (!gamer7) {
-																																										console.log('No gamer found')
+																																										res.redirect('/game' + gameId)
 																																									} else {
 																																										db('gamesData')
 																																											.where('gameId', gameId)
@@ -410,7 +410,7 @@ router
 																																													.first()
 																																													.then((gamer8)=> {
 																																														if (!gamer8) {
-																																															console.log('No gamer found')
+																																															res.redirect('/game' + gameId)
 																																														} else {
 																																															db('gamesData')
 																																																.where('gameId', gameId)
@@ -438,7 +438,7 @@ router
 																																																		.first()
 																																																		.then((gamer9)=> {
 																																																			if (!gamer9) {
-																																																				console.log('No gamer found')
+																																																				res.redirect('/game' + gameId)
 																																																			} else {
 																																																				db('gamesData')
 																																																					.where('gameId', gameId)
@@ -466,7 +466,7 @@ router
 																																																								.first()
 																																																								.then((gamer10)=> {
 																																																									if (!gamer10) {
-																																																										console.log('No gamer found')
+																																																										res.redirect('/game' + gameId)
 																																																									} else {
 																																																										db('gamesData')
 																																																											.where('gameId', gameId)
@@ -494,7 +494,7 @@ router
 																																																													.first()
 																																																													.then((gamer11)=> {
 																																																														if (!gamer11) {
-																																																															console.log('No gamer found')
+																																																															res.redirect('/game' + gameId)
 																																																														} else {
 																																																															db('gamesData')
 																																																																.where('gameId', gameId)
@@ -522,7 +522,7 @@ router
 													.first()
 													.then((gamer12)=> {
 														if (!gamer12) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -550,7 +550,7 @@ router
 													.first()
 													.then((gamer13)=> {
 														if (!gamer13) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -578,7 +578,7 @@ router
 													.first()
 													.then((gamer14)=> {
 														if (!gamer14) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -606,7 +606,7 @@ router
 													.first()
 													.then((gamer15)=> {
 														if (!gamer15) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -634,7 +634,7 @@ router
 													.first()
 													.then((gamer16)=> {
 														if (!gamer16) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -662,7 +662,7 @@ router
 													.first()
 													.then((gamer17)=> {
 														if (!gamer17) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -690,7 +690,7 @@ router
 													.first()
 													.then((gamer18)=> {
 														if (!gamer18) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -718,7 +718,7 @@ router
 													.first()
 													.then((gamer19)=> {
 														if (!gamer19) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)
@@ -746,7 +746,7 @@ router
 													.first()
 													.then((gamer20)=> {
 														if (!gamer20) {
-															console.log('No gamer found')
+															res.redirect('/game' + gameId)
 														} else {
 															db('gamesData')
 																.where('gameId', gameId)

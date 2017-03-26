@@ -17,16 +17,67 @@
 		        </thead>
 
 		        <tbody>
-		        	{{#gamesData}}
-		          <tr class="gameRecords">
-		            <td>{{gameSerial}}</td>
-		            <td><span class="{{player1Role}}">{{player1Role}}</span>/<span class="{{player1}}">{{player1}}</span></td>
-		            <td><span class="{{player2Role}}">{{player2Role}}</span>/<span class="{{player2}}">{{player2}}</span></td>
-		            <td><span class="{{player3Role}}">{{player3Role}}</span>/<span class="{{player3}}">{{player3}}</span></td>
-		            <td><span class="{{player1Role}}">{{player4Role}}</span>/<span class="{{player1}}">{{player4}}</span></td>
-		            <td><span class="{{player1Role}}">{{player5Role}}</span>/<span class="{{player1}}">{{player5}}</span></td>
-		          </tr>
-		          {{/gamesData}}
+		        {{#gamesData}}
+			          <tr class="gameRecords">
+			            <td>{{gameSerial}}</td>
+			            <td><span class="{{player1Role}}">{{player1Role}}</span>/<span class="{{player1}}">{{player1}}</span></td>
+			            <td><span class="{{player2Role}}">{{player2Role}}</span>/<span class="{{player2}}">{{player2}}</span></td>
+			            <td><span class="{{player3Role}}">{{player3Role}}</span>/<span class="{{player3}}">{{player3}}</span></td>
+			            {{#player4}}
+			            <td><span class="{{player4Role}}">{{player4Role}}</span>/<span class="{{player4}}">{{player4}}</span></td>
+			            {{/player4}}
+			            {{#player5}}
+			            <td><span class="{{player5Role}}">{{player5Role}}</span>/<span class="{{player5}}">{{player5}}</span></td>
+			            {{/player5}}
+			            {{#player6}}
+			            <td><span class="{{player6Role}}">{{player6Role}}</span>/<span class="{{player6}}">{{player6}}</span></td>
+			            {{/player6}}
+
+			            {{#player7}}
+			            <td><span class="{{player7Role}}">{{player7Role}}</span>/<span class="{{player7}}">{{player7}}</span></td>
+			            {{/player7}}
+
+			            {{#player8}}
+						<td><span class="{{player8Role}}">{{player8Role}}</span>/<span class="{{player8}}">{{player8}}</span></td>
+						{{/player8}}
+						{{#player9}}
+						<td><span class="{{player9Role}}">{{player9Role}}</span>/<span class="{{player9}}">{{player9}}</span></td>
+						{{/player9}}
+						{{#player10}}
+						<td><span class="{{player10Role}}">{{player10Role}}</span>/<span class="{{player10}}">{{player10}}</span></td>
+						{{/player10}}
+						{{#player11}}
+						<td><span class="{{player11Role}}">{{player11Role}}</span>/<span class="{{player11}}">{{player11}}</span></td>
+						{{/player11}}
+						{{#player12}}
+						<td><span class="{{player12Role}}">{{player12Role}}</span>/<span class="{{player12}}">{{player12}}</span></td>
+						{{/player12}}
+						{{#player13}}
+						<td><span class="{{player13Role}}">{{player13Role}}</span>/<span class="{{player13}}">{{player13}}</span></td>
+						{{/player13}}
+						{{#player14}}
+						<td><span class="{{player14Role}}">{{player14Role}}</span>/<span class="{{player14}}">{{player14}}</span></td>
+						{{/player14}}
+						{{#player15}}
+						<td><span class="{{player15Role}}">{{player15Role}}</span>/<span class="{{player15}}">{{player15}}</span></td>
+						{{/player15}}
+						{{#player16}}
+						<td><span class="{{player16Role}}">{{player16Role}}</span>/<span class="{{player16}}">{{player16}}</span></td>
+						{{/player16}}
+						{{#player17}}
+						<td><span class="{{player17Role}}">{{player17Role}}</span>/<span class="{{player17}}">{{player17}}</span></td>
+						{{/player17}}
+						{{#player18}}
+						<td><span class="{{player18Role}}">{{player18Role}}</span>/<span class="{{player18}}">{{player18}}</span></td>
+						{{/player18}}
+						{{#player19}}
+						<td><span class="{{player19Role}}">{{player19Role}}</span>/<span class="{{player19}}">{{player19}}</span></td>
+						{{/player19}}
+						{{#player20}}
+						<td><span class="{{player20Role}}">{{player20Role}}</span>/<span class="{{player20}}">{{player20}}</span></td>
+						{{/player20}}
+			          </tr>
+		        {{/gamesData}}
 		        </tbody>
 		      </table>
 			</div>
@@ -43,7 +94,7 @@
 			      <p>{{win}} 胜 | {{lose}} 败</p>
 			      <p>{{numberGames}} 场游戏</p>
 			      </p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">{{gamePoints}}</i></a>
+			      <a href="#!" class="secondary-content"><i class="material-icons">积分：{{gamePoints}}</i></a>
 			    </li>
 			   {{/gamers}}
 			  </ul>
@@ -89,6 +140,7 @@
 								  							<option value="251">预言家</option>
 								  							<option value="300">丘比特</option>
 								  							<option value="500">情侣</option>
+								  							<option value="100">法官</option>
 								  						</select>
 							  						</div>
 							  						<div class="col s6 m6 l6">
@@ -96,6 +148,7 @@
 							  								<option selected value="0">比赛结果</option>
 								  							<option value="1">胜利</option>
 								  							<option value="-1">失败</option>
+								  							<option value="1">法官</option>
 								  						</select>
 							  						</div>
 							  					</div>
