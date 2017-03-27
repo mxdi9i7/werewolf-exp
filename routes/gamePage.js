@@ -38,32 +38,41 @@ router
 				db('gamesData')
 					.where('gameId', gameId)
 					.then((gamesData)=> {
-						var playerResultList = [];
-						var is_authorized;
-						for (i = 1; i <= game.totalPlayers; i++) {
-								playerResultList.push("<td><span class='playerRole'>{{player" + i + "Role}}</span> / <span class='playerGame'>{{player" + i + "}}</span></td>")
+						var pointsInGame = 0;
+						for (i = 0; i < gamers.length; i ++) {
+								pointsInGame = pointsInGame + Number(gamers[i].gamePoints)
 						}
-						if (req.user.id == game.host) {
-							is_authorized = 'is_authorized'
-						} else {
-							is_authorized = 'is_not_authorized'
-						}
-						console.log(is_authorized)
-						res.render('gamePage',{
-							partials: {
-								header: './partials/header',
-								footer: './partials/footer'
-							},
-							nickname: req.user.nickname,
-							authenticated: req.isAuthenticated(),
-							currentUser: req.user.nickname,
-							profilePic: req.user.profilePic,
-							game,
-							gamers,
-							gamesData,
-							message: req.session.message,
-							historyList: playerResultList,
-							is_host: is_authorized
+						db('games')
+							.where('id', gameId)
+							.update({
+								totalPlayers: gamers.length,
+								totalGames: gamesData.length,
+								totalPoints: pointsInGame,
+								clickCount: game.clickCount + 20
+							}).then(()=>{
+								var playerResultList = [];
+								var is_authorized;
+								if (req.user.id == game.host) {
+									is_authorized = 'is_authorized'
+								} else {
+									is_authorized = 'is_not_authorized'
+								}
+								res.render('gamePage',{
+									partials: {
+										header: './partials/header',
+										footer: './partials/footer'
+									},
+									nickname: req.user.nickname,
+									authenticated: req.isAuthenticated(),
+									currentUser: req.user.nickname,
+									profilePic: req.user.profilePic,
+									game,
+									gamers,
+									gamesData,
+									message: req.session.message,
+									historyList: playerResultList,
+									is_host: is_authorized
+									})
 							})
 					})
 			})

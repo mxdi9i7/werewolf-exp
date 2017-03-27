@@ -49,21 +49,9 @@ router
 			})
 		})
 	})
-	.get('/games:gameId', loginRequired, (req, res, next) => {
-		const { gameId } = req.params;
-		res.render('games',{
-			partials: {
-				header: './partials/header',
-				footer: './partials/footer'
-			},
-			nickname: req.user.nickname,
-			authenticated: req.isAuthenticated(),
-			currentUser: req.user.nickname,
-			profilePic: req.user.profilePic			
-
-		})
-	})
-	.post('/games', loginRequired, upload.single('gameFile'), (req,res,next) => {
+	.post('/games', loginRequired, upload.single('eventFile'), (req,res,next) => {
+		var imageUploaded = req.file
+		console.log()
 		var newGame = {
 			title: req.body.title,
 			host: req.user.id,
@@ -72,7 +60,7 @@ router
 			totalPoints: 0,
 			clickCount: 10,
 			description: req.body.description,
-			// filePath: req.file.filename ? req.file.filename : 'images/shortshortwolf.jpg'
+			filePath: req.session.filePath ? req.session.filePath : 'images/shortshortwolf.jpg'
 		}
 		console.log(req.file)
 		db('games')

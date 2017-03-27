@@ -49,7 +49,7 @@
 				      </div>
 				      <div class="input-field">
 				        <select name="gender" required>
-					      <option value="" disabled selected>性别</option>
+					      <option value="trans" disabled>性别</option>
 					      <option value="female">小姐姐</option>
 					      <option value="male">小哥哥</option>
 					      <option value="trans">第三方阵营</option>

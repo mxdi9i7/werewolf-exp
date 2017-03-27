@@ -7,7 +7,7 @@
 				{{#games}}
 					<div class="col s12 m6 l6">
 						  <div class="example-2 card">
-						    <div class="wrapper" style="background: url({{filePath}}) center/cover no-repeat;">
+						    <div class="wrapper" style="background: url(images/{{filePath}}) center/cover no-repeat;">
 						      <div class="header">
 						        <div class="date">
 						          <span class="day">下一场比赛：</span>
@@ -44,15 +44,14 @@
 						    <h4 class="center-align">发布比赛</h4>
 						      <div class="row">
 						        <div class="input-field col s12">
-						          <input id="last_name" type="text" class="validate" name="title">
+						          <input id="last_name" type="text" class="validate" name="title" required>
 						          <label for="last_name">比赛名称</label>
 						        </div>
 						        <div class="input-field col s12">
-						          <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
+						          <textarea id="textarea1" class="materialize-textarea" name="description" required></textarea>
 						          <label for="textarea1">比赛描述</label>
 						        </div>
-							        <span>上传照片</span>
-							        <input type="file" name="gameFile" class="white black-text">
+							        <a href="/test" target="_blank" class="btn-flat">添加照片</a>
 							    </div>
 						      </div>
 
