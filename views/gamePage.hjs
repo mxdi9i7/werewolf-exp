@@ -2,6 +2,9 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/gamesCard.css">
 	<section class="games-section">
 		<h1>{{game.title}}</h1>
+		 <span class="badge new blue white-text" data-badge-caption="人">玩家总数：{{game.totalPlayers}} / 20</span>
+		 <span class="badge new red white-text" data-badge-caption="">{{game.title}} 实力指数：{{game.totalPoints}}</span>
+		 <span class="badge new black white-text" data-badge-caption="">狼王： {{king}}, {{kingPoint}} 分</span>
 		<div class="row">
 			<div class="col s12 m12 l12">
 		      <table class="responsive-table bordered striped">

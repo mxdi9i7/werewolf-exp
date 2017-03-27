@@ -33,7 +33,7 @@ router
 		.then((game)=> {
 			db('gamersData')
 			.where('gameId', gameId)
-			.orderBy('gamerSerial')
+			.orderBy('gamePoints', 'desc')
 			.then((gamers)=> {
 				db('gamesData')
 					.where('gameId', gameId)
@@ -50,6 +50,7 @@ router
 								totalPoints: pointsInGame,
 								clickCount: game.clickCount + 20
 							}).then(()=>{
+
 								var playerResultList = [];
 								var is_authorized;
 								if (req.user.id == game.host) {
@@ -71,7 +72,9 @@ router
 									gamesData,
 									message: req.session.message,
 									historyList: playerResultList,
-									is_host: is_authorized
+									is_host: is_authorized,
+									king: gamers[0].gamerNickname,
+									kingPoint: gamers[0].gamePoints
 									})
 							})
 					})
