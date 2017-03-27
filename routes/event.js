@@ -22,55 +22,58 @@ function loginRequired(req, res, next) {
   next()
 }
 
-var counter = 1;
 
 router
 	.get('/event:event_id', loginRequired, (req, res, next) => {
 			const { event_id } = req.params;
-			counter += 18;
 				db('events')
 				.where('id', event_id)
 				.first()
-				.update({
-					clickCount: counter
-				})
-				.then(()=> {
-					db("events")
-					.where("id", event_id)
+				.then((event)=> {
+					db('events')
+					.where('id', event_id)
 					.first()
-					.then((event) => {
-						var eventParticipantsList = event.participantsID.split(',');
-						res.render('event', {
-								event,
-								title: event.title,
-								partials: {
-									header: './partials/header',
-									footer: './partials/footer'
-								},
-								currentFill: function() {
-									return event.participants.split(',').length;
-								},
-								authenticated: req.isAuthenticated(),
-								joined: function() {
-									for (i = 0; i <= eventParticipantsList.length; i++) {
-										console.log(eventParticipantsList[i])
-										if (eventParticipantsList[i] == req.user.id) {											
-											return 'joined'
+					.update({
+							clickCount: event.clickCount + 20
+					})
+					.then(()=> {
+						db("events")
+						.where("id", event_id)
+						.first()
+						.then((event) => {
+							var eventParticipantsList = event.participantsID.split(',');
+							res.render('event', {
+									event,
+									title: event.title,
+									partials: {
+										header: './partials/header',
+										footer: './partials/footer'
+									},
+									currentFill: function() {
+										return event.participants.split(',').length;
+									},
+									authenticated: req.isAuthenticated(),
+									joined: function() {
+										for (i = 0; i <= eventParticipantsList.length; i++) {
+											console.log(eventParticipantsList[i])
+											if (eventParticipantsList[i] == req.user.id) {											
+												return 'joined'
+											}
+										}
+									},
+									currentUser: req.user.nickname,
+									profilePic: req.user.profilePic,
+									owned: function() {
+										if (event.user_id !== req.user.id) {
+											return 'notOwned';
 										}
 									}
-								},
-								currentUser: req.user.nickname,
-								profilePic: req.user.profilePic,
-								owned: function() {
-									if (event.user_id !== req.user.id) {
-										return 'notOwned';
-									}
-								}
+								})
 							})
-						console.log(event.filePath)
-					}, next)
-				})
-	})
+							console.log(event.filePath)
+						}, next)
+					})
+		})
 	.post('/event:event_id', loginRequired, (req, res, next) => {
 		const { event_id } = req.params;
 		db('events')
