@@ -60,9 +60,9 @@ router
 			totalPoints: 0,
 			clickCount: 10,
 			description: req.body.description,
-			filePath: req.session.filePath ? req.session.filePath : 'images/shortshortwolf.jpg'
+			filePath: req.session.filePath ? req.session.filePath : 'shortshortwolf.jpg'
 		}
-		console.log(req.file)
+		console.log(req.session.filePath)
 		db('games')
 			.insert(newGame)
 			.then((ids)=>{
