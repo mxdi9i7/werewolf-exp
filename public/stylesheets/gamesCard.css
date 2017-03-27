@@ -92,9 +92,6 @@ h1 {
 }
 
 
-.example-2 .wrapper {
-  background: url(../images/shortshortwolf.jpg) center/cover no-repeat;
-}
 .example-2 .wrapper:hover .menu-content span {
   -webkit-transform: translate(-50%, -10px);
           transform: translate(-50%, -10px);

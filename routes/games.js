@@ -1,7 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('knex');
+var multer = require('multer');
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+  }
+})
 
+var upload = multer({ storage: storage })
 
 const db = knex({
   client: 'mysql',
@@ -52,6 +62,25 @@ router
 			profilePic: req.user.profilePic			
 
 		})
+	})
+	.post('/games', loginRequired, upload.single('gameFile'), (req,res,next) => {
+		var newGame = {
+			title: req.body.title,
+			host: req.user.id,
+			totalGames: 0,
+			totalPlayers: 0,
+			totalPoints: 0,
+			clickCount: 10,
+			description: req.body.description,
+			// filePath: req.file.filename ? req.file.filename : 'images/shortshortwolf.jpg'
+		}
+		console.log(req.file)
+		db('games')
+			.insert(newGame)
+			.then((ids)=>{
+				newGame.id = ids[0]
+				res.redirect('/games')
+			})
 	})
 
 

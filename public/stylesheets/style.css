@@ -491,6 +491,13 @@ blockquote {
   width: 100%;
   padding:100px 10%;
 }
+.games-section h1 {
+  display: inline;
+}
+.games-section button {
+  position: relative;
+  top: 20px;
+}
 button.add-gamer.btn.btn-large {
   margin: 0 auto;
   display: block;
