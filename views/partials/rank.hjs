@@ -1,21 +1,33 @@
 
 	  			<h3 class="gamer-header">玩家排行榜</h3>
-	  			  <ul class="collection">
-	  			  	{{#users}}
-		  			  		<li class="collection-item avatar">
-						      <img src="{{profilePic}}" alt="" class="circle">
-						      	<a href="user{{id}}">
-						      		<span class="title">{{nickname}}</span>
-						      	</a>
-						      <p>人气值:<span class="clickCountP"> {{clickCount}}</span></p>
-						      <script type="text/javascript">
-						      		//Click count display different color
-									if (Number($('.clickCount').text()) > 100) {
-										$('.clickCount p').css('color', 'cornflowerblue')
-									}
-									console.log(Number($('.clickCountP').text()))
-									$('.clickCountP').css('color', 'red')
-						      </script>
-						    </li>
-					{{/users}}
-				  </ul>
+	  				  <ul id="tabs-swipe-demo" class="tabs">
+					    <li class="tab col s6"><a class="active" href="#test-swipe-1">人气排行榜</a></li>
+					    <li class="tab col s6 disabled"><a href="#test-swipe-2">实力排行榜</a></li>
+					  </ul>
+					  <div id="test-swipe-1" class="col s12">
+					  	<ul class="collection">
+			  			  	{{#users}}
+				  			  		<li class="collection-item avatar">
+								      <img src="{{profilePic}}" alt="" class="circle">
+								      	<a href="user{{id}}">
+								      		<span class="title">{{nickname}} <span class="badge new blue" data-badge-caption="">+加为好友</span></span>
+								      	</a>
+								      <p>人气值:<span class="clickCountP"> {{clickCount}}</span></p>
+								      <script type="text/javascript">
+								      		//Click count display different color
+											if (Number($('.clickCount').text()) > 100) {
+												$('.clickCount p').css('color', 'cornflowerblue')
+											}
+											console.log(Number($('.clickCountP').text()))
+											$('.clickCountP').css('color', 'red')
+											
+											 $('ul.tabs').tabs({
+											 	swipeable: true,
+											 });
+								      </script>
+								    </li>
+							{{/users}}
+						  </ul>
+					  </div>
+					  <div id="test-swipe-2" class="col s12">Test 2</div>
+	  			  
