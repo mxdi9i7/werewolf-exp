@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="/stylesheets/materialize.min.css" />
     <link rel="icon" type="img/png" href="/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="/javascripts/jquery-3.1.1.min.js"></script>  
+    <script src="/javascripts/jquery-3.1.1.min.js"></script> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="www.egiang.com 面杀网，狼人杀线下约局，计算战绩，排位积分">
+	<meta name="keywords" content="狼人杀, werewolf, werewolves, wolf, wolves, 狼人, 狼, 狼人游戏, 三国杀, 桌游, 狼王, 天黑请闭眼, 天黑, 排位, 线下约局, egiang, 面杀, 面杀网, 纽约, 法拉盛">
+	<meta name="author" content="Peter Zheng">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   </head>
