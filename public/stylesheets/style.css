@@ -381,7 +381,7 @@ img.profilePic {
 #body .btn-floating {
 	background-color: #D90429;
 }
-#body .carousel-item {
+#body .color-carousel .carousel-item {
 	background-image: url(../images/nav-bg.jpg);
 	background-size: cover;
 }
@@ -514,8 +514,9 @@ button.add-gamer.btn.btn-large {
   top: 50px;
 }
 
-
-
+#ranks .tabs-content.carousel.initialized {
+  height: 900px;
+}
 
 
 

@@ -20,7 +20,7 @@
 	  	<div class="col s12 m12 l8">
 	  		{{>eventList}}
 		</div>
-		<div class="ranking board col s12 m12 l4">
+		<div class="ranking board col s12 m12 l4" id="ranks">
 	  		{{>rank}}
 	  	</div>
 	  </section>
