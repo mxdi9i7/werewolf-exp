@@ -39,24 +39,30 @@ router
 					.limit(10)
 					.orderBy('users.clickCount', 'desc')
 					.then((users)=> {
-						res.render('index', {
-							partials: {
-								header: './partials/header',
-								footer: './partials/footer',
-								rank: './partials/rank',
-								eventList: './partials/eventList'
-							},
-							title: '面杀网',
-							events,
-							users,
-							nickname: user.nickname,
-							id: user.id,
-							username: user.username,
-							authenticated: req.isAuthenticated(),
-							rsvp: user.rsvp,
-							currentUser: req.user.nickname,
-							profilePic: req.user.profilePic
-						})
+						db('gamersData')
+							.orderBy('gamePoints', 'desc')
+							.limit(10)
+							.then((gamers)=> {
+									res.render('index', {
+									partials: {
+										header: './partials/header',
+										footer: './partials/footer',
+										rank: './partials/rank',
+										eventList: './partials/eventList'
+									},
+									title: '面杀网',
+									events,
+									users,
+									gamers,
+									nickname: user.nickname,
+									id: user.id,
+									username: user.username,
+									authenticated: req.isAuthenticated(),
+									rsvp: user.rsvp,
+									currentUser: req.user.nickname,
+									profilePic: req.user.profilePic
+								})
+							})
 					})
 				})
 				

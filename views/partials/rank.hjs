@@ -1,10 +1,30 @@
 
 	  			<h3 class="gamer-header">玩家排行榜</h3>
-	  				  <ul id="tabs-swipe-demo" class="tabs">
-					    <li class="tab col s6"><a class="active" href="#test-swipe-1">人气排行榜</a></li>
-					    <li class="tab col s6 disabled"><a href="#test-swipe-2">实力排行榜</a></li>
+	  				  <ul id="tabs-swipe-demo" class="tabs rank-tabs">
+
+					    <li class="tab col s6"><a class="active" href="#test-swipe-2">实力排行榜</a></li>
+					    <li class="tab col s6"><a href="#test-swipe-1">人气排行榜</a></li>
 					  </ul>
-					  <div id="test-swipe-1" class="col s12">
+					 
+					  <div id="test-swipe-2" class="col s12">
+					  		<ul class="collection">
+					  			{{#gamers}}
+					  				<li class="collection-item avatar">
+								      <img src="{{gamerProfile}}" alt="" class="circle">
+								      	<a href="user{{userId}}">
+								      		<span class="title">{{gamerNickname}}</span>
+								      	</a>
+								      	<a href="/game{{gameId}}">
+								      		<span class="badge new blue" data-badge-caption="">+查看战绩</span>
+								      	</a>
+								      	<p class="{{gamerGender}}"></p>
+								      <p>实力指数:<span class="clickCountP"> {{gamePoints}}</span><span> | 胜率: {{KDA}}</span></p>
+								     
+								    </li>
+					  		{{/gamers}}
+					  		</ul>
+					  </div>
+					   <div id="test-swipe-1" class="col s12">
 					  	<ul class="collection">
 			  			  	{{#users}}
 				  			  		<li class="collection-item avatar">
@@ -19,7 +39,6 @@
 							{{/users}}
 						  </ul>
 					  </div>
-					  <div id="test-swipe-2" class="col s12">Test 2</div>
 	  			  
  										<script type="text/javascript">
 								      		//Click count display different color
@@ -29,7 +48,5 @@
 											console.log(Number($('.clickCountP').text()))
 											$('.clickCountP').css('color', 'red')
 											
-											 $('ul.tabs').tabs({
-											 	swipeable: true,
-											 });
+											 
 								      	</script>
