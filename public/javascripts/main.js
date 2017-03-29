@@ -111,10 +111,9 @@ $(document).ready(function(){
 })
 
 	//change gender text to chinese
-		$('.male').text('小哥哥')
-		$('.trans').text('第三方阵营')
-		$('.female').text('小姐姐')
-
+		$('.male').html('<span>小哥哥</span><span> </span><i id="maleIcon" class="fa fa-mars maleIcon" aria-hidden="true"></i>');
+		$('.female').html('<span>小姐姐</span><span> </span><i id="femaleIcon" class="fa fa-venus femaleIcon" aria-hidden="true"></i>');
+		$('.trans').text('第三方阵营');
 
 	//game change data authorizing
 

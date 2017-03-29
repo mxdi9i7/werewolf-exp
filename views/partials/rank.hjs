@@ -10,10 +10,18 @@
 				  			  		<li class="collection-item avatar">
 								      <img src="{{profilePic}}" alt="" class="circle">
 								      	<a href="user{{id}}">
-								      		<span class="title">{{nickname}} <span class="badge new blue" data-badge-caption="">+加为好友</span></span>
+								      		<span class="title">{{nickname}}<span class="badge new blue" data-badge-caption="">+加为好友</span></span>
 								      	</a>
+								      	<p class="{{gender}}"></p>
 								      <p>人气值:<span class="clickCountP"> {{clickCount}}</span></p>
-								      <script type="text/javascript">
+								     
+								    </li>
+							{{/users}}
+						  </ul>
+					  </div>
+					  <div id="test-swipe-2" class="col s12">Test 2</div>
+	  			  
+ 										<script type="text/javascript">
 								      		//Click count display different color
 											if (Number($('.clickCount').text()) > 100) {
 												$('.clickCount p').css('color', 'cornflowerblue')
@@ -24,10 +32,4 @@
 											 $('ul.tabs').tabs({
 											 	swipeable: true,
 											 });
-								      </script>
-								    </li>
-							{{/users}}
-						  </ul>
-					  </div>
-					  <div id="test-swipe-2" class="col s12">Test 2</div>
-	  			  
+								      	</script>
