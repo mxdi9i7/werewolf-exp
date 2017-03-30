@@ -76,19 +76,27 @@ router
 				.limit(10)
 				.orderBy('users.clickCount', 'desc')
 				.then((users) => {
-					res.render('index', {
-						partials: {
-							header: './partials/header',
-							footer: './partials/footer',
-							rank: './partials/rank',
-							eventList: './partials/eventList'
-						},
-						title: '面杀网',
-						events,
-						users,
-						nickname: null,
-						authenticated: req.isAuthenticated()
-					})
+					db('gamersData')
+							.orderBy('gamePoints', 'desc')
+							.limit(10)
+							.then((gamers)=> {
+								res.render('index', {
+								partials: {
+									header: './partials/header',
+									footer: './partials/footer',
+									rank: './partials/rank',
+									eventList: './partials/eventList'
+								},
+								title: '面杀网',
+								events,
+								users,
+								gamers,
+								nickname: null,
+								authenticated: req.isAuthenticated()
+							})
+
+						})
+					
 				})
 			})
 		}
