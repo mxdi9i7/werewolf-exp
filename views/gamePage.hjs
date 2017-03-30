@@ -90,16 +90,26 @@
 			<h2>排行榜</h2>
 			  <ul class="collection">
 			  {{#gamers}}
-			    <li class="collection-item avatar">
-			      <img src="{{gamerProfile}}" alt="" class="circle">
-			      <span class="title">{{gamerNickname}}</span>
-			      <p class="{{gamerGender}}">{{gamerGender}}<br>
-			      <p>胜率： {{KDA}}</p>
-			      <p>{{win}} 胜 | {{lose}} 败</p>
-			      <p>{{numberGames}} 场游戏</p>
-			      </p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">积分：{{gamePoints}}</i></a>
-			    </li>
+				  <input value="{{userId}}" class="gamerId {{userId}}" hidden>
+				  <input value="{{currentUserId}}" class="yourself {{currentUserId}}" hidden> 
+				    <li class="collection-item avatar" id="{{userId}}">
+				      <img src="{{gamerProfile}}" alt="" class="circle">
+				      <span class="title">{{gamerNickname}}</span>
+				      <p class="{{gamerGender}}">{{gamerGender}}<br>
+				      <p>胜率： {{KDA}}</p>
+				      <p>{{win}} 胜 | {{lose}} 败</p>
+				      <p>{{numberGames}} 场游戏</p>
+				      <a href="" class="refreshScore">清零</a>
+				      <a href="#!" class="secondary-content"><i class="material-icons">积分：{{gamePoints}}</i></a>
+				    </li>
+				    <!-- <script type="text/javascript">
+				    		if ($('#{{userId}}.{{userId}}').val() == $("#{{userId}}.{{currentUserId}}")) {
+					    		$('.refreshScore').show()
+					    		console.log('match')
+					    	} else {
+					    		$('.refreshScore').hide()
+					    	}
+				    </script> -->
 			   {{/gamers}}
 			  </ul>
 			  <button class="btn btn-large white black-text left trigger-gamer" data-target="modal1">添加玩家</button>

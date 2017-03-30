@@ -111,7 +111,8 @@ $(document).ready(function(){
 	$('.50').text('法官')
 	$('.2').text('法官')
 })
-
+	$('.is_own').show();
+	$('.is_not_own').hide();
 	//change gender text to chinese
 		$('.male').html('<span>小哥哥</span><span> </span><i id="maleIcon" class="fa fa-mars maleIcon" aria-hidden="true"></i>');
 		$('.female').html('<span>小姐姐</span><span> </span><i id="femaleIcon" class="fa fa-venus femaleIcon" aria-hidden="true"></i>');
@@ -123,7 +124,6 @@ $(document).ready(function(){
 		$('.trigger-record').hide()
 		$('.trigger-gamer').hide()
 	}
-
 
 
 

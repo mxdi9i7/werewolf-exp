@@ -50,32 +50,40 @@ router
 								totalPoints: pointsInGame,
 								clickCount: game.clickCount + 20
 							}).then(()=>{
-
-								var playerResultList = [];
-								var is_authorized;
-								if (req.user.id == game.host) {
-									is_authorized = 'is_authorized'
-								} else {
-									is_authorized = 'is_not_authorized'
-								}
-								res.render('gamePage',{
-									partials: {
-										header: './partials/header',
-										footer: './partials/footer'
-									},
-									nickname: req.user.nickname,
-									authenticated: req.isAuthenticated(),
-									currentUser: req.user.nickname,
-									profilePic: req.user.profilePic,
-									game,
-									gamers,
-									gamesData,
-									message: req.session.message,
-									historyList: playerResultList,
-									is_host: is_authorized,
-									king: gamers[0].gamerNickname,
-									kingPoint: gamers[0].gamePoints
+								db('gamersData')
+									.where('gameId', gameId)
+									.where('userId', req.user.id)
+									.first()
+									.then((yourself)=> {
+											var playerResultList = [];
+											var is_authorized;
+											if (req.user.id == game.host) {
+												is_authorized = 'is_authorized'
+											} else {
+												is_authorized = 'is_not_authorized'
+											}
+											res.render('gamePage',{
+													partials: {
+														header: './partials/header',
+														footer: './partials/footer'
+													},
+													nickname: req.user.nickname,
+													authenticated: req.isAuthenticated(),
+													currentUser: req.user.nickname,
+													currentUserId: req.user.id,
+													profilePic: req.user.profilePic,
+													game,
+													gamers,
+													gamesData,
+													message: req.session.message,
+													historyList: playerResultList,
+													is_host: is_authorized,
+													king: gamers[0].gamerNickname,
+													kingPoint: gamers[0].gamePoints
+													})
 									})
+										
+								
 							})
 					})
 			})

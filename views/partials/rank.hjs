@@ -14,15 +14,16 @@
 								      	<a href="user{{userId}}">
 								      		<span class="title">{{gamerNickname}}</span>
 								      	</a>
+								      	<span class="gameLevel">{{gameLevel}}</span>
 								      	<a href="/game{{gameId}}">
 								      		<span class="badge new blue" data-badge-caption="">+查看战绩</span>
 								      	</a>
 								      	<p class="{{gamerGender}}"></p>
-								      <p>实力指数:<span class="clickCountP"> {{gamePoints}}</span><span> | 胜率: {{KDA}}</span></p>
-								     
+								      <p>实力指数:<span class="pointCount"> {{gamePoints}}</span><span> | 胜率: {{KDA}}</span></p>
 								    </li>
 					  		{{/gamers}}
 					  		</ul>
+					  		
 					  </div>
 					   <div id="test-swipe-1" class="col s12">
 					  	<ul class="collection">
