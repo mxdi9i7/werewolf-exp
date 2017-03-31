@@ -520,9 +520,20 @@ button.add-gamer.btn.btn-large {
 .male, .female, .trans {
   font-size: 0.8rem;
 }
-
-
-
+#body .secondary-content {
+  margin-right: 20px;
+}
+#body .rankPic {
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#body .checkRecord {
+  position: relative;
+  top: 0px;
+  left: 50%;
+}
 
 
 

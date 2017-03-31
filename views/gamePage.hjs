@@ -99,17 +99,11 @@
 				      <p>胜率： {{KDA}}</p>
 				      <p>{{win}} 胜 | {{lose}} 败</p>
 				      <p>{{numberGames}} 场游戏</p>
-				      <a href="" class="refreshScore">清零</a>
-				      <a href="#!" class="secondary-content"><i class="material-icons">积分：{{gamePoints}}</i></a>
+				      <!-- <a href="" class="refreshScore">清零</a> -->
+				      <a href="#!" class="secondary-content">积分：{{gamePoints}}</a>
+				      <span class="right-align">段位：{{rank}} 阶</span>
+				      <img src="{{rankPic}}" class="rankPic">
 				    </li>
-				    <!-- <script type="text/javascript">
-				    		if ($('#{{userId}}.{{userId}}').val() == $("#{{userId}}.{{currentUserId}}")) {
-					    		$('.refreshScore').show()
-					    		console.log('match')
-					    	} else {
-					    		$('.refreshScore').hide()
-					    	}
-				    </script> -->
 			   {{/gamers}}
 			  </ul>
 			  <button class="btn btn-large white black-text left trigger-gamer" data-target="modal1">添加玩家</button>
@@ -185,5 +179,19 @@
 	</section>
 {{>footer}}
 <script type="text/javascript">
+//table item generation for game records
+	$('.150').text('村民')
+	$('.250').text('狼人')
+	$('.249').text('女巫')
+	$('.248').text('猎人')
+	$('.247').text('守卫')
+	$('.246').text('白痴')
+	$('.251').text('预言家')
+	$('.300').text('丘比特')
+	$('.500').text('情侣')
+	$('.1').text('胜利')
+	$('.-1').text('失败')
+	$('.50').text('法官')
+	$('.2').text('法官')
 		      	  Materialize.toast('{{message}}', 4000) // 4000 is the duration of the toast
 	</script>

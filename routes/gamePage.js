@@ -99,6 +99,7 @@ router
 				.first()
 				.then((user)=> {
 					db('gamersData')
+						.where('gameId', gameId)
 						.where('userId', req.body.gamerId)
 						.then((duplicatedGamers)=> {
 							var gamerSerial = gamers.length + 1;
@@ -237,7 +238,6 @@ router
 									return 0
 								}
 							}
-
 							db('gamersData')
 								.where('gameId', gameId)
 								.where('gamerSerial', 1)
@@ -252,6 +252,26 @@ router
 											var updatedWin = Number(gamer1.win) + ifWin(currentGame.player1);
 											var updatedLose = Number(gamer1.lose) + ifLose(currentGame.player1);
 											var totalGames = updatedWin + updatedLose;
+											var rank;
+											var rankPic;
+											if (updatedPoint <= 0) {
+												rank = 0
+											} else if (updatedPoint > 0 && updatedPoint < 500) {
+												rank = 1
+												rankPic = 'images/ranks/level1.png'
+											} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+												rank = 2
+												rankPic = 'images/ranks/level2.png'
+											} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+												rank = 3
+												rankPic = 'images/ranks/level3.png'
+											} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+												rank = 4
+												rankPic = 'images/ranks/level4.png'
+											} else if (updatedPoint > 5000) {
+												rank = 5
+												rankPic = 'images/ranks/level5.png'
+											}
 											db('gamersData')
 											.where('gameId', gameId)
 											.where('gamerSerial', 1)
@@ -262,6 +282,8 @@ router
 												lose: updatedLose,
 												numberGames: totalGames,
 												KDA: Math.floor(updatedWin / totalGames * 100) + "%",
+												rank: rank,
+												rankPic: rankPic
 											}).then(()=> {
 												db('gamersData')
 													.where('gameId', gameId)
@@ -280,15 +302,37 @@ router
 																	var updatedWin = Number(gamer2.win) + ifWin(currentGame.player2);
 																	var updatedLose = Number(gamer2.lose) + ifLose(currentGame.player2);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																	var rankPic;
+																	if (updatedPoint <= 0) {
+																		rank = 0
+																	} else if (updatedPoint > 0 && updatedPoint < 500) {
+																		rank = 1
+																		rankPic = 'images/ranks/level1.png'
+																	} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																		rank = 2
+																		rankPic = 'images/ranks/level2.png'
+																	} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																		rank = 3
+																		rankPic = 'images/ranks/level3.png'
+																	} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																		rank = 4
+																		rankPic = 'images/ranks/level4.png'
+																	} else if (updatedPoint > 5000) {
+																		rank = 5
+																		rankPic = 'images/ranks/level5.png'
+																	}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 2)
 																	.first()
 																	.update({
+																		rank: rank,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
 																		numberGames: totalGames,
+																		rankPic,
 																		KDA: Math.floor(updatedWin / totalGames * 100) + "%",
 																	}).then(()=>{
 																	db('gamersData')
@@ -308,15 +352,37 @@ router
 																						var updatedWin = Number(gamer3.win) + ifWin(currentGame.player3);
 																						var updatedLose = Number(gamer3.lose) + ifLose(currentGame.player3);
 																						var totalGames = updatedWin + updatedLose;
+																						var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																						db('gamersData')
 																						.where('gameId', gameId)
 																						.where('gamerSerial', 3)
 																						.first()
 																						.update({
+																							rank:rank,
 																							gamePoints: updatedPoint,
 																							win: updatedWin,
 																							lose: updatedLose,
 																							numberGames: totalGames,
+																							rankPic: rankPic,
 																							KDA: Math.floor(updatedWin / totalGames * 100) + "%",
 																						}).then(()=>{
 																						db('gamersData')
@@ -336,11 +402,33 @@ router
 																											var updatedWin = Number(gamer4.win) + ifWin(currentGame.player4);
 																											var updatedLose = Number(gamer4.lose) + ifLose(currentGame.player4);
 																											var totalGames = updatedWin + updatedLose;
+																											var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																											db('gamersData')
 																											.where('gameId', gameId)
 																											.where('gamerSerial', 4)
 																											.first()
 																											.update({
+																												rank,
+																												rankPic,
 																												gamePoints: updatedPoint,
 																												win: updatedWin,
 																												lose: updatedLose,
@@ -364,11 +452,33 @@ router
 																																	var updatedWin = Number(gamer5.win) + ifWin(currentGame.player5);
 																																	var updatedLose = Number(gamer5.lose) + ifLose(currentGame.player5);
 																																	var totalGames = updatedWin + updatedLose;
+																																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																	db('gamersData')
 																																	.where('gameId', gameId)
 																																	.where('gamerSerial', 5)
 																																	.first()
 																																	.update({
+																																	rank,
+																																	rankPic,
 																																		gamePoints: updatedPoint,
 																																		win: updatedWin,
 																																		lose: updatedLose,
@@ -392,11 +502,33 @@ router
 																																							var updatedWin = Number(gamer6.win) + ifWin(currentGame.player6);
 																																							var updatedLose = Number(gamer6.lose) + ifLose(currentGame.player6);
 																																							var totalGames = updatedWin + updatedLose;
+																																							var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																							db('gamersData')
 																																							.where('gameId', gameId)
 																																							.where('gamerSerial', 6)
 																																							.first()
 																																							.update({
+																																							rank,
+																																							rankPic,
 																																								gamePoints: updatedPoint,
 																																								win: updatedWin,
 																																								lose: updatedLose,
@@ -420,11 +552,33 @@ router
 																																												var updatedWin = Number(gamer7.win) + ifWin(currentGame.player7);
 																																												var updatedLose = Number(gamer7.lose) + ifLose(currentGame.player7);
 																																												var totalGames = updatedWin + updatedLose;
+																																												var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																												db('gamersData')
 																																												.where('gameId', gameId)
 																																												.where('gamerSerial', 7)
 																																												.first()
 																																												.update({
+																																												rank,
+																																												rankPic,
 																																													gamePoints: updatedPoint,
 																																													win: updatedWin,
 																																													lose: updatedLose,
@@ -448,11 +602,33 @@ router
 																																																	var updatedWin = Number(gamer8.win) + ifWin(currentGame.player8);
 																																																	var updatedLose = Number(gamer8.lose) + ifLose(currentGame.player8);
 																																																	var totalGames = updatedWin + updatedLose;
+																																																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																																	db('gamersData')
 																																																	.where('gameId', gameId)
 																																																	.where('gamerSerial', 8)
 																																																	.first()
 																																																	.update({
+																																																	rank,
+																																																	rankPic,
 																																																		gamePoints: updatedPoint,
 																																																		win: updatedWin,
 																																																		lose: updatedLose,
@@ -476,11 +652,33 @@ router
 																																																						var updatedWin = Number(gamer9.win) + ifWin(currentGame.player9);
 																																																						var updatedLose = Number(gamer9.lose) + ifLose(currentGame.player9);
 																																																						var totalGames = updatedWin + updatedLose;
+																																																						var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																																						db('gamersData')
 																																																						.where('gameId', gameId)
 																																																						.where('gamerSerial', 9)
 																																																						.first()
 																																																						.update({
+																																																						rank,
+																																																						rankPic,
 																																																							gamePoints: updatedPoint,
 																																																							win: updatedWin,
 																																																							lose: updatedLose,
@@ -504,11 +702,33 @@ router
 																																																												var updatedWin = Number(gamer10.win) + ifWin(currentGame.player10);
 																																																												var updatedLose = Number(gamer10.lose) + ifLose(currentGame.player10);
 																																																												var totalGames = updatedWin + updatedLose;
+																																																												var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																																												db('gamersData')
 																																																												.where('gameId', gameId)
 																																																												.where('gamerSerial', 10)
 																																																												.first()
 																																																												.update({
+																																																												rank,
+																																																												rankPic,
 																																																													gamePoints: updatedPoint,
 																																																													win: updatedWin,
 																																																													lose: updatedLose,
@@ -532,11 +752,33 @@ router
 																																																																	var updatedWin = Number(gamer11.win) + ifWin(currentGame.player11);
 																																																																	var updatedLose = Number(gamer11.lose) + ifLose(currentGame.player11);
 																																																																	var totalGames = updatedWin + updatedLose;
+																																																																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																																																																	db('gamersData')
 																																																																	.where('gameId', gameId)
 																																																																	.where('gamerSerial', 11)
 																																																																	.first()
 																																																																	.update({
+																																																																	rank,
+																																																																	rankPic,
 																																																																		gamePoints: updatedPoint,
 																																																																		win: updatedWin,
 																																																																		lose: updatedLose,
@@ -560,11 +802,33 @@ router
 																	var updatedWin = Number(gamer12.win) + ifWin(currentGame.player12);
 																	var updatedLose = Number(gamer12.lose) + ifLose(currentGame.player12);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 12)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -588,11 +852,33 @@ router
 																	var updatedWin = Number(gamer13.win) + ifWin(currentGame.player13);
 																	var updatedLose = Number(gamer13.lose) + ifLose(currentGame.player13);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 13)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -616,11 +902,33 @@ router
 																	var updatedWin = Number(gamer14.win) + ifWin(currentGame.player14);
 																	var updatedLose = Number(gamer14.lose) + ifLose(currentGame.player14);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 14)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -644,11 +952,33 @@ router
 																	var updatedWin = Number(gamer15.win) + ifWin(currentGame.player15);
 																	var updatedLose = Number(gamer15.lose) + ifLose(currentGame.player15);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 15)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -672,11 +1002,33 @@ router
 																	var updatedWin = Number(gamer16.win) + ifWin(currentGame.player16);
 																	var updatedLose = Number(gamer16.lose) + ifLose(currentGame.player16);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 16)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -700,11 +1052,33 @@ router
 																	var updatedWin = Number(gamer17.win) + ifWin(currentGame.player17);
 																	var updatedLose = Number(gamer17.lose) + ifLose(currentGame.player17);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 17)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -728,11 +1102,33 @@ router
 																	var updatedWin = Number(gamer18.win) + ifWin(currentGame.player18);
 																	var updatedLose = Number(gamer18.lose) + ifLose(currentGame.player18);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 18)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -756,11 +1152,33 @@ router
 																	var updatedWin = Number(gamer19.win) + ifWin(currentGame.player19);
 																	var updatedLose = Number(gamer19.lose) + ifLose(currentGame.player19);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 19)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,
@@ -784,11 +1202,33 @@ router
 																	var updatedWin = Number(gamer20.win) + ifWin(currentGame.player20);
 																	var updatedLose = Number(gamer20.lose) + ifLose(currentGame.player20);
 																	var totalGames = updatedWin + updatedLose;
+																	var rank;
+																						var rankPic;
+																						if (updatedPoint <= 0) {
+																							rank = 0
+																						} else if (updatedPoint > 0 && updatedPoint < 500) {
+																							rank = 1
+																							rankPic = 'images/ranks/level1.png'
+																						} else if (updatedPoint >= 500 && updatedPoint < 1500) {
+																							rank = 2
+																							rankPic = 'images/ranks/level2.png'
+																						} else if (updatedPoint >= 1500 && updatedPoint < 3000) {
+																							rank = 3
+																							rankPic = 'images/ranks/level3.png'
+																						} else if (updatedPoint >= 3000 && updatedPoint < 5000) {
+																							rank = 4
+																							rankPic = 'images/ranks/level4.png'
+																						} else if (updatedPoint > 5000) {
+																							rank = 5
+																							rankPic = 'images/ranks/level5.png'
+																						}
 																	db('gamersData')
 																	.where('gameId', gameId)
 																	.where('gamerSerial', 20)
 																	.first()
 																	.update({
+																	rank,
+																	rankPic,
 																		gamePoints: updatedPoint,
 																		win: updatedWin,
 																		lose: updatedLose,

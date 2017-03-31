@@ -1,9 +1,8 @@
 
-	  			<h3 class="gamer-header">玩家排行榜</h3>
-	  				  <ul id="tabs-swipe-demo" class="tabs rank-tabs">
+	  				  <ul id="tabs-swipe-demo" class="tabs rank-tabs" id="rankTable">
 
-					    <li class="tab col s6"><a class="active" href="#test-swipe-2">实力排行榜</a></li>
-					    <li class="tab col s6"><a href="#test-swipe-1">人气排行榜</a></li>
+					    <li class="tab col s6"><a class="active" href="#test-swipe-2">巅峰榜</a></li>
+					    <li class="tab col s6"><a href="#test-swipe-1">人气榜</a></li>
 					  </ul>
 					 
 					  <div id="test-swipe-2" class="col s12">
@@ -12,16 +11,16 @@
 					  				<li class="collection-item avatar">
 								      <img src="{{gamerProfile}}" alt="" class="circle">
 								      	<a href="user{{userId}}">
-								      		<span class="title">{{gamerNickname}}</span>
+								      		<span class="title left-align">{{gamerNickname}}</span>
 								      	</a>
-								      	<span class="gameLevel">{{gameLevel}}</span>
-								      	<a href="/game{{gameId}}">
-								      		<span class="badge new blue" data-badge-caption="">+查看战绩</span>
-								      	</a>
+								      	
 								      	<p class="{{gamerGender}}"></p>
-								      <p>实力指数:<span class="pointCount"> {{gamePoints}}</span><span> | 胜率: {{KDA}}</span></p>
+								      <p>实力指数: {{gamePoints}} | 胜率: {{KDA}} | {{rank}} 阶</p>
+								      <a href="/game{{gameId}}">
+								      	 <img src="{{rankPic}}" class="tooltipped rankPic" data-position="left" data-delay="50" data-tooltip="点击查看战绩" >
+								      </a>
 								    </li>
-					  		{{/gamers}}
+					  			{{/gamers}}
 					  		</ul>
 					  		
 					  </div>
