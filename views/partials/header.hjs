@@ -31,7 +31,7 @@
 	      </ul>
 	      
 	      	    <!-- Tap Target Structure -->
-			  <div class="tap-target" data-activates="menu">
+			  <div class="tap-target hide-on-med-and-down" data-activates="menu">
 			    <div class="tap-target-content">
 			      <h5>现在注册</h5>
 			      <p>领取新手大礼包！</p>
