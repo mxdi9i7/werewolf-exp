@@ -100,7 +100,7 @@ $(document).ready(function(){
 	//change gender text to chinese
 		$('.male').html('<span>小哥哥</span><span> </span><i id="maleIcon" class="fa fa-mars maleIcon" aria-hidden="true"></i>');
 		$('.female').html('<span>小姐姐</span><span> </span><i id="femaleIcon" class="fa fa-venus femaleIcon" aria-hidden="true"></i>');
-		$('.trans').text('第三方阵营');
+		$('.trans').html('<span>第三方阵营</span><span> </span><i id="transIcon" class="fa fa-transgender" aria-hidden="true"></i>');
 
 	//game change data authorizing
 
