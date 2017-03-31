@@ -48,7 +48,7 @@
 				      <a href="" class="pass-forgot">忘记密码？</a>
 				      <div class="signInBox">
 				        <div class="button register">
-				          <a href="/signup" class="btn-large white btn waves-effect waves-dark register"><span>注册</span></a>
+				          <a href="/signup" class="btn-large white btn waves-effect waves-dark register"><span>没有账号？注册</span></a>
 				        </div>
 				        <div class="button login">
 				          <button class="btn-large btn waves-effect waves-light white-text" type="submit"><span>登录</span></button>

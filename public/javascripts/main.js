@@ -4,6 +4,14 @@ $(document).ready(function(){
 	$('.parallax').parallax();
 	$('.collapsible').collapsible();
 	$('.tooltipped').tooltip({delay: 50});
+	var authentication = $("#hidden-input").val();
+				if (authentication == 'false') {
+					$('.tap-target').tapTarget('open')
+				} else if (authentication == 'true') {
+					$('.tap-target').tapTarget('close')
+				}
+	
+
 	$('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background

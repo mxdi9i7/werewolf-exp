@@ -540,5 +540,8 @@ button.add-gamer.btn.btn-large {
 .collapsible.popout {
   margin: 50px;
 }
+#body .tap-target {
+  background-color: #00b0ff;
+}
 
 
