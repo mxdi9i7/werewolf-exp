@@ -5,7 +5,7 @@
 		<button class="btn white black-text btn-large right" data-target="createGame">发布比赛</button>
 				<div class="row">
 				{{#games}}
-					<div class="col s12 m6 l6">
+					<div class="col s12 m6 l6" onclick="location.href='/game{{id}}'">
 						  <div class="example-2 card">
 						    <div class="wrapper" style="background: url(images/{{filePath}}) center/cover no-repeat;">
 						      <div class="header">
@@ -27,6 +27,8 @@
 						        <div class="content">
 						          <span class="author"></span>
 						          <h1 class="title"><a href="#">{{title}}</a></h1>
+						          <br>
+						          <br>
 						          <p class="text">{{description}}</p>
 						          <a href="/game{{id}}" class="button">查看详情</a>
 						        </div>

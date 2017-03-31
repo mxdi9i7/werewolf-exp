@@ -51,24 +51,49 @@ router
 	})
 	.post('/games', loginRequired, upload.single('eventFile'), (req,res,next) => {
 		var imageUploaded = req.file
-		console.log()
-		var newGame = {
-			title: req.body.title,
-			host: req.user.id,
-			totalGames: 0,
-			totalPlayers: 0,
-			totalPoints: 0,
-			clickCount: 10,
-			description: req.body.description,
-			filePath: req.session.filePath ? req.session.filePath : 'shortshortwolf.jpg'
-		}
+		
+
 		console.log(req.session.filePath)
 		db('games')
-			.insert(newGame)
-			.then((ids)=>{
-				newGame.id = ids[0]
-				res.redirect('/games')
+			.then((games)=> {
+				var gameId = games.length + 1;
+				var newGamer = {
+					userId: req.user.id,
+					gameId: gameId,
+					gamePoints: 0,
+					gamerSerial: 1,
+					gamerNickname: req.user.nickname,
+					gamerProfile: req.user.profilePic,
+					gamerGender: req.user.gender,
+					numberGames: 0,
+					KDA: 0,
+					rank: 0
+				}
+				var newGame = {
+					id: games.length + 1,
+					title: req.body.title,
+					host: req.user.id,
+					totalGames: 0,
+					totalPlayers: 0,
+					totalPoints: 0,
+					clickCount: 10,
+					createdAt: Date.now(),
+					description: req.body.description,
+					filePath: req.session.filePath ? req.session.filePath : 'shortshortwolf.jpg'
+				}
+				db('games')
+				.insert(newGame)
+				.then((ids)=>{
+					newGame.id = ids[0]
+					db('gamersData')
+					.insert(newGamer)
+					.then((ids)=> {
+						newGamer.id = ids[0]
+						res.redirect('/games')
+					})
+				})
 			})
+			
 	})
 
 

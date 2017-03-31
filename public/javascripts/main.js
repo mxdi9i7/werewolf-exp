@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$(".button-collapse").sideNav();
 	$('#publish-form :input').val('');
 	$('.parallax').parallax();
+	$('.collapsible').collapsible();
 	$('.tooltipped').tooltip({delay: 50});
 	$('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal

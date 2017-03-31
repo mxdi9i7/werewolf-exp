@@ -112,7 +112,9 @@ router
 										gamerNickname: user.nickname,
 										gamerProfile: user.profilePic,
 										gamerGender: user.gender,
-										numberGames: 0
+										numberGames: 0,
+										KDA: 0,
+										rank: 0
 								}
 								db('gamersData')
 								.insert(newGamer)
