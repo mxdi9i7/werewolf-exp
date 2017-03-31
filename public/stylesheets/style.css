@@ -382,8 +382,11 @@ img.profilePic {
 	background-color: #D90429;
 }
 #body .color-carousel .carousel-item {
-	background-image: url(../images/nav-bg.jpg);
+	background-image: url(../images/newbg.jpg);
 	background-size: cover;
+}
+#body .color-carousel {
+  margin-top: 56px;
 }
 #body .footer-copyright {
 	padding: 0 10%;

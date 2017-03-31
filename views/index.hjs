@@ -1,11 +1,10 @@
  {{> header }}
 	  <div class="carousel carousel-slider center color-carousel" id="color-carousel" data-indicators="true">
 		    <div class="carousel-fixed-item center">
-		      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+		      <!-- <a class="btn waves-effect blue white-text darken-text-2" href="/publish">现在约局</a> -->
 		    </div>
 		    <div class="carousel-item carousel-item-one white-text" href="#two!">
-		      <h2>公告牌#333</h2>
-		      <p class="white-text">广告位招商， 请联系微信：peterbugman</p>
+		      
 		    </div>
 		    <div class="carousel-item carousel-item-two white-text" href="#three!">
 		      <h2>公告牌#2</h2>
@@ -26,7 +25,7 @@
 	  </section>
 
 
-	  <a href="./publish" class="btn-floating thin btn-large publishBtn white-text waves-effect"><i class="fa fa-plus"></i></a>
+	  <a href="./publish" class="btn-floating thin btn-large publishBtn white-text waves-effect pulse"><i class="fa fa-plus"></i></a>
 	  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
