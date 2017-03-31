@@ -121,7 +121,7 @@
 			    </div>
 			  </div>
 			  <div id="modal2" class="modal bottom-sheet">
-			    <div class="modal-content">
+			    <div class="modal-content addRecord">
 				  	<div class="s12 m12 l12 input-field">
 				  		<div class="row">
 				  			<h3>记录玩家的战绩</h3>
@@ -137,8 +137,8 @@
 							  			<ul class="gameRecordInput">
 							  					<div class="row">
 							  						<div class="col s6 m6 l6">
-							  							<select name="roles{{gamerSerial}}">
-							  								<option selected value="0">身份牌</option>
+							  							<select name="roles{{gamerSerial}}" class="browser-default">
+							  								<option selected value="0" disabled>身份牌</option>
 								  							<option value="150">村民</option>
 								  							<option value="250">狼人</option>
 								  							<option value="249">女巫</option>
@@ -153,7 +153,7 @@
 							  						</div>
 							  						<div class="col s6 m6 l6">
 							  							<select name="winOrLose{{gamerSerial}}">
-							  								<option selected value="0">比赛结果</option>
+							  								<option selected value="0" disabled>比赛结果</option>
 								  							<option value="1">胜利</option>
 								  							<option value="-1">失败</option>
 								  							<option value="2">法官</option>
