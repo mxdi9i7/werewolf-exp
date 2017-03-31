@@ -5,13 +5,11 @@ $(document).ready(function(){
 	$('.collapsible').collapsible();
 	$('.tooltipped').tooltip({delay: 50});
 	var authentication = $("#hidden-input").val();
-				if (authentication == 'false') {
-					$('.tap-target').tapTarget('open')
-				} else if (authentication == 'true') {
+				if (authentication == 'true' || screen.width < 990) {
 					$('.tap-target').tapTarget('close')
+				} else {
+					$('.tap-target').tapTarget('open')
 				}
-	
-
 	$('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background

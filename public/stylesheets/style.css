@@ -414,7 +414,7 @@ img.profilePic {
       font-size: 3rem;
     }
 }
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 990px) {
     h1.parallax-header {
       font-size: 5.5rem;
     }
