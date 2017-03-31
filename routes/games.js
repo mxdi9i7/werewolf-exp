@@ -67,7 +67,8 @@ router
 					gamerGender: req.user.gender,
 					numberGames: 0,
 					KDA: 0,
-					rank: 0
+					rank: 0,
+					rankPic: 'images/ranks/level0.png'
 				}
 				var newGame = {
 					id: games.length + 1,

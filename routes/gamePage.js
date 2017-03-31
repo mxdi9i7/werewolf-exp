@@ -114,7 +114,8 @@ router
 										gamerGender: user.gender,
 										numberGames: 0,
 										KDA: 0,
-										rank: 0
+										rank: 0,
+										rankPic: 'images/ranks/level0.png'
 								}
 								db('gamersData')
 								.insert(newGamer)
@@ -258,6 +259,7 @@ router
 											var rankPic;
 											if (updatedPoint <= 0) {
 												rank = 0
+												rankPic = 'images/ranks/level0.png'
 											} else if (updatedPoint > 0 && updatedPoint < 500) {
 												rank = 1
 												rankPic = 'images/ranks/level1.png'
@@ -308,6 +310,7 @@ router
 																	var rankPic;
 																	if (updatedPoint <= 0) {
 																		rank = 0
+																		rankPic = 'images/ranks/level0.png'
 																	} else if (updatedPoint > 0 && updatedPoint < 500) {
 																		rank = 1
 																		rankPic = 'images/ranks/level1.png'
@@ -358,6 +361,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -408,6 +412,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -458,6 +463,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -508,6 +514,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -558,6 +565,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -608,6 +616,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -658,6 +667,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -708,6 +718,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -758,6 +769,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -808,6 +820,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -858,6 +871,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -908,6 +922,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -958,6 +973,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -1008,6 +1024,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -1058,6 +1075,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -1108,6 +1126,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -1158,6 +1177,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
@@ -1208,6 +1228,7 @@ router
 																						var rankPic;
 																						if (updatedPoint <= 0) {
 																							rank = 0
+																							rankPic = 'images/ranks/level0.png'
 																						} else if (updatedPoint > 0 && updatedPoint < 500) {
 																							rank = 1
 																							rankPic = 'images/ranks/level1.png'
