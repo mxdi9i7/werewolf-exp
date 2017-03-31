@@ -534,6 +534,12 @@ button.add-gamer.btn.btn-large {
   top: 0px;
   left: 50%;
 }
+.collapsible-body.center-align {
+  padding: 50px;
+}
+.collapsible.popout {
+  margin: 50px;
+}
 
 
 

@@ -73,7 +73,7 @@
 	    <div class="row container">
 	        <ul class="collapsible popout" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header">3月31日 （晚 6:30）： 曼哈顿 Baruch College</div>
+              <div class="collapsible-header black white-text">3月31日 （晚 6:30）： 曼哈顿 Baruch College</div>
               <div class="collapsible-body center-align">
                 <span>地址：55 Lexington Ave, New York, N.Y. 10010</span>
                 <br>
@@ -82,7 +82,7 @@
               </div>
             </li>
             <li>
-              <div class="collapsible-header">4月2日 （晚 6:30）： 布鲁克林 金域KTV</div>
+              <div class="collapsible-header black white-text">4月2日 （晚 6:30）： 布鲁克林 金域KTV</div>
               <div class="collapsible-body center-align">
                 <span>地址：3901 8th Ave, Brooklyn, N.Y. 11232</span>
                 <br>
@@ -92,7 +92,7 @@
               </div>
             </li>
             <li>
-              <div class="collapsible-header">4月7日 （晚 6:30）： 皇后区 Laguardia Community College</div>
+              <div class="collapsible-header black white-text">4月7日 （晚 6:30）： 皇后区 Laguardia Community College</div>
               <div class="collapsible-body center-align">
                 <span>地址：30-10 Thomson Ave, Long Island City, NY 11101</span>
                 <br>
