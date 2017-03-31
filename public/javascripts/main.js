@@ -19,6 +19,7 @@ $(document).ready(function(){
   );
 	$('ul.rank-tabs').tabs({
 		swipeable: true,
+		height: 900
 	});
 	$('#createGame').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
