@@ -136,7 +136,7 @@
 				  			<h3>记录玩家的战绩</h3>
 				  			<ul>
 				  				<form method="post" action="/addRecord{{game.id}}">
-				  				{{#gamers}}
+				  				{{#roster}}
 				  					<div class="col s6 m6 l6">
 				  						<li class="gamerList">
 					  						{{gamerSerial}}. {{gamerNickname}}
@@ -171,7 +171,7 @@
 							  					</div>
 							  			</ul>
 							  		</div>
-				  				{{/gamers}}
+				  				{{/roster}}
 				  					<button type="submit" class="btn btn-large black white-text add-gamer">添加战绩</button>
 				  				</form>
 				  			</ul>
