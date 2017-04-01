@@ -1,12 +1,12 @@
         <footer class="page-footer">
           <div class="container">
             <div class="row">
-              <div class="col l5 m5 offset-l1 offset-m1 s11 offset-s1">
+              <div class="col l3 m3 offset-l1 offset-m1 s11 offset-s1">
                 <h5 class="white-text">面杀网</h5>
                 <h6 class="white-text italics">Egiang.com</h6>
                 <p class="grey-text text-lighten-4">在这里你可以发起，加入，寻找你附近的面杀局</p>
               </div>
-              <div class="col l3 m3 s12 offset-s1">
+              <div class="col l3 m3 s11 offset-s1">
                 <h5 class="white-text">更多链接</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!">首页</a></li>
@@ -15,13 +15,13 @@
                   <li><a class="grey-text text-lighten-3" href="#!">教程攻略(即将开放）</a></li>
                 </ul>
               </div>
-              <div class="col l3 m12 s12 offset-s1">
+              <div class="col l3 m3 s11">
                   <div class="row QRSection">
-                    <div class="col l12 m5 s5 offset-m1">
+                    <div class="col l6 m12 s12 offset-m1 offset-s1">
                         <p class="white-text">在微信上找到我们</p>
                         <img src="images/wechatQR.jpeg" class="materialboxed small-pic" width="1200">
                     </div>
-                    <div class="col l12 m5 s5">
+                    <div class="col l5 m12 s12 offset-s1">
                         <p class="white-text">加入我们的大家庭</p>
                         <img src="images/group.jpeg" class="materialboxed small-pic" width="1200">
                     </div>
