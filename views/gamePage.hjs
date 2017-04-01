@@ -139,15 +139,15 @@
 							  						<div class="col s6 m6 l6">
 							  							<select name="roles{{gamerSerial}}" class="browser-default">
 							  								<option selected value="0" disabled>身份牌</option>
-								  							<option value="150">村民</option>
-								  							<option value="250">狼人</option>
-								  							<option value="249">女巫</option>
-								  							<option value="248">猎人</option>
-								  							<option value="247">守卫</option>
-								  							<option value="246">白痴</option>
-								  							<option value="251">预言家</option>
-								  							<option value="300">丘比特</option>
-								  							<option value="500">情侣</option>
+								  							<option value="100">村民</option>
+								  							<option value="300">狼人</option>
+								  							<option value="200">女巫</option>
+								  							<option value="201">猎人</option>
+								  							<option value="202">守卫</option>
+								  							<option value="203">白痴</option>
+								  							<option value="204">预言家</option>
+								  							<option value="205">丘比特</option>
+								  							<option value="400">情侣</option>
 								  							<option value="50">法官</option>
 								  						</select>
 							  						</div>
@@ -180,15 +180,15 @@
 {{>footer}}
 <script type="text/javascript">
 //table item generation for game records
-	$('.150').text('村民')
-	$('.250').text('狼人')
-	$('.249').text('女巫')
-	$('.248').text('猎人')
-	$('.247').text('守卫')
-	$('.246').text('白痴')
-	$('.251').text('预言家')
-	$('.300').text('丘比特')
-	$('.500').text('情侣')
+	$('.100').text('村民')
+	$('.300').text('狼人')
+	$('.200').text('女巫')
+	$('.201').text('猎人')
+	$('.202').text('守卫')
+	$('.203').text('白痴')
+	$('.204').text('预言家')
+	$('.205').text('丘比特')
+	$('.400').text('情侣')
 	$('.1').text('胜利')
 	$('.-1').text('失败')
 	$('.50').text('法官')
