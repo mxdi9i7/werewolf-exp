@@ -12,9 +12,9 @@
 		          <tr>
 
 		          	  <th>局数/玩家</th>
-		          	{{#gamers}}
+		          	{{#roster}}
 		              <th>{{gamerNickname}}</th>
-		          	{{/gamers}}
+		          	{{/roster}}
 		          	
 		          </tr>
 		        </thead>
