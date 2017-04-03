@@ -148,6 +148,7 @@
 							  						<div class="col s6 m6 l6">
 							  							<select name="roles{{gamerSerial}}" class="browser-default">
 							  								<option selected value="0" disabled>身份牌</option>
+							  								<option value="0">缺席</option>
 								  							<option value="100">村民</option>
 								  							<option value="300">狼人</option>
 								  							<option value="200">女巫</option>
@@ -166,6 +167,7 @@
 								  							<option value="1">胜利</option>
 								  							<option value="-1">失败</option>
 								  							<option value="2">法官</option>
+								  							<option value="0">缺席</option>
 								  						</select>
 							  						</div>
 							  					</div>
@@ -219,5 +221,6 @@
 	$('.-1').text('失败')
 	$('.50').text('法官')
 	$('.2').text('法官')
+	$('.0').text('缺席')
 		      	  Materialize.toast('{{message}}', 4000) // 4000 is the duration of the toast
 	</script>
