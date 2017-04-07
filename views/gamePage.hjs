@@ -9,16 +9,12 @@
 			<div class="col s12 m12 l12">
 				<div class="row">
 					<div class="col s12 m12 l2">
-						<img src="images/{{game.filePath}}" style="max-width: 300px">
+						<img src="images/{{game.filePath}}" style="max-width: 400px">
 					</div>
 					<div class="col s12 m12 offset-l3 l7">
 						<blockquote>比赛简介</blockquote>
 						<p>
-							狼人杀sbkill积分赛 每三周狼人杀游戏板子会更换一次
-比赛前一周将会进行新板子通知
-从4/6开始
-每周四晚两场比赛7：30pm - 9：30pm
-由CUC承办的SBkill将在Stony Brook University irving lounge举办狼人杀积分赛。积分最高的前三名将受邀参加阿拉丁独家冠名举办的全美狼人杀邀请赛。
+							{{game.description}}
 						</p>
 						<blockquote>积分赛规则</blockquote>
 						<p>
@@ -188,7 +184,7 @@
 							  								<option selected value="0" disabled>身份牌</option>
 							  								<option value="0">缺席</option>
 								  							<option value="100">村民</option>
-								  							<option value="300">狼人</option>
+								  							<option value="250">狼人</option>
 								  							<option value="200">女巫</option>
 								  							<option value="201">猎人</option>
 								  							<option value="202">守卫</option>
@@ -247,6 +243,7 @@
 <script type="text/javascript">
 //table item generation for game records
 	$('.100').text('村民')
+	$('.250').text('狼人')
 	$('.300').text('狼人')
 	$('.200').text('女巫')
 	$('.201').text('猎人')

@@ -45,11 +45,18 @@ router
 				profilePic: 'profilePic/' + req.file.filename
 			})
 			.then(()=> {
-				console.log(req.file)
-				res.redirect('/users')
+				db('gamersData')
+				.where('userId', req.user.id)
+				.first()
+				.update({
+					gamerProfile: 'profilePic/' + req.file.filename
+					}).then(()=>{
+						console.log(req.file)
+						res.redirect('/users')
+					})
+				})
 			})
 		})
-	})
 	.post('/users', loginRequired, (req, res, next) => {
 		db('users')
 		.where('id', req.user.id)
