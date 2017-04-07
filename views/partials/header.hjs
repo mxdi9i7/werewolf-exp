@@ -24,6 +24,7 @@
 	      <ul class="right hide-on-med-and-down">
 	        <li><a href="../" class="white-text">首页</a></li>
 	        <li><a href="/games" class="white-text">排位赛</a></li>
+	        <li><a href="/game2" class="white-text">SBKill<span class="new badge yellow black-text" data-badge-caption="!">SBKill积分赛</span></a></li>
 	        <li><a href="/tournament" class="white-text">比赛专区<span class="new badge white black-text" data-badge-caption="!">狼王争霸赛</span></a></li>
 	        <li id="nickname_tag"><a href="../users" class="white-text"><img class="circle nav-prof" src="{{profilePic}}">{{currentUser}}</a></li>
 	        <li id="login_btn"><a href="./login" class="btn white-text light-blue accent-3 waves-effect" id="menu">登录/注册</a></li>
