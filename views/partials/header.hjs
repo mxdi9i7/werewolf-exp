@@ -40,8 +40,9 @@
 			  </div>
 	      <ul class="side-nav" id="mobile-demo">
 	        <li><a href="../" class="black-text">首页</a></li>
-	        <li><a href="/games">排位赛</a></li>
-	        <li><a href="/tournament" class="black-text">比赛专区</a></li>
+	        <li><a href="/games" class="white-text">排位赛</a></li>
+	        <li><a href="/game2" class="white-text">SBKill<span class="new badge yellow black-text" data-badge-caption="!">SBKill积分赛</span></a></li>
+	        <li><a href="/tournament" class="white-text">狼王争霸<span class="new badge white black-text" data-badge-caption="!">狼王争霸赛</span></a></li>
 	        <li id="nickname_tag"><a href="../users" class="black-text"><img class="circle nav-prof" src="{{profilePic}}">{{currentUser}}</a></li>
 	        <li id="login_btn"><a href="../login" class="btn white-text light-blue accent-3 waves-effect">登录/注册</a></li>
 			<li id="logout_btn"><a href="./logout" class="btn white-text red accent-3 waves-effect">退出登录</a></li>
