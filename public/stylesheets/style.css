@@ -559,5 +559,9 @@ button.add-gamer.btn.btn-large {
 #body .tap-target {
   background-color: #00b0ff;
 }
-
-
+.signiture {
+  position: absolute;
+  left: 35%;
+  top: 10px;
+  font-size: 1rem;
+}
