@@ -209,6 +209,26 @@
 							  			</ul>
 							  		</div>
 				  				{{/roster}}
+				  					<!-- <div class="col s6 m6 l6">
+				  						<li class="gamerList">
+				  							MVP：
+				  						</li>
+				  						<li class="gamerList">
+				  							背锅侠：
+				  						</li>
+				  					</div>
+				  					<div class="col s6 m6 l6">
+							  			<ul class="gameRecordInput">
+							  					<div class="row">
+							  						<div class="col s12 m12 l12">
+							  							<input name="MVP" placeholder="MVP">
+							  						</div>
+							  						<div class="col s12 m12 l12">
+							  							<input name="MVP" placeholder="MVP">
+							  						</div>
+							  					</div>
+							  			</ul>
+							  		</div> -->
 				  					<button type="submit" class="btn btn-large black white-text add-gamer">添加战绩</button>
 				  				</form>
 				  			</ul>
