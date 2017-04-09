@@ -58,20 +58,25 @@ router
 			})
 		})
 	.post('/users', loginRequired, (req, res, next) => {
-		db('users')
-		.where('id', req.user.id)
-		.first()
-		.then((user) => {
 			db('users')
 			.where('id', req.user.id)
 			.first()
 			.update({
+				signiture: req.body.signiture,
 				nickname: req.body.nickname
 			})
 			.then(()=> {
-				res.redirect('/users')
+				db('gamersData')
+					.where('userId', req.user.id)
+					.first()
+					.update({
+						gamerSigniture: req.body.signiture,
+						gamerNickname: req.body.nickname
+					})
+					.then(()=>{
+						res.redirect('/users')
+					})
 			})
-		})
 	})
 	.get("/users", loginRequired, (req, res, next) => {
 		db('events')

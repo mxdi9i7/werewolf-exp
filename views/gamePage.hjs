@@ -141,7 +141,7 @@
 					      <p>{{win}} 胜 | {{lose}} 败</p>
 					      <p>{{numberGames}} 场游戏</p>
 					      <!-- <a href="" class="refreshScore">清零</a> -->
-					      <p class="signiture"><i class="blue-text">"宣言{{signiture}}"</i></p>
+					      <p class="signiture hide-on-med-and-down"><i class="blue-text">"{{gamerSigniture}}"</i></p>
 					      <a href="#!" class="secondary-content">积分：{{gamePoints}}</a>
 					      <span class="right-align">段位：{{rank}} 阶</span>
 					      <img src="{{rankPic}}" class="rankPic">

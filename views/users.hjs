@@ -30,6 +30,7 @@
 							      <li class="collection-item"><strong>性别:</strong><span id="{{gender}}"> {{gender}}</span></li>
 							      <li class="collection-item"><strong>身份：</strong>{{identity}}</li>
 							      <li class="collection-item"><strong>用户ID：</strong>{{id}}</li>
+							      <li class="collection-item"><strong>个性签名：</strong>{{signiture}}</li>
 							      <li class="collection-item"><strong>人气值：</strong>{{clickCount}}</li>
 							    </ul>
 							{{/user}}
@@ -61,7 +62,9 @@
 				      <div id="test7">
 				      	<form method="post">
 				      		<label for="nickname">新用户名</label>
-				      		<input type="text" name="nickname" placeholder="输入新的用户名">
+				      		<input type="text" name="nickname" placeholder="{{user.nickname}}">
+				      		<label for="signiture">个性签名</label>
+				      		<textarea class="materialize-textarea" name="signiture"></textarea>
 				      		<button class="btn btn-large white-text light-blue accent-3 waves-effect">确认修改</button>
 				      	</form>
 				      </div>
