@@ -136,7 +136,8 @@
 					    <li class="collection-item avatar" id="{{userId}}">
 					      <img src="{{gamerProfile}}" alt="" class="circle">
 					      <span class="title">{{gamerNickname}}</span>
-					      <p class="{{gamerGender}}">{{gamerGender}} | {{gamers.userId}}<br>
+					      <p class="{{gamerGender}}">{{gamerGender}}<br>
+					      <p>{{userId}}</p>
 					      <p>胜率： {{KDA}}</p>
 					      <p>{{win}} 胜 | {{lose}} 败</p>
 					      <p>{{numberGames}} 场游戏</p>
