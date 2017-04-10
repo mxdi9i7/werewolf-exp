@@ -25,6 +25,77 @@ function loginRequired(req, res, next) {
 
 /* GET home page. */
 router
+	.get('/sbkill', loginRequired, (req,res,next)=> {
+		const gameId = 2;
+		db('games')
+		.where('id', gameId)
+		.first()
+		.then((game)=> {
+			db('gamersData')
+			.where('gameId', gameId)
+			.orderBy('gamePoints', 'desc')
+			.then((gamers)=> {
+				db('gamesData')
+					.where('gameId', gameId)
+					.then((gamesData)=> {
+						var pointsInGame = 0;
+						for (i = 0; i < gamers.length; i ++) {
+								pointsInGame = pointsInGame + Number(gamers[i].gamePoints)
+						}
+						db('games')
+							.where('id', gameId)
+							.update({
+								totalPlayers: gamers.length,
+								totalGames: gamesData.length,
+								totalPoints: pointsInGame,
+								clickCount: game.clickCount + 20
+							}).then(()=>{
+								db('gamersData')
+									.where('gameId', gameId)
+									.where('userId', req.user.id)
+									.first()
+									.then((yourself)=> {
+										db('gamersData')
+											.where('gameId', gameId)
+											.orderBy('gamerSerial')
+											.then((roster)=>{
+												var playerResultList = [];
+												var is_authorized;
+												if (req.user.id == game.host) {
+													is_authorized = 'is_authorized'
+												} else {
+													is_authorized = 'is_not_authorized'
+												}
+												res.render('gamePage',{
+														partials: {
+															header: './partials/header',
+															footer: './partials/footer'
+														},
+														nickname: req.user.nickname,
+														authenticated: req.isAuthenticated(),
+														currentUser: req.user.nickname,
+														currentUserId: req.user.id,
+														profilePic: req.user.profilePic,
+														game,
+														gamers,
+														gamesData,
+														roster,
+														message: req.session.message,
+														historyList: playerResultList,
+														is_host: is_authorized,
+														king: gamers[0].gamerNickname,
+														kingPoint: gamers[0].gamePoints
+														})
+											})
+											
+									})
+										
+								
+							})
+					})
+			})
+		})
+	})
 	.get('/game:gameId', loginRequired, (req, res, next) => {
 		const { gameId } = req.params;
 		db('games')
