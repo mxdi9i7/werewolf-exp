@@ -31,7 +31,4 @@ public/profilePic/
 # Debug log from npm
 npm-debug.log
 
-#sensitive stuff
-ecosystem.config.js
-db.js
 
